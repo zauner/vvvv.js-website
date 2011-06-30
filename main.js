@@ -6,11 +6,13 @@ $(document).ready(function() {
   
   $('#main').hide();
   var vvvviewer;
+  var page_mainloop;
   
   var graph = new VVVV.Core.Graph("main.v4p", function() {
-    VVVV.Core.MainLoop.run(this);
+    page_mainloop = new VVVV.Core.MainLoop(this);
     $('#main').show();
   });
+  
   
   $('a#showpatch').click(function() {
     if (vvvviewer && vvvviewer!=undefined) {
@@ -25,6 +27,12 @@ $(document).ready(function() {
       $('#pagepatch').show();
       $(this).text("Hide this site's patch");
     }
+  });
+  
+  
+  
+  window.setTimeout(5, function() {
+    alert('stopped');
   });
   
   
