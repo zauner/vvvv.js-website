@@ -1,6 +1,6 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta25.1.dtd" >
-   <PATCH nodename="C:\Dokumente und Einstellungen\Matthias\Eigene Dateien\My Dropbox\vvvv_js_page\main.v4p" filename="D:\htdocs\vvvv_js_page\main.v4p" systemname="main">
-   <BOUNDS height="12915" left="2520" top="3285" type="Window" width="25380">
+   <PATCH nodename="C:\Dokumente und Einstellungen\matthias\Eigene Dateien\My Dropbox\vvvv_js_page\main.v4p" filename="D:\htdocs\vvvv_js_page\main.v4p" systemname="main">
+   <BOUNDS height="12915" left="960" top="270" type="Window" width="25380">
    </BOUNDS>
    <NODE componentmode="InABox" id="4" nodename="IOBox (Value Advanced)" systemname="IOBox (Value Advanced)">
    <BOUNDS height="100" left="3060" top="555" type="Node" width="100">
@@ -1183,9 +1183,9 @@
    <LINK dstnodeid="42" dstpinname="Input 2" srcnodeid="224" srcpinname="Output">
    </LINK>
    <NODE componentmode="InABox" id="225" nodename="IOBox (Value Advanced)" systemname="IOBox (Value Advanced)">
-   <BOUNDS height="100" left="11445" top="11910" type="Node" width="100">
+   <BOUNDS height="100" left="11445" top="10665" type="Node" width="100">
    </BOUNDS>
-   <BOUNDS height="240" left="11445" top="11910" type="Box" width="795">
+   <BOUNDS height="240" left="11445" top="10665" type="Box" width="795">
    </BOUNDS>
    <PIN pinname="Descriptive Name" slicecount="1" values="|#menu a/event/mouseover|">
    </PIN>
@@ -1202,12 +1202,10 @@
    <PIN pinname="Reset" visible="1">
    </PIN>
    </NODE>
-   <LINK dstnodeid="226" dstpinname="Set" srcnodeid="225" srcpinname="Y Output Value">
-   </LINK>
    <NODE componentmode="InABox" id="228" nodename="IOBox (Value Advanced)" systemname="IOBox (Value Advanced)">
-   <BOUNDS height="100" left="12120" top="11295" type="Node" width="100">
+   <BOUNDS height="100" left="12120" top="10140" type="Node" width="100">
    </BOUNDS>
-   <BOUNDS height="240" left="12120" top="11295" type="Box" width="795">
+   <BOUNDS height="240" left="12120" top="10140" type="Box" width="795">
    </BOUNDS>
    <PIN pinname="Descriptive Name" slicecount="1" values="|#menu a/event/mouseout|">
    </PIN>
@@ -1418,10 +1416,10 @@
    </NODE>
    <LINK dstnodeid="268" dstpinname="Input 1" srcnodeid="272" srcpinname="Output">
    </LINK>
-   <NODE systemname="IOBox (Value Advanced)" nodename="IOBox (Value Advanced)" componentmode="InABox" id="273">
-   <BOUNDS type="Node" left="75" top="8460" width="100" height="100">
+   <NODE componentmode="InABox" id="273" nodename="IOBox (Value Advanced)" systemname="IOBox (Value Advanced)">
+   <BOUNDS height="100" left="75" top="8460" type="Node" width="100">
    </BOUNDS>
-   <BOUNDS type="Box" left="75" top="8460" width="840" height="1485">
+   <BOUNDS height="1485" left="75" top="8460" type="Box" width="840">
    </BOUNDS>
    <PIN pinname="Rows" slicecount="1" values="6">
    </PIN>
@@ -1430,34 +1428,60 @@
    <PIN pinname="Y Output Value" visible="1">
    </PIN>
    </NODE>
-   <LINK srcnodeid="15" srcpinname="Output" dstnodeid="273" dstpinname="Y Input Value">
+   <LINK dstnodeid="273" dstpinname="Y Input Value" srcnodeid="15" srcpinname="Output">
    </LINK>
-   <LINK srcnodeid="273" srcpinname="Y Output Value" dstnodeid="42" dstpinname="Switch">
+   <LINK dstnodeid="42" dstpinname="Switch" srcnodeid="273" srcpinname="Y Output Value">
    </LINK>
-   <LINK srcnodeid="273" srcpinname="Y Output Value" dstnodeid="50" dstpinname="Switch">
+   <LINK dstnodeid="50" dstpinname="Switch" srcnodeid="273" srcpinname="Y Output Value">
    </LINK>
-   <LINK srcnodeid="273" srcpinname="Y Output Value" dstnodeid="52" dstpinname="Go To Position">
+   <LINK dstnodeid="52" dstpinname="Go To Position" srcnodeid="273" srcpinname="Y Output Value">
    </LINK>
-   <LINK srcnodeid="273" srcpinname="Y Output Value" dstnodeid="214" dstpinname="Switch">
+   <LINK dstnodeid="214" dstpinname="Switch" srcnodeid="273" srcpinname="Y Output Value">
    </LINK>
-   <NODE systemname="IOBox (Value Advanced)" nodename="IOBox (Value Advanced)" componentmode="InABox" id="274">
-   <BOUNDS type="Node" left="1380" top="8835" width="100" height="100">
+   <NODE componentmode="InABox" id="274" nodename="IOBox (Value Advanced)" systemname="IOBox (Value Advanced)">
+   <BOUNDS height="100" left="1380" top="8835" type="Node" width="100">
    </BOUNDS>
-   <BOUNDS type="Box" left="1380" top="8835" width="795" height="240">
+   <BOUNDS height="240" left="1380" top="8835" type="Box" width="795">
    </BOUNDS>
    <PIN pinname="Y Input Value" visible="1">
    </PIN>
    <PIN pinname="Y Output Value" visible="1">
    </PIN>
    </NODE>
-   <LINK srcnodeid="271" srcpinname="Former Slice" dstnodeid="274" dstpinname="Y Input Value">
+   <LINK dstnodeid="274" dstpinname="Y Input Value" srcnodeid="271" srcpinname="Former Slice">
    </LINK>
-   <LINK srcnodeid="274" srcpinname="Y Output Value" dstnodeid="272" dstpinname="Input">
+   <LINK dstnodeid="272" dstpinname="Input" srcnodeid="274" srcpinname="Y Output Value">
    </LINK>
-   <LINK srcnodeid="181" srcpinname="Output" dstnodeid="189" dstpinname="Input String">
+   <LINK dstnodeid="189" dstpinname="Input String" srcnodeid="181" srcpinname="Output">
    </LINK>
-   <LINK srcnodeid="181" srcpinname="Output" dstnodeid="170" dstpinname="Input String">
+   <LINK dstnodeid="170" dstpinname="Input String" srcnodeid="181" srcpinname="Output">
    </LINK>
-   <LINK srcnodeid="228" srcpinname="Y Output Value" dstnodeid="226" dstpinname="Reset">
+   <LINK dstnodeid="226" dstpinname="Reset" srcnodeid="228" srcpinname="Y Output Value">
+   </LINK>
+   <NODE systemname="AND (Boolean)" nodename="AND (Boolean)" componentmode="Hidden" id="275">
+   <BOUNDS type="Node" left="12180" top="11670" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input 1" visible="1">
+   </PIN>
+   <PIN pinname="Input 2" visible="1">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="NOT (Boolean)" nodename="NOT (Boolean)" componentmode="Hidden" id="276">
+   <BOUNDS type="Node" left="12645" top="11190" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input" visible="1">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="228" srcpinname="Y Output Value" dstnodeid="276" dstpinname="Input">
+   </LINK>
+   <LINK srcnodeid="225" srcpinname="Y Output Value" dstnodeid="275" dstpinname="Input 1">
+   </LINK>
+   <LINK srcnodeid="276" srcpinname="Output" dstnodeid="275" dstpinname="Input 2">
+   </LINK>
+   <LINK srcnodeid="275" srcpinname="Output" dstnodeid="226" dstpinname="Set">
    </LINK>
    </PATCH>
