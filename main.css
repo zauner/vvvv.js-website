@@ -8,11 +8,26 @@ p{
   margin-top:0;
 }
 
+a{
+  text-decoration:none;
+  color:black;
+}
+
 #header{
   position:relative;
   height:150px;
+  width:955px;
   overflow:hidden;
   margin-bottom:5px;
+}
+
+#header a#showpatch{
+  position:absolute;
+  right:0;
+  bottom:0;
+  background-color:#000;
+  color:white;
+  font-weight:bold;
 }
 
 #header #title{
@@ -69,6 +84,8 @@ ul#menu a{
   clear:both;
 }
 
-#patch{
+.patch{
   margin-top:30px;
+  overflow:auto;
+  width:955px;
 }
