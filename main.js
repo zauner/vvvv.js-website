@@ -32,3 +32,16 @@ $(document).ready(function() {
   
 });
 
+
+function initSection(section_name) {
+  switch (section_name) {
+  
+    case 3:
+      var webgl_patch = new VVVV.Core.Patch("rotating_quads.v4p", function() {
+        webgl_mainloop = new VVVV.Core.MainLoop(this);
+      });
+    break;
+  
+  }
+}
+
