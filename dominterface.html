@@ -1,0 +1,56 @@
+<p>A VVVV patch can interact with the document it's embedded into through its IOBoxes. The DOM Interface automatically establishes a connection between IOBoxes and HTML nodes, attributes, styles, etc. Programming a client side application with VVVV follows the pattern:</p>
+
+<ol>
+  <li>get data from the DOM through the input IOBoxes,</li>
+  <li>process it, and</li>
+  <li>manipulate the DOM through setting the output IOBoxes</li>
+</ol>
+
+<p>Those connections are established based on the IOBoxes' "Descriptive Names", which have to be in the format</p>
+
+<pre>&lt;dom selector&gt;/&lt;property type&gt;/&lt;property&gt;</pre>
+
+<p>The <em>dom selector</em> specifies the elements to connect with. You can use everything jQuery understands. Have a look at the Selector section of the jQuery Documentation.</p>
+
+<p>The <em>property type</em> is either attribute, style or event. This allows you to access specific attributes, CSS information, or events for the selected elements.</p>
+
+<p>The <em>property</em> specifies the name of the actual attribute, style or event.</p>
+
+<h2>Example: Content and Events</h2>
+
+<p>Click the "Show Patch" link on the right to observe the patch. The first two text inputs have the ids "input1" and "input2". See, how the respective IOBoxes in the patch on the right change right away, as
+you modify the values in the text inputs below. The button got the id "calculate", and the patch queries, if the button has been clicked. If so, the output IOBox, which is connected to the third text input
+will be set.</p>
+
+<input type="text" size="5" value="5" id="input1"/> + <input type="text" size="5" value="2" id="input2"/> = <input type="text" size="5" value="" id="sum"/> <input type="button" value="Calculate" id="calculate"/>
+<a href="#current_patches[0]" class="patch_link"><span>Show</span> Patch #1 &gt;</a>
+
+
+
+<h2>Example: Attributes</h2>
+
+<p>You can access elements' attributes by using the <em>attribute</em> property type. The example below reads the "href"-property of the "VVVV Website"-link, and writes it into the link text when hovering
+the mouse pointer over it. Again, hit the "Show Patch" link to the right, to watch the thing working.</p>
+
+<a class="example2_link" href="http://www.vvvv.org">VVVV Website</a>
+<a href="#current_patches[1]" class="patch_link"><span>Show</span> Patch #2 &gt;</a>
+
+
+
+<h2>Example: Styles</h2>
+
+<p>Just as accessing attributes, you can read and write style information of selected elements. Move the mouse across the bars below to see the height and opacity styles get animated.</p>
+
+<a href="#current_patches[2]" class="patch_link"><span>Show</span> Patch #3 &gt;</a>
+<div id="example3">
+  <div class="example3_bar"></div>
+  <div class="example3_bar"></div>
+  <div class="example3_bar"></div>
+  <div class="example3_bar"></div>
+  <div class="example3_bar"></div>
+  <div class="example3_bar"></div>
+  <div class="example3_bar"></div>
+  <div class="example3_bar"></div>
+  <div class="example3_bar"></div>
+  <div class="example3_bar"></div>
+</div>

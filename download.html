@@ -1,0 +1,18 @@
+<h2>Rendering Patches</h2>
+
+<p>You can load and view a patch by first creating a Patch object, and then pass it to a newly created VVVViewer object:</p>
+
+<pre>
+var myvvvviewer;
+var mypatch = new VVVV.Core.Patch("mypatch.v4p", function() {
+  myvvvviewer = new VVVV.VVVViewer(this, '#patch');
+});
+</pre>
+
+<p>This is the corresponding HTML code:</p>
+
+<pre>
+&lt;div id='patch'&gt;Your browser does not support the VVVViewer&lt;/div&gt;
+</pre>
+
+<p>While in the example above the Patch constructor new VVVV.Core.Patch("mypatch.v4p", ...) loads a VVVV patch file from the remote server, it is also possible to just pass actual VVVV XML Code to the constructor instead of a filename. This might be the case, when you display VVVV Code which comes from a forum post or a blog entry.</p>
