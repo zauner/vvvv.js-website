@@ -48,8 +48,6 @@ $(document).ready(function() {
 
 function initSection(section_name) {
 
-  console.log('oooooi'+section_name);
-
   for (var i=0; i<current_mainloops.length; i++) {
     current_mainloops[i].stop();
     delete current_mainloops[i];
@@ -97,6 +95,42 @@ function initSection(section_name) {
         current_mainloops.push(new VVVV.Core.MainLoop(this));
       }));
       attachShowPatchEvents();
+    break;
+    
+    case 6:
+      var p = new VVVV.Core.Patch('');
+      _(VVVV.Nodes).each(function(n) {
+        var node = new n(0, p);
+        var code = '<div class="node2">';
+        code += '<a class="header" href="#">';
+        code += '<div class="name">'+node.nodename+'</div>';
+        var compatibility_rate = 0;
+        if (node.meta)
+          compatibility_rate = 100-node.meta.compatibility_issues.length*10;
+        code += '<div class="compatibility_rate"><div style="width:'+compatibility_rate+'%"></div></div>';
+        code += '<div style="clear:both"></div>';
+        code += '</a>';
+        code += '<div class="infos">';
+        if (node.meta) {
+          if (node.meta.authors.length>0)
+            code += '<label>Author(s):</label><div class="data">'+node.meta.authors.join(', ')+'</div>';
+          if (node.meta.original_authors.length>0)
+            code += '<label>Original Node Author(s):</label><div class="data">'+node.meta.original_authors.join(', ')+'</div>';
+          if (node.meta.compatibility_issues.length>0)
+            code += '<label>Compatibility Issues:</label><div class="data">'+node.meta.compatibility_issues.join('<br> ')+'</div>';
+          
+        }
+        else
+          code += "No information found ...";
+        code += "</div>";
+        code += "</div>";
+        
+        $('#nodelist').append($(code));
+      });
+      $('#nodelist a.header').click(function() {
+        $(this).next().toggle();
+        return false;
+      });
     break;
   
   }

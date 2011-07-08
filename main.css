@@ -145,3 +145,53 @@ ul#menu a{
   height:10px;
 }
 
+
+#nodelist{
+
+}
+
+#nodelist .node2{
+  clear:both;
+  border-bottom:1px solid #cfcfcf;
+}
+
+#nodelist .node2 .header{
+  display:block;
+  background:#efefef;
+  padding:10px 0px 10px 10px;
+}
+
+#nodelist .node2 .name{
+  float:left;
+  font-weight:bold;
+}
+
+#nodelist .node2 .compatibility_rate{
+  border:1px solid black;
+  background:white;
+  width:25%;
+  margin-left: 70%;
+}
+
+#nodelist .node2 .compatibility_rate div{
+  height:5px;
+  background-color:#555;
+}
+
+#nodelist .node2 .infos{
+  display:none;
+  margin:10px;
+  clear:both;
+}
+
+#nodelist .node2 .infos label{
+  clear:both;
+  float:left;
+  padding-bottom:0.8em;
+}
+
+#nodelist .node2 .infos .data{
+  margin-left:30%;
+  padding-bottom:0.8em;
+}
+
