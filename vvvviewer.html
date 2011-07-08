@@ -1,4 +1,111 @@
-<p>
-On the internet, discussions about <i>textual programming problems</i> usually include snippets of sourcecode, placed right in the middle of running text. With VVVV patches, it is not that easy.
-Describing patching problems often involves either a verbal description of a patch, or attached resources like screenshots or the actual .v4p file.
-</p>
+<p>On the internet, discussions about textual programming problems usually include snippets of sourcecode, placed right in the middle of running text. With VVVV patches, it is not that easy. Describing patching problems often involves either a verbal description of a patch, or attached resources like screenshots or the actual .v4p file.</p>
+
+<p>The VVVViewer is a rather independent module of the VVVV.js project, which renders VVVV patches (really: the patches) as SVG within the browser, using d3.js . This makes communicating and discussing VVVV code easier.</p>
+
+<p>Here's some VVVV XML code. Click the button to parse and render the patch:</p>
+
+<input type="button" value="Parse &amp; Render" id="render_vvvviewer_demo"/>
+
+<pre id="patch1">
+&lt;!DOCTYPE PATCH  SYSTEM "D:\charanim\movvvve2\vvvv_40beta23.3\bin\40alpha23.dtd" &gt;
+   &lt;PATCH&gt;
+   &lt;NODE componentmode="InABox" id="6" nodename="IOBox (Value Advanced)" systemname="IOBox (Value Advanced)"&gt;
+   &lt;BOUNDS height="100" left="1395" top="870" type="Node" width="100"&gt;
+   &lt;/BOUNDS&gt;
+   &lt;BOUNDS height="1365" left="1395" top="870" type="Box" width="795"&gt;
+   &lt;/BOUNDS&gt;
+   &lt;PIN pinname="Rows" slicecount="1" values="5"&gt;
+   &lt;/PIN&gt;
+   &lt;PIN pinname="SliceCount Mode" slicecount="1" values="ColsRowsPages"&gt;
+   &lt;/PIN&gt;
+   &lt;PIN pinname="Y Output Value" visible="1"&gt;
+   &lt;/PIN&gt;
+   &lt;PIN pinname="Y Input Value" slicecount="5" values="1,2,3,4,5"&gt;
+   &lt;/PIN&gt;
+   &lt;/NODE&gt;
+   &lt;NODE componentmode="InABox" id="5" nodename="IOBox (String)" systemname="IOBox (String)"&gt;
+   &lt;BOUNDS height="270" left="1260" top="510" type="Node" width="945"&gt;
+   &lt;/BOUNDS&gt;
+   &lt;BOUNDS height="270" left="1260" top="510" type="Box" width="945"&gt;
+   &lt;/BOUNDS&gt;
+   &lt;PIN pinname="Input String" slicecount="1" visible="0" values="|the spread:|"&gt;
+   &lt;/PIN&gt;
+   &lt;PIN pinname="Output String" visible="0"&gt;
+   &lt;/PIN&gt;
+   &lt;PIN pinname="Show Grid" slicecount="1" values="0"&gt;
+   &lt;/PIN&gt;
+   &lt;/NODE&gt;
+   &lt;NODE componentmode="Hidden" id="4" nodename="GetSlice (Spreads)" systemname="GetSlice (Spreads)"&gt;
+   &lt;BOUNDS height="100" left="2145" top="4215" type="Node" width="100"&gt;
+   &lt;/BOUNDS&gt;
+   &lt;PIN pinname="Input" visible="1"&gt;
+   &lt;/PIN&gt;
+   &lt;PIN pinname="Bin Size" slicecount="1" values="1"&gt;
+   &lt;/PIN&gt;
+   &lt;PIN pinname="Index" visible="1"&gt;
+   &lt;/PIN&gt;
+   &lt;PIN pinname="Output" visible="1"&gt;
+   &lt;/PIN&gt;
+   &lt;/NODE&gt;
+   &lt;LINK dstnodeid="4" dstpinname="Input" srcnodeid="6" srcpinname="Y Output Value"&gt;
+   &lt;/LINK&gt;
+   &lt;NODE componentmode="Hidden" id="3" nodename="Count (Value)" systemname="Count (Value)"&gt;
+   &lt;BOUNDS height="100" left="3510" top="2655" type="Node" width="100"&gt;
+   &lt;/BOUNDS&gt;
+   &lt;PIN pinname="Input" visible="1"&gt;
+   &lt;/PIN&gt;
+   &lt;PIN pinname="Count" visible="1"&gt;
+   &lt;/PIN&gt;
+   &lt;/NODE&gt;
+   &lt;LINK dstnodeid="3" dstpinname="Input" srcnodeid="6" srcpinname="Y Output Value"&gt;
+   &lt;/LINK&gt;
+   &lt;NODE componentmode="Hidden" id="2" nodename="RandomSpread (Spreads)" systemname="RandomSpread (Spreads)"&gt;
+   &lt;BOUNDS height="100" left="2400" top="3135" type="Node" width="100"&gt;
+   &lt;/BOUNDS&gt;
+   &lt;PIN pinname="Input" slicecount="1" visible="1" values="0"&gt;
+   &lt;/PIN&gt;
+   &lt;PIN pinname="Width" slicecount="1" values="1"&gt;
+   &lt;/PIN&gt;
+   &lt;PIN pinname="Random Seed" slicecount="1" values="0"&gt;
+   &lt;/PIN&gt;
+   &lt;PIN pinname="Spread Count" visible="1"&gt;
+   &lt;/PIN&gt;
+   &lt;PIN pinname="Output" visible="1"&gt;
+   &lt;/PIN&gt;
+   &lt;/NODE&gt;
+   &lt;LINK dstnodeid="2" dstpinname="Spread Count" srcnodeid="3" srcpinname="Count"&gt;
+   &lt;/LINK&gt;
+   &lt;NODE componentmode="Hidden" id="1" nodename="Sort (Spreads)" systemname="Sort (Spreads)"&gt;
+   &lt;BOUNDS height="100" left="2400" top="3630" type="Node" width="100"&gt;
+   &lt;/BOUNDS&gt;
+   &lt;PIN pinname="Input" visible="1"&gt;
+   &lt;/PIN&gt;
+   &lt;PIN pinname="Former Index" visible="1"&gt;
+   &lt;/PIN&gt;
+   &lt;/NODE&gt;
+   &lt;LINK dstnodeid="1" dstpinname="Input" srcnodeid="2" srcpinname="Output"&gt;
+   &lt;/LINK&gt;
+   &lt;LINK dstnodeid="4" dstpinname="Index" srcnodeid="1" srcpinname="Former Index"&gt;
+   &lt;/LINK&gt;
+   &lt;NODE componentmode="InABox" id="7" nodename="IOBox (Value Advanced)" systemname="IOBox (Value Advanced)"&gt;
+   &lt;BOUNDS height="100" left="1410" top="4890" type="Node" width="100"&gt;
+   &lt;/BOUNDS&gt;
+   &lt;BOUNDS height="1365" left="1410" top="4890" type="Box" width="795"&gt;
+   &lt;/BOUNDS&gt;
+   &lt;PIN pinname="Rows" slicecount="1" values="5"&gt;
+   &lt;/PIN&gt;
+   &lt;PIN pinname="SliceCount Mode" slicecount="1" values="ColsRowsPages"&gt;
+   &lt;/PIN&gt;
+   &lt;PIN pinname="Y Output Value" visible="1"&gt;
+   &lt;/PIN&gt;
+   &lt;PIN pinname="Y Input Value" visible="1"&gt;
+   &lt;/PIN&gt;
+   &lt;/NODE&gt;
+   &lt;LINK srcnodeid="4" srcpinname="Output" dstnodeid="7" dstpinname="Y Input Value"&gt;
+   &lt;/LINK&gt;
+   &lt;/PATCH&gt;
+</pre>
+
+<p>As you can see, the patch is <em>not evaluated</em>, but <em>only displayed</em>, this is why there's no result. You can use this to describe patching solutions or problems, and to exchange
+patch "snippets" with others. However, in case you're running the patch, you can use the VVVViewer for debugging purposes.</p>
+

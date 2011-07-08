@@ -37,17 +37,29 @@ a{
   position:relative;
   height:150px;
   width:955px;
-  overflow:hidden;
   margin-bottom:5px;
 }
 
-#header a#showpatch{
+a.patch_link{
   position:absolute;
   right:0;
-  bottom:0;
-  background-color:#000;
+  background-color:#444;
   color:white;
   font-weight:bold;
+}
+
+a#show_page_patch{
+  bottom:0;
+}
+
+.patch{
+  display:none;
+  position:absolute;
+  top:0px;
+  left:975px;
+  overflow:auto;
+  width:500px;
+  height:500px;
 }
 
 #header #title{
@@ -90,6 +102,7 @@ ul#menu a{
 }
 
 #contents .content_window{
+  position:relative;
   overflow:hidden;
   height:35px;
   border-top:2px solid #444;
@@ -104,8 +117,31 @@ ul#menu a{
   clear:both;
 }
 
-.patch{
-  margin-top:30px;
-  overflow:auto;
-  width:955px;
+#teaser_patch{
+  background:#e6e6e6;
+  text-align:center;
+  margin-bottom:20px;
 }
+
+.content pre{
+  height:auto;
+  width:auto;
+  overflow:auto;
+  padding:5px;
+}
+
+#example3{
+  width:80%;
+  position:relative;
+  height:60px;
+}
+
+#example3 .example3_bar{
+  position:absolute;
+  bottom:0px;
+  width:9%;
+  background-color:black;
+  border:1px solid white;
+  height:10px;
+}
+

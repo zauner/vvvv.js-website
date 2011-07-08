@@ -5,7 +5,7 @@
    <NODE componentmode="InAWindow" filename="main.v4p" id="0" nodename="C:\Dokumente und Einstellungen\Matthias\Eigene Dateien\My Dropbox\vvvv_js_page\main.v4p" systemname="main" path="C:\Dokumente und Einstellungen\Matthias\Eigene Dateien\My Dropbox\vvvv_js_page\">
    <BOUNDS height="100" left="2910" top="4020" type="Node" width="100">
    </BOUNDS>
-   <BOUNDS height="12915" left="2520" top="3285" type="Window" width="25380">
+   <BOUNDS height="12915" left="705" top="1770" type="Window" width="25380">
    </BOUNDS>
    <PIN pinname="#menu a/event/click" visible="1">
    </PIN>
