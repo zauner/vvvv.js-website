@@ -7,7 +7,7 @@
 
 p{
   margin-top:0;
-  margin-bottom:1.5em;
+  margin-bottom:1em;
 }
 
 p.box{
@@ -26,11 +26,21 @@ em{
 h2{
   font-weight:bold;
   font-size:12pt;
+  margin-top:2.5em;
+}
+
+h2:first-child{
+  margin-top:0px;
+}
+
+h3{
+  font-weight:bold;
+  font-size:10pt;
 }
 
 a{
-  text-decoration:none;
   color:black;
+  text-decoration:underline;
 }
 
 #header{
@@ -46,6 +56,7 @@ a.patch_link{
   background-color:#444;
   color:white;
   font-weight:bold;
+  text-decoration:none;
 }
 
 a#show_page_patch{
@@ -56,10 +67,10 @@ a#show_page_patch{
   display:none;
   position:absolute;
   top:0px;
-  left:975px;
+  left:963px;
   overflow:auto;
-  width:500px;
-  height:500px;
+  padding-left:12px;
+  border-top:16px solid #444;
 }
 
 #header #title{
@@ -86,6 +97,7 @@ ul#menu{
 
 ul#menu a{
   display:block;
+  text-decoration:none;
   height:35px;
   border-top:2px solid #444;
   color:#444;

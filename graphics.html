@@ -1,7 +1,35 @@
 
+<p>Creating fancy real-time computer graphics surely is one of the original VVVV's core strengths. Shifting those capabilities to the web has been the initial idea behind developing VVVV.js.</p>
+
+<p>One could do some HTML element animation, by animating style attributes, or create SVG output by just building SVG XML strings. But that would not cope with VVVV's huge range of functionality in the scope
+of graphics output. Here's a discussion of more advanced technologies.</p>
+
+<h2>3D rendering with WebGL</h2>
+
+<p>While VVVV relies mainly on DirectX when it comes to 3D rendering, WebGL seems to be the right counterpart in the realm of VVVV.js. As a prove of concept, several nodes you might know
+from VVVV's EX9 category have been partially implemented, such as Renderer, Quad, FileTexture, as well as some transformation nodes. The idea is, to make the Renderer node render into any &lt;canvas&gt; element
+within the website. You choose the canvas element by giving the Renderer node the regarding dom selector as a "Descriptive Name". See the example below, and click the "View Patch" link to the right,
+to get the clou.</p>
 
 <div>
   <a href="#current_patches[0]" class="patch_link"><span>Show</span> Patch &gt;</a>
-  #renderer-2:<br/>
+  This canvas object has the id 'renderer-2', and is<br/>
+  referenced to by the Renderer Node with the Descriptive Name '#renderer-2', seen?<br/>
   <canvas id="renderer-2" width="600" height="230" style="border:1px solid black;margin-top:10px"></canvas><br/>
+</div>
+
+<h2>2D graphics with Canvas</h2>
+
+<p>WebGL is fun, no doubt, but not supported very well. Chances are not too good, that the example above works on your browser. However, 3D is not everything, so a way of creating pure Canvas graphics output
+with VVVV.js would be great.</p>
+
+<p>While there are the EX9 nodes in pure VVVV, which <em>correspond directly</em> to the WebGL nodes of VVVV.js, we can't really map any original VVVV nodes to Canvas drawing techniques. Well, there is
+the GDI node group, which allows drawing 2D shapes, but those nodes don't cover all the possibilities of Canvas.</p>
+
+<p>Therefore, there is going to be a <em>VVVV.js-specific</em> Canvas group, which contains nodes for drawing into a Canvas graphics context.</p>
+
+<div>
+  <a href="#current_patches[1]" class="patch_link"><span>Show</span> Patch &gt;</a>
+  <br/>
+  <canvas id="renderer-3" width="600" height="230" style="border:1px solid black;margin-top:10px"></canvas><br/>
 </div>

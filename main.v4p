@@ -369,7 +369,7 @@
    </BOUNDS>
    <PIN pinname="Descriptive Name" slicecount="1" values="|#header #particles|">
    </PIN>
-   <PIN pinname="Input String" visible="1">
+   <PIN pinname="Input String" visible="1" slicecount="30" values="|&lt;div class=&quot;particle&quot; style=&quot;position:absolute;background-color:#000;width:3;height:3;left:191.6950;top:99.5326&quot;&gt;&lt;/div&gt;|,|&lt;div class=&quot;particle&quot; style=&quot;position:absolute;background-color:#000;width:3;height:3;left:695.0563;top:123.9838&quot;&gt;&lt;/div&gt;|,|&lt;div class=&quot;particle&quot; style=&quot;position:absolute;background-color:#000;width:3;height:3;left:347.3747;top:34.3998&quot;&gt;&lt;/div&gt;|,|&lt;div class=&quot;particle&quot; style=&quot;position:absolute;background-color:#000;width:3;height:3;left:214.1006;top:69.5404&quot;&gt;&lt;/div&gt;|,|&lt;div class=&quot;particle&quot; style=&quot;position:absolute;background-color:#000;width:3;height:3;left:48.7773;top:4.3362&quot;&gt;&lt;/div&gt;|,|&lt;div class=&quot;particle&quot; style=&quot;position:absolute;background-color:#000;width:3;height:3;left:441.7900;top:45.2370&quot;&gt;&lt;/div&gt;|,|&lt;div class=&quot;particle&quot; style=&quot;position:absolute;background-color:#000;width:3;height:3;left:414.4610;top:94.1369&quot;&gt;&lt;/div&gt;|,|&lt;div class=&quot;particle&quot; style=&quot;position:absolute;background-color:#000;width:3;height:3;left:450.6550;top:42.0553&quot;&gt;&lt;/div&gt;|,|&lt;div class=&quot;particle&quot; style=&quot;position:absolute;background-color:#000;width:3;height:3;left:157.3297;top:88.4311&quot;&gt;&lt;/div&gt;|,|&lt;div class=&quot;particle&quot; style=&quot;position:absolute;background-color:#000;width:3;height:3;left:314.2850;top:45.1801&quot;&gt;&lt;/div&gt;|,|&lt;div class=&quot;particle&quot; style=&quot;position:absolute;background-color:#000;width:3;height:3;left:929.7501;top:100.5217&quot;&gt;&lt;/div&gt;|,|&lt;div class=&quot;particle&quot; style=&quot;position:absolute;background-color:#000;width:3;height:3;left:911.9228;top:123.9571&quot;&gt;&lt;/div&gt;|,|&lt;div class=&quot;particle&quot; style=&quot;position:absolute;background-color:#000;width:3;height:3;left:941.5423;top:50.9833&quot;&gt;&lt;/div&gt;|,|&lt;div class=&quot;particle&quot; style=&quot;position:absolute;background-color:#000;width:3;height:3;left:93.5133;top:118.9274&quot;&gt;&lt;/div&gt;|,|&lt;div class=&quot;particle&quot; style=&quot;position:absolute;background-color:#000;width:3;height:3;left:260.7118;top:83.0495&quot;&gt;&lt;/div&gt;|,|&lt;div class=&quot;particle&quot; style=&quot;position:absolute;background-color:#000;width:3;height:3;left:10.8032;top:49.8388&quot;&gt;&lt;/div&gt;|,|&lt;div class=&quot;particle&quot; style=&quot;position:absolute;background-color:#000;width:3;height:3;left:506.1568;top:108.0408&quot;&gt;&lt;/div&gt;|,|&lt;div class=&quot;particle&quot; style=&quot;position:absolute;background-color:#000;width:3;height:3;left:316.9165;top:59.6373&quot;&gt;&lt;/div&gt;|,|&lt;div class=&quot;particle&quot; style=&quot;position:absolute;background-color:#000;width:3;height:3;left:575.7185;top:79.5990&quot;&gt;&lt;/div&gt;|,|&lt;div class=&quot;particle&quot; style=&quot;position:absolute;background-color:#000;width:3;height:3;left:57.4804;top:7.0305&quot;&gt;&lt;/div&gt;|,|&lt;div class=&quot;particle&quot; style=&quot;position:absolute;background-color:#000;width:3;height:3;left:756.2085;top:113.4392&quot;&gt;&lt;/div&gt;|,|&lt;div class=&quot;particle&quot; style=&quot;position:absolute;background-color:#000;width:3;height:3;left:42.7397;top:59.9124&quot;&gt;&lt;/div&gt;|,|&lt;div class=&quot;particle&quot; style=&quot;position:absolute;background-color:#000;width:3;height:3;left:643.8404;top:47.8108&quot;&gt;&lt;/div&gt;|,|&lt;div class=&quot;particle&quot; style=&quot;position:absolute;background-color:#000;width:3;height:3;left:649.0267;top:54.3684&quot;&gt;&lt;/div&gt;|,|&lt;div class=&quot;particle&quot; style=&quot;position:absolute;background-color:#000;width:3;height:3;left:648.1645;top:122.0209&quot;&gt;&lt;/div&gt;|,|&lt;div class=&quot;particle&quot; style=&quot;position:absolute;background-color:#000;width:3;height:3;left:571.3484;top:74.7735&quot;&gt;&lt;/div&gt;|,|&lt;div class=&quot;particle&quot; style=&quot;position:absolute;background-color:#000;width:3;height:3;left:369.5532;top:84.3280&quot;&gt;&lt;/div&gt;|,|&lt;div class=&quot;particle&quot; style=&quot;position:absolute;background-color:#000;width:3;height:3;left:383.5653;top:40.2703&quot;&gt;&lt;/div&gt;|,|&lt;div class=&quot;particle&quot; style=&quot;position:absolute;background-color:#000;width:3;height:3;left:663.8648;top:69.3883&quot;&gt;&lt;/div&gt;|,|&lt;div class=&quot;particle&quot; style=&quot;position:absolute;background-color:#000;width:3;height:3;left:680.5582;top:97.2976&quot;&gt;&lt;/div&gt;|">
    </PIN>
    </NODE>
    <NODE componentmode="Hidden" id="117" nodename="Add (String)" systemname="Add (String)">
@@ -663,7 +663,7 @@
    </BOUNDS>
    <PIN pinname="Y Output Value" visible="1">
    </PIN>
-   <PIN pinname="Y Input Value" slicecount="1" values="100">
+   <PIN pinname="Y Input Value" slicecount="1" values="30">
    </PIN>
    </NODE>
    <LINK dstnodeid="143" dstpinname="Spread Count" srcnodeid="144" srcpinname="Y Output Value">
@@ -681,8 +681,6 @@
    <LINK dstnodeid="145" dstpinname="Input" srcnodeid="143" srcpinname="Output">
    </LINK>
    <LINK dstnodeid="138" dstpinname="Input String" srcnodeid="145" srcpinname="Output">
-   </LINK>
-   <LINK dstnodeid="111" dstpinname="Input String" srcnodeid="122" srcpinname="Output">
    </LINK>
    <NODE componentmode="InABox" id="148" nodename="IOBox (Value Advanced)" systemname="IOBox (Value Advanced)">
    <BOUNDS height="100" left="18300" top="2370" type="Node" width="100">
@@ -727,15 +725,13 @@
    <NODE componentmode="Hidden" id="155" nodename="Add (Value)" systemname="Add (Value)">
    <BOUNDS height="100" left="19065" top="900" type="Node" width="100">
    </BOUNDS>
-   <PIN pinname="Input 1" slicecount="1" visible="1" values="-0.134008338296605">
+   <PIN pinname="Input 1" visible="1">
    </PIN>
    <PIN pinname="Input 2" slicecount="1" values="1">
    </PIN>
    <PIN pinname="Output" visible="1">
    </PIN>
    </NODE>
-   <LINK dstnodeid="155" dstpinname="Input 1" srcnodeid="150" srcpinname="X">
-   </LINK>
    <LINK dstnodeid="154" dstpinname="Input 1" srcnodeid="155" srcpinname="Output">
    </LINK>
    <NODE componentmode="Hidden" id="156" nodename="Divide (Value)" systemname="Divide (Value)">
@@ -885,9 +881,9 @@
    <NODE componentmode="Hidden" id="190" nodename="RandomSpread (Spreads)" systemname="RandomSpread (Spreads)">
    <BOUNDS height="100" left="17190" top="4185" type="Node" width="100">
    </BOUNDS>
-   <PIN pinname="Width" slicecount="1" values="50">
+   <PIN pinname="Width" slicecount="1" values="80">
    </PIN>
-   <PIN pinname="Input" slicecount="1" values="30">
+   <PIN pinname="Input" slicecount="1" values="50">
    </PIN>
    <PIN pinname="Output" visible="1">
    </PIN>
@@ -962,8 +958,6 @@
    <PIN pinname="Output" visible="1">
    </PIN>
    </NODE>
-   <LINK dstnodeid="202" dstpinname="Input 1" srcnodeid="203" srcpinname="Output">
-   </LINK>
    <NODE componentmode="Hidden" id="201" nodename="AsString (Value)" systemname="AsString (Value)">
    <BOUNDS height="100" left="21810" top="4770" type="Node" width="100">
    </BOUNDS>
@@ -972,8 +966,6 @@
    <PIN pinname="Input" visible="1">
    </PIN>
    </NODE>
-   <LINK dstnodeid="203" dstpinname="Input 2" srcnodeid="201" srcpinname="Output">
-   </LINK>
    <NODE componentmode="Hidden" id="200" nodename="LFO (Animation)" systemname="LFO (Animation)">
    <BOUNDS height="100" left="22470" top="3060" type="Node" width="100">
    </BOUNDS>
@@ -994,8 +986,6 @@
    <PIN pinname="Descriptive Name" slicecount="1" values="|#header #particles .particle/style/background|">
    </PIN>
    </NODE>
-   <LINK dstnodeid="199" dstpinname="Input String" srcnodeid="202" srcpinname="Output">
-   </LINK>
    <NODE componentmode="Hidden" id="204" nodename="Multiply (Value)" systemname="Multiply (Value)">
    <BOUNDS height="100" left="21825" top="4140" type="Node" width="100">
    </BOUNDS>
@@ -1223,13 +1213,11 @@
    </BOUNDS>
    <BOUNDS height="240" left="21315" top="7095" type="Box" width="795">
    </BOUNDS>
-   <PIN pinname="Input String" visible="1">
+   <PIN pinname="Input String" slicecount="30" visible="1" values="|hsla(280.3964,33%,65%, 0.8)|,|hsla(431.4048,33%,65%, 0.8)|,|hsla(327.1003,33%,65%, 0.8)|,|hsla(287.1181,33%,65%, 0.8)|,|hsla(237.5211,33%,65%, 0.8)|,|hsla(355.4249,33%,65%, 0.8)|,|hsla(347.2262,33%,65%, 0.8)|,|hsla(358.0844,33%,65%, 0.8)|,|hsla(270.0868,33%,65%, 0.8)|,|hsla(317.1734,33%,65%, 0.8)|,|hsla(501.8129,33%,65%, 0.8)|,|hsla(496.4647,33%,65%, 0.8)|,|hsla(505.3506,33%,65%, 0.8)|,|hsla(250.9419,33%,65%, 0.8)|,|hsla(301.1014,33%,65%, 0.8)|,|hsla(226.1289,33%,65%, 0.8)|,|hsla(374.7349,33%,65%, 0.8)|,|hsla(317.9628,33%,65%, 0.8)|,|hsla(395.6034,33%,65%, 0.8)|,|hsla(240.1320,33%,65%, 0.8)|,|hsla(449.7504,33%,65%, 0.8)|,|hsla(235.7098,33%,65%, 0.8)|,|hsla(416.0400,33%,65%, 0.8)|,|hsla(417.5959,33%,65%, 0.8)|,|hsla(417.3372,33%,65%, 0.8)|,|hsla(394.2924,33%,65%, 0.8)|,|hsla(333.7539,33%,65%, 0.8)|,|hsla(337.9575,33%,65%, 0.8)|,|hsla(422.0473,33%,65%, 0.8)|,|hsla(427.0553,33%,65%, 0.8)|">
    </PIN>
    <PIN pinname="Descriptive Name" slicecount="1" values="|#header #particles .particle/style/border-color|">
    </PIN>
    </NODE>
-   <LINK dstnodeid="237" dstpinname="Input String" srcnodeid="236" srcpinname="Output">
-   </LINK>
    <NODE componentmode="InABox" id="247" nodename="IOBox (String)" systemname="IOBox (String)">
    <BOUNDS height="100" left="19050" top="10815" type="Node" width="100">
    </BOUNDS>
@@ -1455,7 +1443,7 @@
    </PIN>
    <PIN pinname="Position Out" visible="1">
    </PIN>
-   <PIN pinname="FilterTime" slicecount="1" values="0.7">
+   <PIN pinname="FilterTime" slicecount="1" values="0.4">
    </PIN>
    </NODE>
    <LINK dstnodeid="285" dstpinname="Go To Position" srcnodeid="192" srcpinname="Output">
@@ -1516,22 +1504,22 @@
    </LINK>
    <LINK dstnodeid="33" dstpinname="Input" srcnodeid="4" srcpinname="Y Output Value">
    </LINK>
-   <NODE systemname="TogEdge (Animation)" nodename="TogEdge (Animation)" componentmode="Hidden" id="292">
-   <BOUNDS type="Node" left="1800" top="2340" width="100" height="100">
+   <NODE componentmode="Hidden" id="292" nodename="TogEdge (Animation)" systemname="TogEdge (Animation)">
+   <BOUNDS height="100" left="1800" top="2340" type="Node" width="100">
    </BOUNDS>
    <PIN pinname="Input" visible="1">
    </PIN>
    <PIN pinname="Up Edge" visible="1">
    </PIN>
    </NODE>
-   <LINK srcnodeid="33" srcpinname="Output" dstnodeid="292" dstpinname="Input">
+   <LINK dstnodeid="292" dstpinname="Input" srcnodeid="33" srcpinname="Output">
    </LINK>
-   <LINK srcnodeid="292" srcpinname="Up Edge" dstnodeid="91" dstpinname="Set">
+   <LINK dstnodeid="91" dstpinname="Set" srcnodeid="292" srcpinname="Up Edge">
    </LINK>
-   <LINK srcnodeid="292" srcpinname="Up Edge" dstnodeid="93" dstpinname="Input">
+   <LINK dstnodeid="93" dstpinname="Input" srcnodeid="292" srcpinname="Up Edge">
    </LINK>
-   <NODE systemname="S+H (Animation)" nodename="S+H (Animation)" componentmode="Hidden" id="293">
-   <BOUNDS type="Node" left="3795" top="6660" width="100" height="100">
+   <NODE componentmode="Hidden" id="293" nodename="S+H (Animation)" systemname="S+H (Animation)">
+   <BOUNDS height="100" left="3795" top="6660" type="Node" width="100">
    </BOUNDS>
    <PIN pinname="Input" visible="1">
    </PIN>
@@ -1540,32 +1528,32 @@
    <PIN pinname="Output" visible="1">
    </PIN>
    </NODE>
-   <LINK srcnodeid="61" srcpinname="Success" dstnodeid="293" dstpinname="Input">
+   <LINK dstnodeid="293" dstpinname="Input" srcnodeid="61" srcpinname="Success">
    </LINK>
-   <LINK srcnodeid="61" srcpinname="Success" dstnodeid="293" dstpinname="Set">
+   <LINK dstnodeid="293" dstpinname="Set" srcnodeid="61" srcpinname="Success">
    </LINK>
-   <NODE systemname="IOBox (Value Advanced)" nodename="IOBox (Value Advanced)" componentmode="InABox" id="294">
-   <BOUNDS type="Node" left="3150" top="7170" width="100" height="100">
+   <NODE componentmode="InABox" id="294" nodename="IOBox (Value Advanced)" systemname="IOBox (Value Advanced)">
+   <BOUNDS height="100" left="3150" top="7170" type="Node" width="100">
    </BOUNDS>
-   <BOUNDS type="Box" left="3150" top="7170" width="795" height="240">
-   </BOUNDS>
-   <PIN pinname="Y Input Value" visible="1">
-   </PIN>
-   </NODE>
-   <LINK srcnodeid="293" srcpinname="Output" dstnodeid="294" dstpinname="Y Input Value">
-   </LINK>
-   <NODE systemname="IOBox (Value Advanced)" nodename="IOBox (Value Advanced)" componentmode="InABox" id="295">
-   <BOUNDS type="Node" left="15" top="1950" width="100" height="100">
-   </BOUNDS>
-   <BOUNDS type="Box" left="15" top="1950" width="795" height="240">
+   <BOUNDS height="240" left="3150" top="7170" type="Box" width="795">
    </BOUNDS>
    <PIN pinname="Y Input Value" visible="1">
    </PIN>
    </NODE>
-   <LINK srcnodeid="33" srcpinname="Output" dstnodeid="295" dstpinname="Y Input Value">
+   <LINK dstnodeid="294" dstpinname="Y Input Value" srcnodeid="293" srcpinname="Output">
    </LINK>
-   <NODE systemname="AvoidNIL (Spreads)" filename="%VVVV%\modules\vvvv group\Spreads\AvoidNIL (Spreads).v4p" nodename="AvoidNIL (Spreads)" componentmode="Hidden" id="313">
-   <BOUNDS type="Node" left="8835" top="6060" width="100" height="100">
+   <NODE componentmode="InABox" id="295" nodename="IOBox (Value Advanced)" systemname="IOBox (Value Advanced)">
+   <BOUNDS height="100" left="15" top="1950" type="Node" width="100">
+   </BOUNDS>
+   <BOUNDS height="240" left="15" top="1950" type="Box" width="795">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" visible="1">
+   </PIN>
+   </NODE>
+   <LINK dstnodeid="295" dstpinname="Y Input Value" srcnodeid="33" srcpinname="Output">
+   </LINK>
+   <NODE componentmode="Hidden" filename="%VVVV%\modules\vvvv group\Spreads\AvoidNIL (Spreads).v4p" id="313" nodename="AvoidNIL (Spreads)" systemname="AvoidNIL (Spreads)">
+   <BOUNDS height="100" left="8835" top="6060" type="Node" width="100">
    </BOUNDS>
    <PIN pinname="Input" visible="1">
    </PIN>
@@ -1574,12 +1562,12 @@
    <PIN pinname="Output" visible="1">
    </PIN>
    </NODE>
-   <LINK srcnodeid="274" srcpinname="Y Output Value" dstnodeid="313" dstpinname="Input">
+   <LINK dstnodeid="313" dstpinname="Input" srcnodeid="274" srcpinname="Y Output Value">
    </LINK>
-   <LINK srcnodeid="313" srcpinname="Output" dstnodeid="272" dstpinname="Input">
+   <LINK dstnodeid="272" dstpinname="Input" srcnodeid="313" srcpinname="Output">
    </LINK>
-   <NODE systemname="AND (Boolean)" nodename="AND (Boolean)" componentmode="Hidden" id="314">
-   <BOUNDS type="Node" left="9975" top="8970" width="100" height="100">
+   <NODE componentmode="Hidden" id="314" nodename="AND (Boolean)" systemname="AND (Boolean)">
+   <BOUNDS height="100" left="9975" top="8970" type="Node" width="100">
    </BOUNDS>
    <PIN pinname="Input 1" visible="1">
    </PIN>
@@ -1588,10 +1576,10 @@
    <PIN pinname="Output" visible="1">
    </PIN>
    </NODE>
-   <LINK srcnodeid="289" srcpinname="OnChange" dstnodeid="314" dstpinname="Input 1">
+   <LINK dstnodeid="314" dstpinname="Input 1" srcnodeid="289" srcpinname="OnChange">
    </LINK>
-   <NODE systemname="EQ (Value)" nodename="EQ (Value)" componentmode="Hidden" id="315">
-   <BOUNDS type="Node" left="10245" top="7695" width="100" height="100">
+   <NODE componentmode="Hidden" id="315" nodename="EQ (Value)" systemname="EQ (Value)">
+   <BOUNDS height="100" left="10245" top="7695" type="Node" width="100">
    </BOUNDS>
    <PIN pinname="Input 2" slicecount="1" values="-1">
    </PIN>
@@ -1600,10 +1588,58 @@
    <PIN pinname="Inverse Output" visible="1">
    </PIN>
    </NODE>
-   <LINK srcnodeid="313" srcpinname="Output" dstnodeid="315" dstpinname="Input 1">
+   <LINK dstnodeid="315" dstpinname="Input 1" srcnodeid="313" srcpinname="Output">
    </LINK>
-   <LINK srcnodeid="315" srcpinname="Inverse Output" dstnodeid="314" dstpinname="Input 2">
+   <LINK dstnodeid="314" dstpinname="Input 2" srcnodeid="315" srcpinname="Inverse Output">
    </LINK>
-   <LINK srcnodeid="314" srcpinname="Output" dstnodeid="267" dstpinname="Do Execute">
+   <LINK dstnodeid="267" dstpinname="Do Execute" srcnodeid="314" srcpinname="Output">
+   </LINK>
+   <NODE componentmode="Hidden" id="-2" nodename="Mouse (System Global)" systemname="Mouse (System Global)">
+   <BOUNDS height="100" left="19080" top="255" type="Node" width="100">
+   </BOUNDS>
+   <PIN pinname="X" visible="1">
+   </PIN>
+   </NODE>
+   <LINK dstnodeid="155" dstpinname="Input 1" srcnodeid="-2" srcpinname="X">
+   </LINK>
+   <LINK dstnodeid="202" dstpinname="Input 1" srcnodeid="203" srcpinname="Output">
+   </LINK>
+   <LINK dstnodeid="203" dstpinname="Input 2" srcnodeid="201" srcpinname="Output">
+   </LINK>
+   <NODE componentmode="Hidden" id="316" nodename="Add (String)" systemname="Add (String)">
+   <BOUNDS height="100" left="23415" top="5190" type="Node" width="100">
+   </BOUNDS>
+   <PIN pinname="Input 1" slicecount="1" values="|rgba(0,0,0,|">
+   </PIN>
+   <PIN pinname="Input 2" visible="1">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <NODE componentmode="Hidden" id="317" nodename="AsString (Value)" systemname="AsString (Value)">
+   <BOUNDS height="100" left="23550" top="4485" type="Node" width="100">
+   </BOUNDS>
+   <PIN pinname="Input" visible="1">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <LINK dstnodeid="317" dstpinname="Input" srcnodeid="200" srcpinname="Output">
+   </LINK>
+   <LINK dstnodeid="316" dstpinname="Input 2" srcnodeid="317" srcpinname="Output">
+   </LINK>
+   <NODE componentmode="Hidden" id="318" nodename="Add (String)" systemname="Add (String)">
+   <BOUNDS height="100" left="23190" top="5745" type="Node" width="100">
+   </BOUNDS>
+   <PIN pinname="Input 1" visible="1">
+   </PIN>
+   <PIN pinname="Input 2" slicecount="1" values=")">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <LINK dstnodeid="318" dstpinname="Input 1" srcnodeid="316" srcpinname="Output">
+   </LINK>
+   <LINK dstnodeid="199" dstpinname="Input String" srcnodeid="202" srcpinname="Output">
    </LINK>
    </PATCH>

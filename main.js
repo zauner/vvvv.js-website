@@ -2,6 +2,8 @@
 var vvvviewer;
 var page_mainloop;
 var page_patch;
+var header_patch;
+var header_mainloop;
 var current_patches = [];
 var current_mainloops = [];
 
@@ -41,12 +43,19 @@ $(document).ready(function() {
     $('#main').show();
   });
   
+  header_patch = new VVVV.Core.Patch("waves.v4p", function() {
+    header_mainloop = new VVVV.Core.MainLoop(this);
+  });
+  
   attachShowPatchEvents();
 
 });
 
 
 function initSection(section_name) {
+
+  hidePatch();
+  $('.patch_link').find('span').text('Show');
 
   for (var i=0; i<current_mainloops.length; i++) {
     current_mainloops[i].stop();
@@ -92,6 +101,9 @@ function initSection(section_name) {
     case 3:
       hidePatch();
       current_patches.push(new VVVV.Core.Patch("rotating_quads.v4p", function() {
+        current_mainloops.push(new VVVV.Core.MainLoop(this));
+      }));
+      current_patches.push(new VVVV.Core.Patch("arcs.v4p", function() {
         current_mainloops.push(new VVVV.Core.MainLoop(this));
       }));
       attachShowPatchEvents();
