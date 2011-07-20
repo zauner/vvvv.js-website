@@ -86,12 +86,16 @@ a#show_page_patch{
   top:0px;
 }
 
+#menu_panel{
+  float:left;
+  margin:0px;
+}
+
 ul#menu{
   list-style:none;
   padding:0px;
   width:350px;
   border-bottom:2px solid #999;
-  float:left;
   margin:0px;
 }
 
@@ -104,6 +108,16 @@ ul#menu a{
   text-decoration:none;
   font-weight:bold;
   font-size:14pt;
+}
+
+#disclaimer{
+  margin-top:60px;
+  width:350px;
+}
+
+#disclaimer .social_button{
+  display:block;
+  margin-top:1em;
 }
 
 #contents{
@@ -162,6 +176,15 @@ ul#menu a{
 
 }
 
+#nodelist .group{
+  margin-top:2em;
+  background:#444;
+  color:white;
+  margin-top:1em;
+  padding:8px 0px 8px 10px;
+  font-size:12pt;
+}
+
 #nodelist .node2{
   clear:both;
   border-bottom:1px solid #cfcfcf;
@@ -205,5 +228,9 @@ ul#menu a{
 #nodelist .node2 .infos .data{
   margin-left:30%;
   padding-bottom:0.8em;
+}
+
+#not-supported{
+  display:none;
 }
 

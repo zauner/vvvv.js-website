@@ -38,16 +38,24 @@ $(document).ready(function() {
   
   $('#main').hide();
   
-  page_patch = new VVVV.Core.Patch("main.v4p", function() {
-    page_mainloop = new VVVV.Core.MainLoop(this);
-    $('#main').show();
-  });
+  if ($.browser.webkit || $.browser.mozilla) {
   
-  header_patch = new VVVV.Core.Patch("waves.v4p", function() {
-    header_mainloop = new VVVV.Core.MainLoop(this);
-  });
+    page_patch = new VVVV.Core.Patch("main.v4p", function() {
+      page_mainloop = new VVVV.Core.MainLoop(this);
+      $('#main').show();
+    });
+    
+    header_patch = new VVVV.Core.Patch("waves.v4p", function() {
+      header_mainloop = new VVVV.Core.MainLoop(this);
+    });
+    
+    attachShowPatchEvents();
+  }
+  else {
   
-  attachShowPatchEvents();
+    $('#not-supported').show();
+  
+  }
 
 });
 
@@ -111,9 +119,15 @@ function initSection(section_name) {
     
     case 6:
       var p = new VVVV.Core.Patch('');
+      var current_group = '';
       _(VVVV.Nodes).each(function(n) {
         var node = new n(0, p);
         var code = '<div class="node2">';
+        var group = /\(([^ \)]+)/.exec(node.nodename)[1];
+        if (current_group!=group) {
+          code += '<div class="group">'+group+'</div>';
+          current_group = group;
+        }
         code += '<a class="header" href="#">';
         code += '<div class="name">'+node.nodename+'</div>';
         var compatibility_rate = 0;
