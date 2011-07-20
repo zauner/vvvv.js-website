@@ -65,15 +65,15 @@ function initSection(section_name) {
   hidePatch();
   $('.patch_link').find('span').text('Show');
 
-  for (var i=0; i<current_mainloops.length; i++) {
-    current_mainloops[i].stop();
-    delete current_mainloops[i];
-    current_mainloops.splice(i, 1);
+  while (current_mainloops.length>0) {
+    current_mainloops[0].stop();
+    delete current_mainloops[0];
+    current_mainloops.splice(0, 1);
   }
 
-  for (var i=0; i<current_patches.length; i++) {
-    delete current_patches[i];
-    current_patches.splice(i, 1);
+  while (current_patches.length>0) {
+    delete current_patches[0];
+    current_patches.splice(0, 1);
   }
 
   switch (section_name) {
