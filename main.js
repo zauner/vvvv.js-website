@@ -7,6 +7,7 @@ var header_mainloop;
 var current_patches = [];
 var current_mainloops = [];
 
+
 function hidePatch() {
   if (vvvviewer && vvvviewer!=undefined) {
     vvvviewer.destroy();
@@ -96,7 +97,7 @@ function initSection(section_name) {
     case 2:
       current_patches.push(new VVVV.Core.Patch("add.v4p", function() {
         current_mainloops.push(new VVVV.Core.MainLoop(this));
-        $('.patch_link').eq(1).click();
+        $('.patch_link').eq(2).click();
       }));
       current_patches.push(new VVVV.Core.Patch("attribute_example.v4p", function() {
         current_mainloops.push(new VVVV.Core.MainLoop(this));
