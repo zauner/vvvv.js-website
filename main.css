@@ -60,6 +60,10 @@ a.patch_link{
 }
 
 a#show_page_patch{
+  bottom:18;
+}
+
+a#show_header_patch{
   bottom:0;
 }
 
