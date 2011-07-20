@@ -6,6 +6,7 @@ var header_patch;
 var header_mainloop;
 var current_patches = [];
 var current_mainloops = [];
+var close_patch_on_page_change = true;
 
 
 function hidePatch() {
@@ -27,6 +28,7 @@ function attachShowPatchEvents() {
       $('#patch').css('top', $(this).offset().top);
       $('#patch').show();
       $(this).find('span').text('Hide');
+      close_patch_on_page_change = !(this.id=="show_page_patch" || this.id=="show_header_patch");
     }
     else
       $('.patch_link').find('span').text('Show');
@@ -63,8 +65,10 @@ $(document).ready(function() {
 
 function initSection(section_name) {
 
-  hidePatch();
-  $('.patch_link').find('span').text('Show');
+  if (close_patch_on_page_change) {
+    hidePatch();
+    $('.patch_link').find('span').text('Show');
+  }
 
   while (current_mainloops.length>0) {
     current_mainloops[0].stop();
@@ -109,7 +113,6 @@ function initSection(section_name) {
     break;
   
     case 3:
-      hidePatch();
       current_patches.push(new VVVV.Core.Patch("rotating_quads.v4p", function() {
         current_mainloops.push(new VVVV.Core.MainLoop(this));
       }));
