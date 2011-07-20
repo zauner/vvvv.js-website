@@ -96,6 +96,7 @@ function initSection(section_name) {
     case 2:
       current_patches.push(new VVVV.Core.Patch("add.v4p", function() {
         current_mainloops.push(new VVVV.Core.MainLoop(this));
+        $('.patch_link').eq(1).click();
       }));
       current_patches.push(new VVVV.Core.Patch("attribute_example.v4p", function() {
         current_mainloops.push(new VVVV.Core.MainLoop(this));
