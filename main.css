@@ -26,7 +26,7 @@ em{
 h2{
   font-weight:bold;
   font-size:12pt;
-  margin-top:2.5em;
+  margin-top:1.5em;
 }
 
 h2:first-child{
@@ -236,5 +236,17 @@ ul#menu a{
 
 #not-supported{
   display:none;
+}
+
+a.download_link{
+  display:inline-block;
+  border:1px solid #444;
+  background:#999;
+  color:white;
+  font-weight:bold;
+  text-decoration:none;
+  width:54px;
+  text-align:center;
+  padding:3px;
 }
 
