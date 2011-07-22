@@ -245,7 +245,7 @@
    </BOUNDS>
    <BOUNDS height="270" left="390" top="12720" type="Box" width="795">
    </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="1" values="35">
+   <PIN pinname="Y Input Value" slicecount="1" values="28">
    </PIN>
    <PIN pinname="Y Output Value" visible="1">
    </PIN>
@@ -409,7 +409,7 @@
    </PIN>
    <PIN pinname="Position Out" visible="1">
    </PIN>
-   <PIN pinname="FilterTime" slicecount="1" values="0.3">
+   <PIN pinname="FilterTime" slicecount="1" values="0.5">
    </PIN>
    </NODE>
    <LINK dstnodeid="218" dstpinname="Go To Position" srcnodeid="214" srcpinname="Output">
