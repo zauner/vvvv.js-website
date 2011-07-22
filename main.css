@@ -45,9 +45,10 @@ a{
 
 #header{
   position:relative;
-  height:120px;
+  height:150px;
   width:793px;
   margin-bottom:5px;
+  background:#35302b;
 }
 
 a.patch_link{
@@ -60,18 +61,18 @@ a.patch_link{
 }
 
 a#show_page_patch{
-  bottom:18;
+  bottom:20;
 }
 
 a#show_header_patch{
-  bottom:0;
+  bottom:2;
 }
 
 .patch{
   display:none;
   position:absolute;
   top:0px;
-  left:793px;
+  left:800px;
   overflow:auto;
   padding-left:18px;
   border-top:15px solid #444;
@@ -81,7 +82,7 @@ a#show_header_patch{
   font-weight:bold;
   font-size:20pt;
   color:white;
-  background-color:#000;
+  margin:5px;
 }
 
 #header #particles{

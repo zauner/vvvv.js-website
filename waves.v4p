@@ -1,5 +1,5 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta25.1.dtd" >
-   <PATCH nodename="C:\Dokumente und Einstellungen\Matthias\Eigene Dateien\My Dropbox\vvvv_js_page\waves.v4p" filename="1.v4p ////" systemname="1.v4p ////">
+   <PATCH nodename="C:\Dokumente und Einstellungen\matthias\Eigene Dateien\My Dropbox\vvvv_js_page\waves.v4p" filename="1.v4p ////" systemname="1.v4p ////">
    <BOUNDS height="12330" left="10395" top="885" type="Window" width="8805">
    </BOUNDS>
    <NODE componentmode="InAWindow" filename="%VVVV%\modules\vvvv_js\Renderer (Canvas VVVVjs).vp4.v4p" id="0" nodename="%VVVV%\modules\vvvv_js\Renderer (Canvas VVVVjs).vp4.v4p" systemname="Renderer (Canvas VVVVjs)">
@@ -359,7 +359,7 @@
    </BOUNDS>
    <PIN pinname="Y Output Value" visible="1">
    </PIN>
-   <PIN pinname="Y Input Value" slicecount="1" values="0.36">
+   <PIN pinname="Y Input Value" slicecount="1" values="1">
    </PIN>
    </NODE>
    <NODE componentmode="Hidden" id="35" nodename="RGB (Color Join)" systemname="RGB (Color Join)">
@@ -367,9 +367,13 @@
    </BOUNDS>
    <PIN pinname="Output" visible="1">
    </PIN>
-   <PIN pinname="Red" slicecount="1" values="1">
+   <PIN pinname="Red" slicecount="1" values="0.13">
    </PIN>
    <PIN pinname="Alpha" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Green" slicecount="1" values="0.13">
+   </PIN>
+   <PIN pinname="Blue" slicecount="1" values="0.13">
    </PIN>
    </NODE>
    <LINK dstnodeid="0" dstpinname="Background Color" srcnodeid="35" srcpinname="Output">
@@ -475,7 +479,7 @@
    </BOUNDS>
    <PIN pinname="Y Output Value" visible="1">
    </PIN>
-   <PIN pinname="Y Input Value" slicecount="1" values="0">
+   <PIN pinname="Y Input Value" slicecount="1" values="1">
    </PIN>
    </NODE>
    <LINK dstnodeid="31" dstpinname="Red" srcnodeid="48" srcpinname="Y Output Value">
@@ -563,7 +567,7 @@
    </BOUNDS>
    <PIN pinname="Y Output Value" visible="1">
    </PIN>
-   <PIN pinname="Y Input Value" slicecount="1" values="0.39">
+   <PIN pinname="Y Input Value" slicecount="1" values="1">
    </PIN>
    </NODE>
    <LINK dstnodeid="30" dstpinname="Blue" srcnodeid="57" srcpinname="Y Output Value">
@@ -574,10 +578,10 @@
    </LINK>
    <LINK dstnodeid="5" dstpinname="X" srcnodeid="23" srcpinname="Output">
    </LINK>
-   <LINK srcnodeid="9" srcpinname="Output" dstnodeid="36" dstpinname="Input 1">
+   <LINK dstnodeid="36" dstpinname="Input 1" srcnodeid="9" srcpinname="Output">
    </LINK>
-   <NODE systemname="Add (Value)" nodename="Add (Value)" componentmode="Hidden" id="60">
-   <BOUNDS type="Node" left="1320" top="8175" width="100" height="100">
+   <NODE componentmode="Hidden" id="60" nodename="Add (Value)" systemname="Add (Value)">
+   <BOUNDS height="100" left="1320" top="8175" type="Node" width="100">
    </BOUNDS>
    <PIN pinname="Input 1" visible="1">
    </PIN>
@@ -586,20 +590,20 @@
    <PIN pinname="Input 2" visible="1">
    </PIN>
    </NODE>
-   <LINK srcnodeid="40" srcpinname="Output" dstnodeid="60" dstpinname="Input 1">
+   <LINK dstnodeid="60" dstpinname="Input 1" srcnodeid="40" srcpinname="Output">
    </LINK>
-   <LINK srcnodeid="60" srcpinname="Output" dstnodeid="54" dstpinname="Go To Position">
+   <LINK dstnodeid="54" dstpinname="Go To Position" srcnodeid="60" srcpinname="Output">
    </LINK>
-   <NODE systemname="LFO (Animation)" nodename="LFO (Animation)" componentmode="Hidden" id="62">
-   <BOUNDS type="Node" left="2235" top="5355" width="100" height="100">
+   <NODE componentmode="Hidden" id="62" nodename="LFO (Animation)" systemname="LFO (Animation)">
+   <BOUNDS height="100" left="2235" top="5355" type="Node" width="100">
    </BOUNDS>
    <PIN pinname="Output" visible="1">
    </PIN>
    <PIN pinname="Period" slicecount="1" values="35">
    </PIN>
    </NODE>
-   <NODE systemname="Multiply (Value)" nodename="Multiply (Value)" componentmode="Hidden" id="68">
-   <BOUNDS type="Node" left="1965" top="7365" width="100" height="100">
+   <NODE componentmode="Hidden" id="68" nodename="Multiply (Value)" systemname="Multiply (Value)">
+   <BOUNDS height="100" left="1965" top="7365" type="Node" width="100">
    </BOUNDS>
    <PIN pinname="Input 1" visible="1">
    </PIN>
@@ -608,8 +612,8 @@
    <PIN pinname="Output" visible="1">
    </PIN>
    </NODE>
-   <NODE systemname="Subtract (Value)" nodename="Subtract (Value)" componentmode="Hidden" id="72">
-   <BOUNDS type="Node" left="1980" top="5760" width="100" height="100">
+   <NODE componentmode="Hidden" id="72" nodename="Subtract (Value)" systemname="Subtract (Value)">
+   <BOUNDS height="100" left="1980" top="5760" type="Node" width="100">
    </BOUNDS>
    <PIN pinname="Input 1" slicecount="1" values="0.5">
    </PIN>
@@ -618,20 +622,20 @@
    <PIN pinname="Output" visible="1">
    </PIN>
    </NODE>
-   <LINK srcnodeid="62" srcpinname="Output" dstnodeid="72" dstpinname="Input 2">
+   <LINK dstnodeid="72" dstpinname="Input 2" srcnodeid="62" srcpinname="Output">
    </LINK>
-   <NODE systemname="LT (Value)" nodename="LT (Value)" componentmode="Hidden" id="75">
-   <BOUNDS type="Node" left="1980" top="6180" width="100" height="100">
+   <NODE componentmode="Hidden" id="75" nodename="LT (Value)" systemname="LT (Value)">
+   <BOUNDS height="100" left="1980" top="6180" type="Node" width="100">
    </BOUNDS>
    <PIN pinname="Input 1" visible="1">
    </PIN>
    <PIN pinname="Output" visible="1">
    </PIN>
    </NODE>
-   <LINK srcnodeid="72" srcpinname="Output" dstnodeid="75" dstpinname="Input 1">
+   <LINK dstnodeid="75" dstpinname="Input 1" srcnodeid="72" srcpinname="Output">
    </LINK>
-   <NODE systemname="Switch (Value Input)" nodename="Switch (Value Input)" componentmode="Hidden" id="76">
-   <BOUNDS type="Node" left="1980" top="6615" width="100" height="100">
+   <NODE componentmode="Hidden" id="76" nodename="Switch (Value Input)" systemname="Switch (Value Input)">
+   <BOUNDS height="100" left="1980" top="6615" type="Node" width="100">
    </BOUNDS>
    <PIN pinname="Input 2" visible="1">
    </PIN>
@@ -642,8 +646,8 @@
    <PIN pinname="Output" visible="1">
    </PIN>
    </NODE>
-   <NODE systemname="Multiply (Value)" nodename="Multiply (Value)" componentmode="Hidden" id="77">
-   <BOUNDS type="Node" left="2565" top="6135" width="100" height="100">
+   <NODE componentmode="Hidden" id="77" nodename="Multiply (Value)" systemname="Multiply (Value)">
+   <BOUNDS height="100" left="2565" top="6135" type="Node" width="100">
    </BOUNDS>
    <PIN pinname="Input 1" visible="1">
    </PIN>
@@ -652,16 +656,16 @@
    <PIN pinname="Output" visible="1">
    </PIN>
    </NODE>
-   <LINK srcnodeid="72" srcpinname="Output" dstnodeid="77" dstpinname="Input 1">
+   <LINK dstnodeid="77" dstpinname="Input 1" srcnodeid="72" srcpinname="Output">
    </LINK>
-   <LINK srcnodeid="77" srcpinname="Output" dstnodeid="76" dstpinname="Input 2">
+   <LINK dstnodeid="76" dstpinname="Input 2" srcnodeid="77" srcpinname="Output">
    </LINK>
-   <LINK srcnodeid="75" srcpinname="Output" dstnodeid="76" dstpinname="Switch">
+   <LINK dstnodeid="76" dstpinname="Switch" srcnodeid="75" srcpinname="Output">
    </LINK>
-   <LINK srcnodeid="72" srcpinname="Output" dstnodeid="76" dstpinname="Input 1">
+   <LINK dstnodeid="76" dstpinname="Input 1" srcnodeid="72" srcpinname="Output">
    </LINK>
-   <NODE systemname="Subtract (Value)" nodename="Subtract (Value)" componentmode="Hidden" id="78">
-   <BOUNDS type="Node" left="1980" top="6975" width="100" height="100">
+   <NODE componentmode="Hidden" id="78" nodename="Subtract (Value)" systemname="Subtract (Value)">
+   <BOUNDS height="100" left="1980" top="6975" type="Node" width="100">
    </BOUNDS>
    <PIN pinname="Input 1" visible="1">
    </PIN>
@@ -670,12 +674,12 @@
    <PIN pinname="Output" visible="1">
    </PIN>
    </NODE>
-   <LINK srcnodeid="76" srcpinname="Output" dstnodeid="78" dstpinname="Input 1">
+   <LINK dstnodeid="78" dstpinname="Input 1" srcnodeid="76" srcpinname="Output">
    </LINK>
-   <LINK srcnodeid="78" srcpinname="Output" dstnodeid="68" dstpinname="Input 1">
+   <LINK dstnodeid="68" dstpinname="Input 1" srcnodeid="78" srcpinname="Output">
    </LINK>
-   <NODE systemname="LinearSpread (Spreads)" nodename="LinearSpread (Spreads)" componentmode="Hidden" id="79">
-   <BOUNDS type="Node" left="1725" top="7785" width="100" height="100">
+   <NODE componentmode="Hidden" id="79" nodename="LinearSpread (Spreads)" systemname="LinearSpread (Spreads)">
+   <BOUNDS height="100" left="1725" top="7785" type="Node" width="100">
    </BOUNDS>
    <PIN pinname="Width" visible="1">
    </PIN>
@@ -686,10 +690,10 @@
    <PIN pinname="Input" slicecount="1" values="-0.08">
    </PIN>
    </NODE>
-   <LINK srcnodeid="68" srcpinname="Output" dstnodeid="79" dstpinname="Width">
+   <LINK dstnodeid="79" dstpinname="Width" srcnodeid="68" srcpinname="Output">
    </LINK>
-   <LINK srcnodeid="79" srcpinname="Output" dstnodeid="60" dstpinname="Input 2">
+   <LINK dstnodeid="60" dstpinname="Input 2" srcnodeid="79" srcpinname="Output">
    </LINK>
-   <LINK srcnodeid="1" srcpinname="Y Output Value" dstnodeid="79" dstpinname="Spread Count">
+   <LINK dstnodeid="79" dstpinname="Spread Count" srcnodeid="1" srcpinname="Y Output Value">
    </LINK>
    </PATCH>
