@@ -41,6 +41,14 @@ $(document).ready(function() {
   
   $('#main').hide();
   
+  if ($.browser.mozilla && document.cookie=="") {
+    $('#compatibility_message').slideDown();
+    $('#compatibility_message input[type="button"]').click(function() {
+      $('#compatibility_message').slideUp();
+      document.cookie = "ff_message_read=1;"
+    });
+  }
+  
   if ($.browser.webkit || $.browser.mozilla) {
   
     page_patch = new VVVV.Core.Patch("main.v4p", function() {

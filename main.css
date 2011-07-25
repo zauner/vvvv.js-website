@@ -1,8 +1,13 @@
 
+body{
+  margin:0px;
+}
+
 #main{
   font-family:Helvetica, Arial, sans-serif;
   color:#444;
   font-size:9pt;
+  margin:10px;
 }
 
 p{
@@ -238,6 +243,15 @@ ul#menu a{
 
 #not-supported{
   display:none;
+}
+
+#compatibility_message{
+  display:none;
+  width:100%;
+  margin:0px;
+  padding:10px;
+  background:#35302b;
+  color:white;
 }
 
 a.download_link{
