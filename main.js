@@ -37,7 +37,7 @@ function attachShowPatchEvents() {
 }
 
 $(document).ready(function() {
-  //initVVVV('vvvv_js/', 'full');
+  initVVVV('vvvv_js/', 'full');
   
   $('#main').hide();
   
