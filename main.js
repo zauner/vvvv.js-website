@@ -37,9 +37,8 @@ function attachShowPatchEvents() {
 }
 
 $(document).ready(function() {
-  initVVVV('vvvv_js/', 'full');
-  
   $('#main').hide();
+  initVVVV('vvvv_js/', 'full');
   
   if ($.browser.mozilla && document.cookie=="") {
     $('#compatibility_message').slideDown();
