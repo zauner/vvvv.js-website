@@ -266,3 +266,32 @@ a.download_link{
   padding:3px;
 }
 
+.blog_post{
+  margin-bottom:1.5em;
+}
+
+.blog_post h2{
+  margin:0px;
+  display:inline;
+  float:left;
+}
+
+.blog_meta{
+  font-size:8pt;
+  color:#ccc;
+  margin-bottom:1em;
+  text-align:right;
+}
+
+.blog_post p{
+  clear:both;
+}
+
+.blog_post img{
+  display:block;
+  margin-left:auto;
+  margin-right:auto;
+  margin-top:1.5em;
+  margin-bottom:1.5em;
+}
+
