@@ -1,6 +1,6 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta26.dtd" >
    <PATCH nodename="C:\Dokumente und Einstellungen\Matthias\Eigene Dateien\My Dropbox\vvvv_js_page\arcs.v4p" filename="C:\Dokumente und Einstellungen\Matthias\Eigene Dateien\My Dropbox\vvvv_js_page\arcs.v4p" systemname="arcs">
-   <BOUNDS height="7860" left="3810" top="1710" type="Window" width="6810">
+   <BOUNDS height="8925" left="5250" top="3450" type="Window" width="6810">
    </BOUNDS>
    <NODE componentmode="InAWindow" filename="%VVVV%\modules\vvvv_js\Renderer (Canvas VVVVjs).v4p" id="1" nodename="Renderer (Canvas VVVVjs)" systemname="Renderer (Canvas VVVVjs)">
    <BOUNDS height="100" left="195" top="7275" type="Node" width="100">
@@ -39,6 +39,8 @@
    </PIN>
    <PIN pinname="Transform" visible="1">
    </PIN>
+   <BOUNDS type="Window" left="390" top="2775" width="6990" height="8010">
+   </BOUNDS>
    </NODE>
    <LINK dstnodeid="1" dstpinname="Layers" srcnodeid="2" srcpinname="Layer">
    </LINK>
@@ -60,8 +62,6 @@
    <PIN pinname="Output" visible="1">
    </PIN>
    </NODE>
-   <LINK dstnodeid="2" dstpinname="End Angle" srcnodeid="4" srcpinname="Output">
-   </LINK>
    <NODE componentmode="Hidden" id="5" nodename="Add (Value)" systemname="Add (Value)">
    <BOUNDS height="100" left="3675" top="2940" type="Node" width="100">
    </BOUNDS>
@@ -186,10 +186,6 @@
    </LINK>
    <LINK dstnodeid="15" dstpinname="Y Input Value" srcnodeid="5" srcpinname="Output">
    </LINK>
-   <LINK dstnodeid="4" dstpinname="Input 1" srcnodeid="15" srcpinname="Y Output Value">
-   </LINK>
-   <LINK dstnodeid="2" dstpinname="Start Angle" srcnodeid="15" srcpinname="Y Output Value">
-   </LINK>
    <NODE componentmode="Hidden" id="16" nodename="LFO (Animation)" systemname="LFO (Animation)">
    <BOUNDS height="100" left="5670" top="4320" type="Node" width="100">
    </BOUNDS>
@@ -303,5 +299,11 @@
    <LINK srcnodeid="26" srcpinname="Y Output Value" dstnodeid="25" dstpinname="Y">
    </LINK>
    <LINK srcnodeid="26" srcpinname="Y Output Value" dstnodeid="25" dstpinname="X">
+   </LINK>
+   <LINK srcnodeid="15" srcpinname="Y Output Value" dstnodeid="4" dstpinname="Input 1">
+   </LINK>
+   <LINK srcnodeid="4" srcpinname="Output" dstnodeid="2" dstpinname="End Angle">
+   </LINK>
+   <LINK srcnodeid="15" srcpinname="Y Output Value" dstnodeid="2" dstpinname="Start Angle">
    </LINK>
    </PATCH>

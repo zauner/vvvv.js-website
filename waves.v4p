@@ -1,15 +1,15 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta26.dtd" >
    <PATCH nodename="C:\Dokumente und Einstellungen\Matthias\Eigene Dateien\My Dropbox\vvvv_js_page\waves.v4p" filename="1.v4p ////" systemname="1.v4p ////">
-   <BOUNDS height="12330" left="10395" top="885" type="Window" width="10860">
+   <BOUNDS height="12330" left="11280" top="930" type="Window" width="10860">
    </BOUNDS>
-   <NODE componentmode="InAWindow" filename="%VVVV%\modules\vvvv_js\Renderer (Canvas VVVVjs).vp4.v4p" id="0" nodename="%VVVV%\modules\vvvv_js\Renderer (Canvas VVVVjs).vp4.v4p" systemname="Renderer (Canvas VVVVjs)">
+   <NODE componentmode="Hidden" filename="%VVVV%\modules\vvvv_js\Renderer (Canvas VVVVjs).vp4.v4p" id="0" nodename="%VVVV%\modules\vvvv_js\Renderer (Canvas VVVVjs).vp4.v4p" systemname="Renderer (Canvas VVVVjs)">
    <BOUNDS height="100" left="435" top="10920" type="Node" width="100">
    </BOUNDS>
-   <PIN pinname="Descriptive Name" slicecount="1" values="#particles" encoded="0">
+   <PIN encoded="0" pinname="Descriptive Name" slicecount="1" values="#particles">
    </PIN>
    <PIN pinname="Layers" visible="1">
    </PIN>
-   <BOUNDS height="9855" left="0" top="3405" type="Window" width="10500">
+   <BOUNDS height="9855" left="225" top="3375" type="Window" width="10500">
    </BOUNDS>
    <PIN pinname="Background Color" visible="1">
    </PIN>
@@ -69,7 +69,11 @@
    </PIN>
    <PIN pinname="Line Width" visible="1">
    </PIN>
-   <PIN pinname="Render State" visible="1" slicecount="1" values="||">
+   <PIN pinname="Render State" slicecount="1" visible="1" values="||">
+   </PIN>
+   <BOUNDS height="6360" left="8250" top="8145" type="Window" width="15300">
+   </BOUNDS>
+   <PIN pinname="Transform" slicecount="1" visible="1" values="||">
    </PIN>
    </NODE>
    <NODE componentmode="Hidden" id="7" nodename="Multiply (Value)" systemname="Multiply (Value)">
@@ -85,8 +89,6 @@
    <LINK dstnodeid="7" dstpinname="Input 2" srcnodeid="2" srcpinname="Y Output Value">
    </LINK>
    <LINK dstnodeid="7" dstpinname="Input 1" srcnodeid="1" srcpinname="Y Output Value">
-   </LINK>
-   <LINK dstnodeid="0" dstpinname="Layers" srcnodeid="5" srcpinname="Layer">
    </LINK>
    <NODE componentmode="Hidden" id="9" nodename="RandomSpread (Spreads)" systemname="RandomSpread (Spreads)">
    <BOUNDS height="100" left="3030" top="4635" type="Node" width="100">
@@ -317,7 +319,7 @@
    </BOUNDS>
    <BOUNDS height="270" left="450" top="11700" type="Box" width="225">
    </BOUNDS>
-   <PIN pinname="Input String" slicecount="1" visible="0" values="a" encoded="0">
+   <PIN encoded="0" pinname="Input String" slicecount="1" visible="0" values="a">
    </PIN>
    <PIN pinname="Output String" visible="0">
    </PIN>
@@ -429,7 +431,7 @@
    </BOUNDS>
    <BOUNDS height="240" left="6585" top="735" type="Box" width="795">
    </BOUNDS>
-   <PIN pinname="Descriptive Name" slicecount="1" values="body/style/width" encoded="0">
+   <PIN encoded="0" pinname="Descriptive Name" slicecount="1" values="body/style/width">
    </PIN>
    <PIN pinname="Y Output Value" visible="1">
    </PIN>
@@ -451,7 +453,7 @@
    </BOUNDS>
    <BOUNDS height="240" left="8280" top="735" type="Box" width="795">
    </BOUNDS>
-   <PIN pinname="Descriptive Name" slicecount="1" values="#particles/style/width" encoded="0">
+   <PIN encoded="0" pinname="Descriptive Name" slicecount="1" values="#particles/style/width">
    </PIN>
    <PIN pinname="Y Output Value" visible="1">
    </PIN>
@@ -694,8 +696,8 @@
    </LINK>
    <LINK dstnodeid="79" dstpinname="Spread Count" srcnodeid="1" srcpinname="Y Output Value">
    </LINK>
-   <NODE systemname="Fill (Canvas VVVVjs RenderState)" filename="E:\vvvvnodes\vvvvtools\modules\vvvv_js_modules\Fill (Canvas VVVVjs RenderState).v4p" nodename="Fill (Canvas VVVVjs RenderState)" componentmode="Hidden" id="83">
-   <BOUNDS type="Node" left="450" top="8370" width="100" height="100">
+   <NODE componentmode="Hidden" filename="E:\vvvvnodes\vvvvtools\modules\vvvv_js_modules\Fill (Canvas VVVVjs RenderState).v4p" id="83" nodename="Fill (Canvas VVVVjs RenderState)" systemname="Fill (Canvas VVVVjs RenderState)">
+   <BOUNDS height="100" left="450" top="8370" type="Node" width="100">
    </BOUNDS>
    <PIN pinname="Render State Out" visible="1">
    </PIN>
@@ -704,12 +706,12 @@
    <PIN pinname="Render State In" visible="1">
    </PIN>
    </NODE>
-   <LINK srcnodeid="83" srcpinname="Render State Out" dstnodeid="5" dstpinname="Render State">
+   <LINK dstnodeid="5" dstpinname="Render State" srcnodeid="83" srcpinname="Render State Out">
    </LINK>
-   <LINK srcnodeid="30" srcpinname="Output" dstnodeid="83" dstpinname="Color">
+   <LINK dstnodeid="83" dstpinname="Color" srcnodeid="30" srcpinname="Output">
    </LINK>
-   <NODE systemname="Stroke (Canvas VVVVjs RenderState)" filename="E:\vvvvnodes\vvvvtools\modules\vvvv_js_modules\Stroke (Canvas VVVVjs RenderState).v4p" nodename="Stroke (Canvas VVVVjs RenderState)" componentmode="Hidden" id="84">
-   <BOUNDS type="Node" left="480" top="7635" width="100" height="100">
+   <NODE componentmode="Hidden" filename="E:\vvvvnodes\vvvvtools\modules\vvvv_js_modules\Stroke (Canvas VVVVjs RenderState).v4p" id="84" nodename="Stroke (Canvas VVVVjs RenderState)" systemname="Stroke (Canvas VVVVjs RenderState)">
+   <BOUNDS height="100" left="480" top="7635" type="Node" width="100">
    </BOUNDS>
    <PIN pinname="Render State Out" visible="1">
    </PIN>
@@ -718,8 +720,10 @@
    <PIN pinname="Width" slicecount="1" values="0.1">
    </PIN>
    </NODE>
-   <LINK srcnodeid="84" srcpinname="Render State Out" dstnodeid="83" dstpinname="Render State In">
+   <LINK dstnodeid="83" dstpinname="Render State In" srcnodeid="84" srcpinname="Render State Out">
    </LINK>
-   <LINK srcnodeid="31" srcpinname="Output" dstnodeid="84" dstpinname="Color">
+   <LINK dstnodeid="84" dstpinname="Color" srcnodeid="31" srcpinname="Output">
+   </LINK>
+   <LINK dstnodeid="0" dstpinname="Layers" srcnodeid="5" srcpinname="Layer">
    </LINK>
    </PATCH>
