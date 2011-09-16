@@ -1,4 +1,29 @@
 <div class="blog_post">
+  <h2>Release: more Canvas with v0.1.2-alpha</h2>
+  <div class="blog_meta">Posted: September 16th, 2011</div>
+  <p>
+    With slight delay we finally reached the next milestone with version 0.1.2-alpha. Besides some changes under the hood (mostly regarding <strong>graph evaluation</strong>), this release introduces a bunch of new nodes,
+    covering a major part of <strong>Canvas 2D drawing functionality</strong>.
+    As a development guidline we used this handy <a href="http://www.nihilogic.dk/labs/canvas_sheet/HTML5_Canvas_Cheat_Sheet.png" target="_new">Canvas HTML5 Cheat Sheet</a>.
+  <p>
+    Version 0.1.2-alpha allows us to:
+  </p>
+  <ul>
+    <li>draw vector shapes like bezier curves, arcs, rectangles, text</li>
+    <li>fill them &mdash; solid or using gradients</li>
+    <li>stroke them, using several stroke styles</li>
+    <li>draw images and streaming video</li>
+    <li>render shadows and glows</li>
+    <li>use various blend techniques</li>
+    <li>transform all this using regular VVVV transform nodes</li>
+  </ul>
+  <p>Have a look at the <a href="https://github.com/zauner/vvvv.js/blob/v0.1.2-alpha/CHANGELOG" target="_new">CHANGELOG</a>, and check out the <a href="vvvv_js/examples/" target="_new">Examples here</a>, to get the details.</p>
+  
+  <p>Also, we set up a very basic out-of-the-box <a href="/forum" target="_new">Forum</a>, to provide you with a place for questions and suggestions. It's brandnew, so don't be shy!</p>
+</div>
+
+
+<div class="blog_post">
   <h2>VVVV.js' road to 1.0</h2>
   <div class="blog_meta">Posted: August 16th, 2011</div>
   <p>
@@ -10,8 +35,8 @@
   </p>
   <img src="vvvvjsroadmap.png"/>
   <p>
-    As you can see, we're first heading for some visual bragging to find out, what's possible in terms of <b>Canvas 2D and WebGL 3D graphics</b> (In fact, the set of Canvas drawing
-    nodes will be released this week).
+    As you can see, we're first heading for some visual bragging to find out, what's possible in terms of <b>Canvas 2D and WebGL 3D graphics</b> <span style="text-decoration:line-through">(In fact, the set of Canvas drawing
+    nodes will be released this week)</span>.
   </p>
   <p>
     After this, we will deal with ways to connect VVVV to the browser, to simplify the development process, and create the <b>VVVV-typical patch-while-running experience</b>. Simultaneiously,
