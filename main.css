@@ -20,6 +20,11 @@ p.box{
   padding:6px;
 }
 
+p.box span{
+  display:inline-block;
+  width:33%;
+}
+
 strong{
   font-weight:bold;
 }
