@@ -91,6 +91,7 @@ function initSection(section_name) {
   switch (section_name) {
   
     case 0:
+      console.log('HMMMM');
       current_patches.push(new VVVV.Core.Patch("teaser.v4p", function() {
         current_mainloops.push(new VVVV.Core.MainLoop(this));
         var v = new VVVV.VVVViewer(this, '#teaser_patch');
