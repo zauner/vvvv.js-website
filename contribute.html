@@ -7,135 +7,19 @@ phrase of medium length.</p>
 
 <ol>
   <li><a href="https://github.com/zauner/vvvv.js/fork">Fork</a> the project's <a href="https://github.com/zauner/vvvv.js">Git Repository on GitHub</a></li>
+  <li>Use the <a href="http://vvvvjs.quasipartikel.at/porting_wizard">Node Porting Wizard</a> to create some template code to start with.</li>
   <li>There's one .js file for each node category in the 'node' directory. Add your code to the corresponding file, or create a new one, if you start a new category.</li>
-  <li>Adjust the meta data (see below)</li>
+  <li>Adjust the meta data</li>
   <li>Create a dummy module and add it to the vvvv_js_modules directory, if necessary (see below)</li>
   <li>Commit your changes to your fork, and make a new issue at the GitHub page, to announce your node</li>
 </ol>
 
-<h2>The anatomy of a VVVV.js node</h2>
+<h2>Further Documentation</h2>
 
-<p></p>The following shows the Add (Value) node, which is located in the file vvvv.js/nodes/VVVV.Nodes.Value.js as an example.</p>
-
-<pre>
-VVVV.Nodes.AddValue = function(id, graph) {
-  this.constructor(id, "Add (Value)", graph);
-  
-  this.meta = {
-    authors: ['Matthias Zauner'],
-    original_authors: ['VVVV Group'],
-    credits: [],
-    compatibility_issues: []
-  };
-  
-  var input1In = this.addInputPin("Input 1", [0.0], this);
-  var input2In = this.addInputPin("Input 2", [0.0], this);
-  
-  var outputOut = this.addOutputPin("Output", [0.0], this);
-
-  this.evaluate = function() {
-    if (input1In.pinIsChanged() || input2In.pinIsChanged()) {
-      var maxSpreadSize = this.getMaxInputSliceCount();
-      
-      for (var i=0; i&lt;maxSpreadSize; i++) {
-        outputOut.setValue(i, parseFloat(input1In.getValue(i)) + parseFloat(input2In.getValue(i)));
-      }
-    }
-    
-  }
-
-}
-VVVV.Nodes.AddValue.prototype = new VVVV.Core.Node(); // quasi inheritance
-</pre>
-
-<p>The first few lines are pretty obvious: choose an object name prefixed by the VVVV.Nodes namespace. Call the "base class" constructor by supplying the nodename ("Add (Value)" in this example), and adjust
-the this.meta object.</p>
-
-<p>The lines
-
-<pre>
-var input1In = this.addInputPin("Input 1", [0.0], this);
-var input2In this.addInputPin("Input 2", [0.0], this);
-  
-var outputOut = this.addOutputPin("Output", [0.0], this);
-</pre>
-
-create in- and output pins. The first argument refers to the pin name, the second one is the default value. <em>In VVVV.js, spreads are simply arrays</em>, there's no explicit spread data structure.
-Note in the example above, that [0.0] means a default value of a one-sliced spread. You'll always have to supply an array here, even if the default value is just one slice.</p>
-
-<p>Let's have a look at the evaluate function, <b>which is called every frame.</b>. There are three methods you'll need:
-
-<h3>Pin changes</h3>
-
-<pre>
-if (input1In.pinIsChanged() ...)
-  ...
-</pre>
-
-Using the pinIsChanged() method, you can find out, if an input pin has changed during the last frame, and therefore the node has to be evaluated. This helps you creating a clever path through your
-node, which saves ressources by only calculating, if really needed.
-
-<h3>Maximum Input Slice Count</h3>
-
-<pre>
-var maxSpreadSize = this.getMaxInputSliceCount();
-</pre>
-
-gives you the maximum slice count of all input pins.
-
-<h3>Reading input values</h3>
-
-<pre>
-input1In.getValue(i);
-</pre>
-
-returns the i-th slice of the input1In input pin. This method does an automatic modulo operation on the index, meaning that, if you call inputpin.getValue(10) on a pin with a spread of 8 slices, the 2nd
-slice will be returned.
-
-<h3>Setting output values</h3>
-
-<pre>outputOut.setValue(i, ...)</pre>
-
-sets the i-th slice of an output pin. This will cause the pinIsChanged() method in other nodes, which are connected to this pin, to return true. There's no explicit setPinIsChanged() method as in pure VVVV.
-Also note, that here the index is not auto-moduloed.
-
-<h3>Spread size</h3>
-
-Find out the spread size of a single pin through
-
-<pre>inputPin.values.length</pre>
-
-As you can see, you can access the values property of a pin directly. However, writing directly into the values array will not set the changed flag for the pin.
-
-<h2>Meta Data</h2>
-
-Fill the meta object with correct values. This is needed to track you as an author, as well as to document known issues. Here's a sample:
-
-<pre>
-this.meta = {
-  authors: ['Your name', 'this other guy\'s name'],
-  original_authors: ['The author of the original VVVV node, if any exists'],
-  credits: ['papers', 'websites', 'books', 'libraries', 'and other sources used do develope the node'],
-  compatibility_issues: ['issue1', 'issue2']
-};
-</pre>
-
-Note that the object properties are all arrays. Authors, original authors and credits should be pretty clear. The compatibility_issues property should contain issues, which describe the progress
-of node development, regarding the range of functionality of the original VVVV node. Use the following checklist, to find out what to put in here:
+There are several guides and documents on <a href="http://substance.io">Substance.io</a> that help you coding your own nodes:
 
 <ul>
-  <li>Are there any pins in the original VVVV node, that are not implemented in the VVVV.js node yet?</li>
-  <li>Is the original VVVV node spreadable, and the VVVV.js node isn't?</li>
-  <li>Does the original VVVV node implement BinSize, but the VVVV.js version doesn't?</li>
-  <li>Does the VVVV.js node's behaviour differ from  the original node's (because of different techniques used, etc.?)</li>
-  <li>Does the original node provide the option of setting pin count dynamically, and your ported node doesn't?</li>
-  <li>In general: is there functionality missing, which the original VVVV node provides?</li>
+  <li><a href="http://substance.io/zauner/porting-vvvv-nodes-to-vvvvjs">Porting VVVV Nodes to VVVV.js</a></li>
+  <li><a href="http://substance.io/zauner/porting-vvvv-hlsl-shaders-to-vvvvjs">Porting VVVV HLSL shaders to VVVV.js</a></li>
+  <li><a href="http://substance.io/zauner/vvvvjs-api-reference">VVVV.js API reference</a></li>
 </ul>
-
-<h2>About Dummy Modules</h2>
-
-<p>There might be some VVVV.js nodes, that don't exist in pure VVVV (for example the whole Canvas category). To be able to create those nodes in VVVV, we use (dummy) modules.</p>
-
-<p>If you write a node which doesn't have an original VVVV counterpart, create a module with the full nodename as filename (e.g. "BezierCurve (Canvas VVVVjs).v4p"), and place it into the
-vvvv_js_modules directory. Add the input and output pins, named just like in the javascript code. You can leave the module empty, or add some dummy behaviour. For example, the BezierCurve (Canvas VVVVjs) node,
-uses the original VVVV's BezierLine (GDI) node, to get at least <em>some</em> output for developing purposes.</p>

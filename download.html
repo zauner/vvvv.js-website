@@ -1,99 +1,20 @@
 <p>Get the latest unstable alpha release of VVVV.js from the <a href="http://www.github.com/zauner/vvvv.js">GitHub repository</a>:<p>
+  
+<p>You can download the <strong>SDK only</strong>, if you just want to play around a bit with example patches or the <a href="vvvvjs.quasipartikel.at/lab">VVVV.js Lab</a>. If
+  you want to deploy a VVVV.js project yourself, download the <strong>Library + SDK package</strong>.</p>
 
 <p class="box">
-<span>Release v0.1.2-alpha:</span>
-<a class="download_link" href="https://github.com/zauner/vvvv.js/tarball/v0.1.2-alpha">.tar.gz</a>
-<a class="download_link" href="https://github.com/zauner/vvvv.js/zipball/v0.1.2-alpha">.zip</a>
-(<a href="https://github.com/zauner/vvvv.js/blob/v0.1.2-alpha/CHANGELOG" target="_new">see the CHANGELOG</a>)
+<span>Release v0.2-alpha:</span>
+<a class="download_link" href="https://github.com/zauner/vvvv.js/tarball/v0.2-alpha">Library + SDK</a>
+<a class="download_link" href="https://github.com/downloads/zauner/vvvv.js/vvvv_js_sdk-0.2.zip">SDK only</a>
+(<a href="https://github.com/zauner/vvvv.js/blob/v0.2-alpha/CHANGELOG" target="_new">see the CHANGELOG</a>)
 </div>
 
 <p class="box">
 <span>Development Snapshot:</span>
-<a class="download_link" href="https://github.com/zauner/vvvv.js/tarball/master">.tar.gz</a>
-<a class="download_link" href="https://github.com/zauner/vvvv.js/zipball/master">.zip</a>
+<a class="download_link" href="https://github.com/zauner/vvvv.js/tarball/master">Library + SDK</a>
 </div>
 
 <p><b>Note:</b> For developing VVVV patches you will need the original VVVV, so if you don't
 have it already, get it from the <a href="http://www.vvvv.org/downloads">VVVV Download Page</a>. <b>Make sure to check the <a href="http://www.vvvv.org/licensing">Licencing Page</a> as well!</b>
 
-<h2>Install Dummy Modules</h2>
-
-<p>Copy the directory "vvvv_js_modules" from the downloaded archive into the "modules" directory of your VVVV installation directory. This is neccessary, because there are some VVVV.js nodes, that don't exist in pure VVVV
-for example the whole Canvas category). To be able to create those nodes in VVVV, we use this (dummy) modules.</p>
-
-<h2>Setup VVVV.js scripts</h2>
-
-<p>Unpack the files into your project directory. Unfortunatly, the directory is named 'vvvv.js', which might cause problems with most webservers, so better rename it to "vvvv_js".</p>
-
-<p>Include the script somehow like this:</p>
-
-<pre>
-&lt;head&gt;
-...
-&lt;script language="JavaScript" src="vvvv_js/lib/jquery/jquery-1.4.2.min.js"&gt;&lt;/script&gt;
-&lt;script language="JavaScript" src="vvvv_js/vvvv.js"&gt;&lt;/script&gt;
-...
-&lt;/head&gt;
-</pre>
-
-<h2>Load and run VVVV.js patches</h2>
-
-<p>Initialize VVVV.js and run a certain .v4p file at startup like this (uses jQuery):</p>
-
-<pre>
-var patch;
-var mainloop;
-$(document).ready(function() {
-  
-  initVVVV('vvvv_js','full');
-  
-  patch = new VVVV.Core.Patch("main.v4p", function() {
-    mainloop = new VVVV.Core.MainLoop(this);
-  });
-
-});
-</pre>
-
-<p>initVVVV(...) initializes VVVV.js and loads all the needed script files, where the argument is the path to where you unpacked VVVV.js to. VVVV.Core.Patch(...) loads the .v4p file, and calls the function supplied in the 2nd argument when finished. VVVV.Core.MainLoop(this) will run the patch.
-You can pause and resume the mainloop by using
-</p>
-
-<pre>
-// pause mainloop
-mainloop.stop();
-
-// resume mainloop
-mainloop.start();
-</pre>
-
-<h2>About patching VVVV.js</h2>
-
-<p>The great thing with VVVV is, that there's no difference between development and runtime, which means that your application is running while you're patching around. Unfortunatly this is not possible
-in VVVV.js right now. Here we're stuck with the more traditional workflow of</p>
-
-<ol>
-  <li>patching in original VVVV</li>
-  <li>saving the file, and</li>
-  <li>running the patch in your browser</li>
-</ol>
-
-<p>Note, that VVVV doesn't know anything abot VVVV.js, so just because you can create a node in VVVV doesn't mean that VVVV.js can actually <em>run</em> it.</p>
-
-<h2>Rendering Patches with the VVVViewer</h2>
-
-<p>You can load and view a patch by first creating a Patch object as shown above, and then pass it to a newly created VVVViewer object:</p>
-
-<pre>
-var myvvvviewer;
-var mypatch = new VVVV.Core.Patch("mypatch.v4p", function() {
-  myvvvviewer = new VVVV.VVVViewer(this, '#patch');
-});
-</pre>
-
-<p>This is the corresponding HTML code:</p>
-
-<pre>
-&lt;div id='patch'&gt;Your browser does not support the VVVViewer&lt;/div&gt;
-</pre>
-
-<p>While in the example above the Patch constructor new VVVV.Core.Patch("mypatch.v4p", ...) loads a VVVV patch file from the remote server, it is also possible to just pass actual VVVV XML Code to the constructor instead of a filename. This might be the case, when you display VVVV Code which comes from a forum post or a blog entry.</p>
