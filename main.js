@@ -38,34 +38,35 @@ function attachShowPatchEvents() {
 
 $(document).ready(function() {
   $('#main').hide();
-  initVVVV('vvvv_js/', 'full');
+  VVVV.init('vvvv_js', 'full', function() {
   
-  if ($.browser.mozilla && document.cookie=="") {
-    $('#compatibility_message').slideDown();
-    $('#compatibility_message input[type="button"]').click(function() {
-      $('#compatibility_message').slideUp();
-      document.cookie = "ff_message_read=1;"
-    });
-  }
-  
-  if ($.browser.webkit || $.browser.mozilla) {
-  
-    page_patch = new VVVV.Core.Patch("main.v4p", function() {
-      page_mainloop = new VVVV.Core.MainLoop(this);
-      $('#main').show();
-    });
+    if ($.browser.mozilla && document.cookie=="") {
+      $('#compatibility_message').slideDown();
+      $('#compatibility_message input[type="button"]').click(function() {
+        $('#compatibility_message').slideUp();
+        document.cookie = "ff_message_read=1;"
+      });
+    }
     
-    header_patch = new VVVV.Core.Patch("waves.v4p", function() {
-      header_mainloop = new VVVV.Core.MainLoop(this);
-    });
+    if ($.browser.webkit || $.browser.mozilla) {
     
-    attachShowPatchEvents();
-  }
-  else {
-  
-    $('#not-supported').show();
-  
-  }
+      page_patch = new VVVV.Core.Patch("main.v4p", function() {
+        page_mainloop = new VVVV.Core.MainLoop(this);
+        $('#main').show();
+      });
+      
+      header_patch = new VVVV.Core.Patch("waves.v4p", function() {
+        header_mainloop = new VVVV.Core.MainLoop(this);
+      });
+      
+      attachShowPatchEvents();
+    }
+    else {
+    
+      $('#not-supported').show();
+    
+    }
+  });
 
 });
 
