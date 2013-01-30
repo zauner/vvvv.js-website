@@ -1,0 +1,152 @@
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>VVVV.js v0.2 Micropage</title>
+  <link rel="stylesheet" type="text/css" href="../../vvvv_js/vvvviewer/vvvv.css"/>
+  <link rel="stylesheet" type="text/css" href="main.css"/>
+  <script language="JavaScript" src="../../vvvv_js/lib/jquery/jquery-1.8.2.min.js"></script> 
+  <script language="JavaScript" src="../../vvvv_js/lib/underscore/underscore-min.js"></script>
+  <script language="JavaScript" src="../../vvvv_js/lib/glMatrix-0.9.5.min.js"></script>
+  <script language="JavaScript" src="../../vvvv_js/vvvv.min.js"></script>
+  <script language="JavaScript">
+    $(document).ready(function() {
+      console.log = function() {};
+      VVVV.init('../../vvvv_js','full', function() {
+        var patchfile = "example11.v4p";
+        $testcanvas = $('<canvas width="10" height="10"></canvas>');
+        $('body').append($testcanvas);
+        try {
+          var testctxt = $testcanvas.get(0).getContext("experimental-webgl");
+        }
+        catch (x) { console.log(x); patchfile = "demo_0_2_canvas.v4p"; }
+        $testcanvas.remove();
+        
+        var patch = new VVVV.Core.Patch(patchfile, function() {
+          var mainloop = new VVVV.Core.MainLoop(patch, 30);
+          mainloop.start();
+        });
+      });
+    })
+  </script>
+</head>
+<body>
+  <h1 id="headline">VVVV.js v0.2</h1>
+  <div id="meta">
+    Feb. 4 2013
+    <a href="#">Download</a>
+    <a href="http://github.com/zauner/vvvv.js">Github</a>
+    <a href="http://vvvvjs.quasipartikel.at">Project Website</a>
+  </div>
+  <div id="main">
+  <div id="left">
+    <div id="rendering"></div>
+    <ul id="menu">
+      <li><a href="#shortstory">The short story</a></li>
+      <li><a href="#webgl">WebGL</a></li>
+      <li><a href="#realtimepatching">Realtime Patching</a></li>
+      <li><a href="#wizard">Node Porting Wizard</a></li>
+      <li><a href="#lab">VVVV.js Lab</a></li>
+      <li><a href="#docs">Docs and Howtos</a></li>
+    </ul>
+  </div>
+  <div id="contentbox">
+  <div id="content">
+    <p>
+      It has already been a year now, since VVVV.js was born &mdash; now it's about time for some version bumping. And while the <em>release of
+      version 0.2</em> basically means only adding a tag in the Github repository, it comes along with an array of brandnew
+      stuff surrounding the project.
+    </p>
+    
+    <h2><a name="shortstory">The short story</a></h2>
+    <p>
+      There's a lot to tell, but I'm aware of the fact that you are busy, so here's a brief summary in 5 points:
+    </p>
+    <p class="shortstory">
+      VVVV.js is now cool with <em>WebGL</em> (vertex buffers, shaders, blend modes and stuff), which you can try yourself at the brandnew <em>VVVV.js Lab</em> by <em>patching around in realtime</em>. If you miss a node from
+      classic VVVV, just start at the <em>Node Porting Wizard</em> and port it to VVVV.js. If you're stuck, you can find plenty of <em>guides and howtows</em> at the
+      Substance.io VVVV.js Network. Booom. 
+    </p>
+    <p>
+      And since I know that you aren't that busy after all, here's the long story:
+    </p>
+    
+    <h2><a name="webgl">Improved WebGL Support</a></h2>
+    
+    <p>
+    Besides getting a bunch of bugs fixed, VVVV.js now is cool with a substantial part of the <em>WebGL graphics pipeline</em>. This includes
+    </p>
+    
+    <ul>
+      <li>
+        <b>Creating geometry</b><br/>
+        Use the newly ported VertexBuffer (Join) and Mesh (Join) nodes to build geometry on the fly in VVVV.js
+      </li>
+      <li>
+        <b>Loading shader programs</b><br/>
+        You can store GLSL vertex and pixel shader programs in a .vvvvjs.fx file and load it as an effect node into your VVVV.js patch just as you would do in classic VVVV.
+        Using some VVVV.js specific keywords all the pins are created based on the shader code. Read more about VVVV.js shaders <a href="http://substance.io/zauner/porting-vvvv-hlsl-shaders-to-vvvvjs">here</a>.
+      </li>
+      <li>
+        <b>Automatic Canvas creation</b><br/>
+        When a Renderer node is created, there is now automatically created a suitable canvas element on the website. You don't have to
+        prepare your HTML, give any IDs etc. to get some graphics output. You still can, of course, if you need to embed the graphics somewhere specific.
+      </li>
+      <li>
+        <b>Multi Pass rendering</b><br/>
+        You now can have multiple Renderer nodes, and use the output of one Renderer as a texture in another one. This is done by the
+        freshly ported DX9Texture node. This allows for effects like DOF, you might be able to see on the left, if your browser supports it.<br/>
+        You can also use the output of a 2D Canvas render in WebGL, as demonstrated <a href="../../vvvv_js/examples/08_2pass_heightmap/">here</a>.
+      </li>
+      <li>
+        <b>Blend and Fill Modes</b><br>
+        Set the blend mode for drawing geometry using the "Blend" node. Use the "Fill" node to switch between drawing solid, wireframe or points.
+      </li>
+    </ul>
+    
+    <p>
+    If you are lucky, your browser is able to display some 3D randomness on the left.
+    </p>
+    
+    <h2><a name="realtimepatching">Realtime Patching</a></h2>
+    
+    <p>
+    The great thing with VVVV is the ability to change the program code while it's being executed. To accomplish this with VVVV.js,
+    it can now <em>connect to a locally running VVVV instance</em>, which allows you to patch around and see the result in your web browser immediatly.
+    Have a look at this <a href="http://www.youtube.com/watch?v=56vBXoKhN8Q">Video on youtube</a> to see it in action, and read more about it
+    <a href="http://substance.io/zauner/patching-vvvvjs">here</a>.
+    </p>
+    
+    <h2><a name="wizard">The Node Porting Wizard</a></h2>
+    
+    <p>
+    To make the process of porting nodes from classic VVVV to VVVV.js more painless, there's the <a href="http://vvvvjs.quasipartikel.at/portingwizard">Porting Wizard</a>, which
+    gets you started after a few clicks.
+    </p>
+    <img src="wizard.png"/>
+
+    <h2><a name="lab">The VVVV.js Lab</a></h2>
+    
+    <p>
+    There's also the brandnew <a href="http://vvvvjs.quasipartikel.at/lab">VVVV.js Lab</a>, the place to <b>patch, learn, remix and share</b> VVVV.js. It works kind of like a very simple versioning tool: you can open
+    VVVV.js patches, alter them, and submit your own version to the gallery. 
+    </p>
+    <img src="lab.png"/>
+    
+    <p>
+    The coolest thing about that is: <b>you don't have to deploy VVVV.js anywhere yourself to try it.</b> The only things you have to do is
+    downloading the <a href="https://github.com/downloads/zauner/vvvv.js/vvvv_js_sdk-0.2.zip">VVVV.js SDK</a>, extracting it, and adding its
+    path to the list of VVVV contribution paths in your root patch.
+
+    </p>
+
+    <h2><a name="docs">Docs and Howtos</a></h2>
+    
+    <p>
+    Last but not least, most of the VVVV.js documentation has been moved to Substance.io. Check out the VVVV.js channel there, for all the guides and howtos.
+    </p>
+
+  </div>
+  </div>
+  </div>
+</body>
+</html>

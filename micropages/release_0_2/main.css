@@ -1,0 +1,157 @@
+
+body{
+  background-color:#002424;
+  color:white;
+  font-family:'Lucida Sans Unicode', sans-serif;
+}
+
+a{
+  color:white;
+  text-decoration:underline;
+}
+
+a:visited{
+  color:white;
+}
+
+.vvvv-js-generated-renderer{
+  display:none;
+}
+
+h1{
+  background:#f8f4db;
+  color:#002424;
+  width:387px;
+  padding-top:85px;
+  padding-bottom:4px;
+  padding-left:4px;
+  font-weight:normal;
+  margin-bottom:0;
+}
+
+#meta{
+  background:#f8f4db;
+  width:387px;
+  padding:4 0 4 4;
+  color:#002424;
+  margin-bottom:14px;
+  margin-top:2px;
+  font-size:8pt;
+}
+
+#meta a{
+  color:#002424;
+  float:right;
+  margin-right:0.5em;
+  margin-left:0.5em;
+  text-decoration:none;
+}
+
+h2{
+  color:#f8f4db;
+  margin-top:2em;
+  font-weight:normal;
+  color:inherit;
+}
+
+h2 a{
+  text-decoration:none;
+  color:#f8f4db;
+}
+
+#rendering .vvvv-js-generated-renderer{
+  display:block;
+}
+
+#main{
+  height:512px;
+}
+
+#contentbox{
+  padding-top:5px;
+  padding-bottom:5px;
+  border-top: 2px solid #f8f4db;
+  border-bottom: 2px solid #f8f4db;
+  margin-left:400px;
+  width:633px;
+}
+
+#content{
+  font-size:10pt;
+  width:628px;
+  padding-right:5px;
+  height:100%;
+  overflow-x:none;
+  overflow-y:scroll;
+  line-height:1.5em;
+}
+
+#content img{
+  display:block;
+  margin-left:auto;
+  margin-right:auto;
+  margin-bottom:10px;
+}
+
+#left{
+  padding-top:5px;
+  padding-bottom:5px;
+  border-top: 2px solid #f8f4db;
+  border-bottom: 2px solid #f8f4db;
+  width:391px;
+  height:100%;
+  float:left;
+}
+
+ul#menu{
+  margin-top:0px;
+  z-index:1;
+  padding-left:0px;
+  list-style:none;
+}
+
+ul#menu li{
+  background: #f8f4db;
+  width: 0.7em;
+  height: 1.2em;
+  margin-bottom: 2px;
+}
+
+ul#menu li a{
+  text-decoration:none;
+  display:block;
+  width:150px;
+  margin-left:1em;
+}
+
+ul#menu li a:hover{
+  font-weight:bold;
+}
+
+#rendering{
+  position:absolute;
+  z-index:-1;
+}
+
+#content ul{
+  padding-left:23px;
+}
+
+#content ul li{
+  margin-bottom:15px;
+}
+
+#content p{
+  margin-top:0;
+}
+
+#content em{
+  font-weight:bold;
+  padding:0 3 0 3;
+}
+
+#content .shortstory{
+  padding:10px;
+  margin-right:10px;
+  background:rgba(200, 200, 200, 0.26);
+}
