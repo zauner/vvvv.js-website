@@ -63,6 +63,11 @@ h2 a{
   display:block;
 }
 
+#rendering img{
+  position:absolute;
+  z-index: -5;
+}
+
 #main{
   height:512px;
 }

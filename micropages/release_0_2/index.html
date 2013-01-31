@@ -10,15 +10,17 @@
   <script language="JavaScript" src="../../vvvv_js/vvvv.min.js"></script>
   <script language="JavaScript">
     $(document).ready(function() {
-      console.log = function() {};
       VVVV.init('../../vvvv_js','full', function() {
-        var patchfile = "example11.v4p";
+        var patchfile = "demo_0_2_canvas.v4p";
         $testcanvas = $('<canvas width="10" height="10"></canvas>');
         $('body').append($testcanvas);
+        var webgl_enabled = false;
         try {
           var testctxt = $testcanvas.get(0).getContext("experimental-webgl");
+          if (testctxt)
+            patchfile = "example11.v4p";
         }
-        catch (x) { console.log(x); patchfile = "demo_0_2_canvas.v4p"; }
+        catch (x) { }
         $testcanvas.remove();
         
         var patch = new VVVV.Core.Patch(patchfile, function() {
@@ -32,14 +34,16 @@
 <body>
   <h1 id="headline">VVVV.js v0.2</h1>
   <div id="meta">
-    Feb. 4 2013
+    Feb. 4, 2013
     <a href="#">Download</a>
     <a href="http://github.com/zauner/vvvv.js">Github</a>
     <a href="http://vvvvjs.quasipartikel.at">Project Website</a>
   </div>
   <div id="main">
   <div id="left">
-    <div id="rendering"></div>
+    <div id="rendering">
+      <img src="shot1.0000.png"/>
+    </div>
     <ul id="menu">
       <li><a href="#shortstory">The short story</a></li>
       <li><a href="#webgl">WebGL</a></li>
@@ -63,7 +67,7 @@
     </p>
     <p class="shortstory">
       VVVV.js is now cool with <em>WebGL</em> (vertex buffers, shaders, blend modes and stuff), which you can try yourself at the brandnew <em>VVVV.js Lab</em> by <em>patching around in realtime</em>. If you miss a node from
-      classic VVVV, just start at the <em>Node Porting Wizard</em> and port it to VVVV.js. If you're stuck, you can find plenty of <em>guides and howtows</em> at the
+      classic VVVV, just start at the <em>Node Porting Wizard</em> and port it to VVVV.js. If you're stuck, you can find plenty of <em>guides and howtos</em> at the
       Substance.io VVVV.js Network. Booom. 
     </p>
     <p>
