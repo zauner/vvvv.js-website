@@ -23,13 +23,17 @@ a:visited{
   display:none;
 }
 
-h1{
+#headline{
   background:#f8f8f8;
   color:rgb(44,44,44);
   width:387px;
   padding-top:85px;
   padding-bottom:4px;
   padding-left:4px;
+  margin-bottom:0;
+}
+
+#headline h1{
   font-weight:normal;
   margin-bottom:0;
 }
