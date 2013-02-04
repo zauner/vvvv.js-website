@@ -7,7 +7,7 @@
   <script language="JavaScript" src="../../vvvv_js/lib/jquery/jquery-1.8.2.min.js"></script> 
   <script language="JavaScript" src="../../vvvv_js/lib/underscore/underscore-min.js"></script>
   <script language="JavaScript" src="../../vvvv_js/lib/glMatrix-0.9.5.min.js"></script>
-  <script language="JavaScript" src="../../vvvv_js/vvvv.min.js"></script>
+  <script language="JavaScript" src="../../vvvv_js/vvvv.js"></script>
   <script language="JavaScript" src="../../vvvv_js/lib/d3-v1.14/d3.min.js"></script>
   <script language="JavaScript" src="../../vvvv_js/vvvviewer/vvvv.vvvviewer.js"></script>
   <script language="JavaScript">
@@ -31,7 +31,7 @@
         if (patchfile=="demo_0_2_canvas.v4p")
           $('.no_webgl').show();
         
-        var patch = new VVVV.Core.Patch("example11.v4p", function() {
+        var patch = new VVVV.Core.Patch(patchfile, function() {
           var mainloop = new VVVV.Core.MainLoop(patch, 15);
           mainloop.start();
         });
