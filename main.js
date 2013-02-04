@@ -61,11 +61,6 @@ $(document).ready(function() {
       
       attachShowPatchEvents();
     }
-    else {
-    
-      $('#not-supported').show();
-    
-    }
   });
 
 });

@@ -5,6 +5,11 @@
 <link rel="stylesheet" type="text/css" href="vvvv_js/vvvviewer/vvvv.css"/>
 <link rel="stylesheet" type="text/css" href="main.css"/>
 <script language="JavaScript" src="vvvv_js/lib/jquery/jquery-1.8.2.min.js"></script>
+<script language="JavaScript">
+  if (!$.browser.webkit && !$.browser.mozilla) {
+    location.href = "notsupported.html"; 
+  }
+</script>
 <script language="JavaScript" src="vvvv_js/vvvviewer/vvvv.vvvviewer.js"></script>
 <script language="JavaScript" src="vvvv_js/vvvv.js"></script>
 <script language="JavaScript" src="main.js"></script>
@@ -58,12 +63,6 @@
   <div class="patch" id="patch"></div>
 
 
-</div>
-
-<div id="not-supported" class="content">
-<h2>Sorry, your browser is not supported.</h2>
-
-This site is created using the very unstable alpha version of VVVV.js, which has been developed for Webkit and Mozilla browsers. We recommend using <a href="http://www.google.com/chrome">Google Chrome</a> for best experience.
 </div>
 
 <!-- Start of StatCounter Code -->
