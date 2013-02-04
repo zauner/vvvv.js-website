@@ -8,7 +8,12 @@
   <script language="JavaScript" src="../../vvvv_js/lib/underscore/underscore-min.js"></script>
   <script language="JavaScript" src="../../vvvv_js/lib/glMatrix-0.9.5.min.js"></script>
   <script language="JavaScript" src="../../vvvv_js/vvvv.min.js"></script>
+  <script language="JavaScript" src="../../vvvv_js/lib/d3-v1.14/d3.min.js"></script>
+  <script language="JavaScript" src="../../vvvv_js/vvvviewer/vvvv.vvvviewer.js"></script>
   <script language="JavaScript">
+    if (!$.browser.webkit && !$.browser.mozilla) {
+      location.href = "../../notsupported.html"; 
+    }
     $(document).ready(function() {
       VVVV.init('../../vvvv_js','full', function() {
         var patchfile = "demo_0_2_canvas.v4p";
@@ -17,25 +22,43 @@
         var webgl_enabled = false;
         try {
           var testctxt = $testcanvas.get(0).getContext("experimental-webgl");
-          if (testctxt)
+          if (testctxt) {
             patchfile = "example11.v4p";
+          }
         }
         catch (x) { }
         $testcanvas.remove();
+        if (patchfile=="demo_0_2_canvas.v4p")
+          $('.no_webgl').show();
         
-        var patch = new VVVV.Core.Patch(patchfile, function() {
-          var mainloop = new VVVV.Core.MainLoop(patch, 30);
+        var patch = new VVVV.Core.Patch("example11.v4p", function() {
+          var mainloop = new VVVV.Core.MainLoop(patch, 15);
           mainloop.start();
         });
+        
+        var vvvviewer = undefined;
+        $('#view_patch').click(function() {
+          if (vvvviewer==undefined) {
+            vvvviewer = new VVVV.VVVViewer(patch);
+            $(this).html('&Delta; Hide Patch');
+          }
+          else {
+            $('svg').parent().remove();
+            vvvviewer = undefined;
+            $(this).html('&nabla; Show this Patch');
+          }
+          return false;
+        })
       });
     })
   </script>
 </head>
 <body>
+  <div id="superwrapper">
   <h1 id="headline">VVVV.js v0.2</h1>
   <div id="meta">
     Feb. 4, 2013
-    <a href="#">Download</a>
+    <a href="../../download/vvvv_js-0.2.0.tar.gz">Download</a>
     <a href="http://github.com/zauner/vvvv.js">Github</a>
     <a href="http://vvvvjs.quasipartikel.at">Project Website</a>
   </div>
@@ -52,6 +75,11 @@
       <li><a href="#lab">VVVV.js Lab</a></li>
       <li><a href="#docs">Docs and Howtos</a></li>
     </ul>
+    <a href="#" id="view_patch">&nabla; Show this Patch</a>
+    <div class="no_webgl">
+      You are viewing the light version of this page, because your browser doesn't support WebGL. Find out
+      more <a href="http://get.webgl.org">here</a>.
+    </div>
   </div>
   <div id="contentbox">
   <div id="content">
@@ -68,10 +96,10 @@
     <p class="shortstory">
       VVVV.js is now cool with <em>WebGL</em> (vertex buffers, shaders, blend modes and stuff), which you can try yourself at the brandnew <em>VVVV.js Lab</em> by <em>patching around in realtime</em>. If you miss a node from
       classic VVVV, just start at the <em>Node Porting Wizard</em> and port it to VVVV.js. If you're stuck, you can find plenty of <em>guides and howtos</em> at the
-      Substance.io VVVV.js Network. Booom. 
+      <a href="http://old.substance.io/network/vvvvjs">Substance.io VVVV.js Network</a>. Booom. 
     </p>
     <p>
-      And since I know that you aren't that busy after all, here's the long story:
+      And in case you aren't that busy after all, here's the long story:
     </p>
     
     <h2><a name="webgl">Improved WebGL Support</a></h2>
@@ -88,7 +116,7 @@
       <li>
         <b>Loading shader programs</b><br/>
         You can store GLSL vertex and pixel shader programs in a .vvvvjs.fx file and load it as an effect node into your VVVV.js patch just as you would do in classic VVVV.
-        Using some VVVV.js specific keywords all the pins are created based on the shader code. Read more about VVVV.js shaders <a href="http://substance.io/zauner/porting-vvvv-hlsl-shaders-to-vvvvjs">here</a>.
+        Using some VVVV.js specific keywords all the pins are created based on the shader code. Read more about VVVV.js shaders <a href="http://old.substance.io/zauner/porting-vvvv-hlsl-shaders-to-vvvvjs">here</a>.
       </li>
       <li>
         <b>Automatic Canvas creation</b><br/>
@@ -117,7 +145,7 @@
     The great thing with VVVV is the ability to change the program code while it's being executed. To accomplish this with VVVV.js,
     it can now <em>connect to a locally running VVVV instance</em>, which allows you to patch around and see the result in your web browser immediatly.
     Have a look at this <a href="http://www.youtube.com/watch?v=56vBXoKhN8Q">Video on youtube</a> to see it in action, and read more about it
-    <a href="http://substance.io/zauner/patching-vvvvjs">here</a>.
+    <a href="http://old.substance.io/zauner/patching-vvvvjs">here</a>.
     </p>
     
     <h2><a name="wizard">The Node Porting Wizard</a></h2>
@@ -146,9 +174,10 @@
     <h2><a name="docs">Docs and Howtos</a></h2>
     
     <p>
-    Last but not least, most of the VVVV.js documentation has been moved to Substance.io. Check out the VVVV.js channel there, for all the guides and howtos.
+    Last but not least, most of the VVVV.js documentation has been moved to Substance.io. Check out the <a href="http://old.substance.io/network/vvvvjs">VVVV.js network over there</a>, for all the guides and howtos.
     </p>
 
+  </div>
   </div>
   </div>
   </div>
