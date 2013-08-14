@@ -1,0 +1,139 @@
+<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta27.1.dtd" >
+   <PATCH nodename="C:\Users\Matthias\Dropbox\vvvv_js_page\menu_hover_effect.v4p" filename="C:\Users\Matthias\Dropbox\vvvv_js_page\menu_hover_effect.v4p" systemname="menu_hover_effect">
+   <BOUNDS height="8970" left="11580" top="3420" type="Window" width="9615">
+   </BOUNDS>
+   <NODE componentmode="Hidden" filename="vvvv_js\vvvv_js_sdk\modules\VVVVJsConnector (VVVVjs)\VVVVJsConnector (VVVVjs).v4p" id="10001" nodename="VVVVJsConnector (VVVVjs)" systemname="VVVVJsConnector (VVVVjs)">
+   <BOUNDS height="100" left="0" top="0" type="Node" width="100">
+   </BOUNDS>
+   </NODE>
+   <NODE componentmode="Hidden" id="10008" nodename="Switch (Value Input)" systemname="Switch (Value Input)">
+   <BOUNDS height="100" left="1476" top="3750" type="Node" width="100">
+   </BOUNDS>
+   <PIN pinname="Switch" visible="1">
+   </PIN>
+   <PIN pinname="Input 1" visible="1">
+   </PIN>
+   <PIN pinname="Input 2" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <NODE componentmode="Hidden" id="10007" nodename="LinearFilter (Animation)" systemname="LinearFilter (Animation)">
+   <BOUNDS height="100" left="1503" top="4596" type="Node" width="100">
+   </BOUNDS>
+   <PIN pinname="Go To Position" visible="1">
+   </PIN>
+   <PIN pinname="Position Out" visible="1">
+   </PIN>
+   <PIN pinname="FilterTime" slicecount="1" values="0.2">
+   </PIN>
+   </NODE>
+   <LINK dstnodeid="10007" dstpinname="Go To Position" srcnodeid="10008" srcpinname="Output">
+   </LINK>
+   <NODE componentmode="Hidden" id="10006" nodename="FlipFlop (Animation)" systemname="FlipFlop (Animation)">
+   <BOUNDS height="100" left="1731" top="2415" type="Node" width="100">
+   </BOUNDS>
+   <PIN pinname="Set" visible="1">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   <PIN pinname="Reset" visible="1">
+   </PIN>
+   </NODE>
+   <NODE componentmode="Hidden" hiddenwhenlocked="0" id="10005" managers="" nodename="Switch (Value Input)" systemname="Switch (Value Input)">
+   <PIN pinname="Switch" pintype="Input" visible="1">
+   </PIN>
+   <PIN pinname="Output" pintype="Output" visible="1">
+   </PIN>
+   <PIN pinname="Input 2" pintype="Input" slicecount="1" visible="1" values="0.8">
+   </PIN>
+   <PIN pinname="Input 1" pintype="Input" slicecount="1" visible="1" values="0.3">
+   </PIN>
+   <BOUNDS height="100" left="1746" top="3075" type="Node" width="100">
+   </BOUNDS>
+   <PIN encoded="0" pinname="Descriptive Name" pintype="Configuration" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Input Count" pintype="Configuration" slicecount="1" values="2">
+   </PIN>
+   <PIN pinname="Input" pintype="Input">
+   </PIN>
+   <PIN pinname="ID" pintype="Output" visible="-1">
+   </PIN>
+   </NODE>
+   <LINK dstnodeid="10005" dstpinname="Switch" srcnodeid="10006" srcpinname="Output">
+   </LINK>
+   <LINK dstnodeid="10008" dstpinname="Input 1" srcnodeid="10005" srcpinname="Output">
+   </LINK>
+   <NODE componentmode="Hidden" id="10004" nodename="AND (Boolean)" systemname="AND (Boolean)">
+   <BOUNDS height="100" left="1716" top="1680" type="Node" width="100">
+   </BOUNDS>
+   <PIN pinname="Input 1" visible="1">
+   </PIN>
+   <PIN pinname="Input 2" visible="1">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <NODE componentmode="Hidden" id="10003" nodename="NOT (Boolean)" systemname="NOT (Boolean)">
+   <BOUNDS height="100" left="2181" top="1200" type="Node" width="100">
+   </BOUNDS>
+   <PIN pinname="Input" visible="1">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <LINK dstnodeid="10004" dstpinname="Input 2" srcnodeid="10003" srcpinname="Output">
+   </LINK>
+   <LINK dstnodeid="10006" dstpinname="Set" srcnodeid="10004" srcpinname="Output">
+   </LINK>
+   <NODE componentmode="InABox" id="10009" nodename="IOBox (Value Advanced)" systemname="IOBox (Value Advanced)">
+   <BOUNDS height="100" left="1740" top="564" type="Node" width="100">
+   </BOUNDS>
+   <BOUNDS height="240" left="1740" top="564" type="Box" width="792">
+   </BOUNDS>
+   <PIN pinname="Y Output Value" visible="1">
+   </PIN>
+   <PIN encoded="0" pinname="Descriptive Name" slicecount="1" values="mouseover">
+   </PIN>
+   </NODE>
+   <NODE componentmode="InABox" id="10010" nodename="IOBox (Value Advanced)" systemname="IOBox (Value Advanced)">
+   <BOUNDS height="100" left="3180" top="612" type="Node" width="100">
+   </BOUNDS>
+   <BOUNDS height="240" left="3180" top="612" type="Box" width="792">
+   </BOUNDS>
+   <PIN pinname="Y Output Value" visible="1">
+   </PIN>
+   <PIN encoded="0" pinname="Descriptive Name" slicecount="1" values="mouseout">
+   </PIN>
+   </NODE>
+   <LINK dstnodeid="10004" dstpinname="Input 1" srcnodeid="10009" srcpinname="Y Output Value">
+   </LINK>
+   <LINK dstnodeid="10006" dstpinname="Reset" srcnodeid="10010" srcpinname="Y Output Value">
+   </LINK>
+   <LINK dstnodeid="10003" dstpinname="Input" srcnodeid="10010" srcpinname="Y Output Value">
+   </LINK>
+   <NODE componentmode="InABox" id="10011" nodename="IOBox (Value Advanced)" systemname="IOBox (Value Advanced)">
+   <BOUNDS height="100" left="1476" top="5556" type="Node" width="100">
+   </BOUNDS>
+   <BOUNDS height="240" left="1476" top="5556" type="Box" width="792">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" visible="1">
+   </PIN>
+   <PIN encoded="0" pinname="Descriptive Name" slicecount="1" values="|Opacity Out|">
+   </PIN>
+   </NODE>
+   <NODE componentmode="InABox" id="10012" nodename="IOBox (Value Advanced)" systemname="IOBox (Value Advanced)">
+   <BOUNDS height="100" left="240" top="600" type="Node" width="100">
+   </BOUNDS>
+   <BOUNDS height="240" left="240" top="600" type="Box" width="792">
+   </BOUNDS>
+   <PIN encoded="0" pinname="Descriptive Name" slicecount="1" values="active">
+   </PIN>
+   <PIN pinname="Y Output Value" visible="1">
+   </PIN>
+   </NODE>
+   <LINK dstnodeid="10008" dstpinname="Switch" srcnodeid="10012" srcpinname="Y Output Value">
+   </LINK>
+   <LINK dstnodeid="10011" dstpinname="Y Input Value" srcnodeid="10007" srcpinname="Position Out">
+   </LINK>
+   </PATCH>
