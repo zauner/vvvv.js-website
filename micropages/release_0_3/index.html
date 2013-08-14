@@ -1,0 +1,123 @@
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Clock Patterns: VVVV.js v0.3.0 Micropage</title>
+  <link rel="stylesheet" type="text/css" href="../../vvvv_js/vvvviewer/vvvv.css"/>
+  <link rel="stylesheet" type="text/css" href="main.css"/>
+  <script language="JavaScript" src="../../vvvv_js/lib/jquery/jquery-1.8.2.min.js"></script> 
+  <script language="JavaScript" src="../../vvvv_js/lib/underscore/underscore-min.js"></script>
+  <script language="JavaScript" src="../../vvvv_js/lib/glMatrix-0.9.5.min.js"></script>
+  <script language="JavaScript" src="../../vvvv_js/vvvv.min.js"></script>
+  <script language="JavaScript" src="../../vvvv_js/lib/d3-v1.14/d3.min.js"></script>
+  <script language="JavaScript" src="../../vvvv_js/vvvviewer/vvvv.vvvviewer.js"></script>
+  <script language="JavaScript">
+    if (!$.browser.webkit && !$.browser.mozilla) {
+      location.href = "../../notsupported.html"; 
+    }
+    $(document).ready(function() {
+      VVVV.init('../../vvvv_js','full', function() {
+        var patchfile = "index.v4p";
+        $testcanvas = $('<canvas width="10" height="10"></canvas>');
+        $('body').append($testcanvas);
+        var webgl_enabled = false;
+        try {
+          var testctxt = $testcanvas.get(0).getContext("experimental-webgl");
+          if (testctxt) {
+            patchfile = "index_webgl.v4p";
+          }
+        }
+        catch (x) { }
+        $testcanvas.remove();
+        if (patchfile=="index.v4p") {
+          $('.no_webgl').show();
+          window.setTimeout(function() {
+            $('.no_webgl').fadeOut();
+          }, 15000);
+        }
+        
+        $('#loading').text("Loading Patches ...")
+        patch = new VVVV.Core.Patch(patchfile, function() {
+          $('#loading').hide();
+          var mainloop = new VVVV.Core.MainLoop(patch, 30);
+          mainloop.start();
+          
+          var vvvviewer = undefined;
+          $('#the_patch').click(function() {
+            if (!vvvviewer)
+              var vvvviewer = new VVVV.VVVViewer(patch, '#the_patch');
+          });
+        });
+      });
+    })
+  </script>
+</head>
+<body>
+<div id="main">
+  <div id="header">
+    <div id="loading">Loading VVVV.js ...</div>
+    <canvas id="pattern" width="920" height="320"></canvas>
+    <div class="no_webgl">
+      You are viewing the light version of this page, because your browser doesn't support WebGL. Find out
+      more <a href="http://get.webgl.org">here</a>.
+    </div>
+  </div>
+  <div id="headline">
+    <h2>Clock Patterns</h2>
+    VVVV.js v0.3.0 Micropage
+    <div id="meta_links">
+      <a href="../../download/vvvv_js-0.3.0.tar.gz">Download</a>
+      <a href="http://github.com/zauner/vvvv.js">Github</a>
+      <a href="http://vvvvjs.quasipartikel.at">Project Website</a>
+    </div>
+  </div>
+  
+  <p class="intro">
+    Granted, this version's micropage does not show off visually as much as the <a href="../release_0_2">previous one</a>, but this has not
+    been the focus of this version update anyway. Instead, version 0.3.0 comes with improvements under VVVV.js' hood &mdash; improvements 
+    in performance, stability and functionality which bring VVVV.js a step closer to becoming a ready-for-production development tool. 
+    Here's what's new:
+  </p>
+  
+  <div id="the_patch"></div>
+  
+  <p>
+    <h3>Subpatches</h2>
+    The biggest addition in this version is the support for subpatches. If you are into VVVV or similar software, you already know how valuable these are. For those
+    who are not familiar with the subpatch concept: you can now group together a patch and form a 'subpatch', which you can use as a node in
+    another patch. You can think of it as functions or classes/modules, if you like. This is great for modularizing your patches, hiding complexity and increasing
+    reusability of your code. Read more about subpatches in the <a href="http://vvvv.org/documentation/subpatches">VVVV Documentation</a>.
+  </p>
+  
+  <div class="patch_caption">
+    <h4>The Clock Pattern Example</h4>
+    If everything works as supposed, you should see a pattern consisting of repeating clock designs at the top of this page. You can observe 
+    the according patch on the right. The patch uses subpatches to modularize the different clock designs, and leaves only switching between
+    them to the main page.
+  </div>
+  
+  <p>
+    <h3>Performance Boost</h2>
+  </p>
+  
+  <p>
+    <h3>Editors</h2>
+  </p>
+</div>
+
+<!-- Start of StatCounter Code -->
+<script type="text/javascript">
+var sc_project=7067416; 
+var sc_invisible=1; 
+var sc_security="cfe91c6a"; 
+</script>
+
+<script type="text/javascript"
+src="http://www.statcounter.com/counter/counter.js"></script><noscript><div
+class="statcounter"><a title="free web stats"
+href="http://statcounter.com/" target="_blank"><img
+class="statcounter"
+src="http://c.statcounter.com/7067416/0/cfe91c6a/1/"
+alt="free web stats" ></a></div></noscript>
+<!-- End of StatCounter Code -->
+</body>
+</html>

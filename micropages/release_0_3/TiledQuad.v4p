@@ -1,0 +1,351 @@
+<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta28.1.dtd" >
+   <PATCH nodename="C:\Users\Matthias\Dropbox\vvvv_js_page\micropages\subpatches\TiledQuad.v4p" systemname="TiledQuad" filename="C:\Users\Matthias\Dropbox\vvvv_js_page\micropages\subpatches\TiledQuad.v4p">
+   <BOUNDS type="Window" left="2535" top="3765" width="13110" height="10080">
+   </BOUNDS>
+   <NODE systemname="VVVVJsConnector (VVVVjs)" nodename="VVVVJsConnector (VVVVjs)" componentmode="Hidden" id="10001" filename="..\..\..\vvvv_js\vvvv_js_sdk\modules\VVVVJsConnector (VVVVjs)\VVVVJsConnector (VVVVjs).v4p">
+   <BOUNDS type="Node" left="0" top="0" width="100" height="100">
+   </BOUNDS>
+   </NODE>
+   <NODE systemname="Quad (DX9)" nodename="Quad (DX9)" componentmode="Hidden" id="10022">
+   <BOUNDS type="Node" left="582" top="2445" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Layer" visible="1">
+   </PIN>
+   <PIN pinname="Texture" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Transform" visible="1">
+   </PIN>
+   <PIN pinname="Color" slicecount="1" values="|1.00000,1.00000,1.00000,1.00000|">
+   </PIN>
+   <PIN pinname="Texture Transform" visible="1">
+   </PIN>
+   <PIN pinname="Render State" visible="1" slicecount="1" values="||">
+   </PIN>
+   </NODE>
+   <NODE systemname="Scale (Transform)" nodename="Scale (Transform)" componentmode="Hidden" id="10021">
+   <BOUNDS type="Node" left="1140" top="1620" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Transform Out" visible="1">
+   </PIN>
+   <PIN pinname="X" slicecount="1" visible="1" values="0.5">
+   </PIN>
+   <PIN pinname="Y" slicecount="1" visible="1" values="0.5">
+   </PIN>
+   <PIN pinname="Transform In" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="Scale (Transform)" nodename="Scale (Transform)" componentmode="Hidden" id="10020">
+   <BOUNDS type="Node" left="408" top="1740" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Transform Out" visible="1">
+   </PIN>
+   <PIN pinname="Y" slicecount="1" values="0.5">
+   </PIN>
+   <PIN pinname="X" slicecount="1" values="0.5">
+   </PIN>
+   <PIN pinname="Transform In" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="Group (EX9)" nodename="Group (EX9)" componentmode="Hidden" id="10019">
+   <BOUNDS type="Node" left="972" top="4332" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Layer 1" visible="1">
+   </PIN>
+   <PIN pinname="Layer" visible="1">
+   </PIN>
+   <PIN pinname="Layer 2" visible="1">
+   </PIN>
+   <PIN pinname="Layer Template Count" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Layer 3" visible="1">
+   </PIN>
+   <PIN pinname="Layer 4" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="Translate (Transform)" nodename="Translate (Transform)" componentmode="Hidden" id="10018">
+   <BOUNDS type="Node" left="1188" top="972" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Transform Out" visible="1">
+   </PIN>
+   <PIN pinname="X" slicecount="1" values="-0.25">
+   </PIN>
+   <PIN pinname="Y" slicecount="1" values="0.25">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="10018" srcpinname="Transform Out" dstnodeid="10021" dstpinname="Transform In">
+   </LINK>
+   <NODE systemname="Translate (Transform)" nodename="Translate (Transform)" componentmode="Hidden" id="10017">
+   <BOUNDS type="Node" left="468" top="792" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Transform Out" visible="1">
+   </PIN>
+   <PIN pinname="X" slicecount="1" values="-0.25">
+   </PIN>
+   <PIN pinname="Transform In" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Y" slicecount="1" values="-0.25">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="10017" srcpinname="Transform Out" dstnodeid="10020" dstpinname="Transform In">
+   </LINK>
+   <NODE systemname="Quad (DX9)" nodename="Quad (DX9)" componentmode="Hidden" id="10016">
+   <BOUNDS type="Node" left="1896" top="2652" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Layer" visible="1">
+   </PIN>
+   <PIN pinname="Transform" visible="1">
+   </PIN>
+   <PIN pinname="Texture Transform" visible="1">
+   </PIN>
+   <PIN pinname="Texture" visible="1" slicecount="1" values="||">
+   </PIN>
+   </NODE>
+   <NODE systemname="Scale (Transform)" nodename="Scale (Transform)" componentmode="Hidden" id="10015">
+   <BOUNDS type="Node" left="2028" top="2040" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="X" slicecount="1" values="0.5">
+   </PIN>
+   <PIN pinname="Transform Out" visible="1">
+   </PIN>
+   <PIN pinname="Transform In" visible="1">
+   </PIN>
+   <PIN pinname="Y" slicecount="1" values="0.5">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="10015" srcpinname="Transform Out" dstnodeid="10016" dstpinname="Transform">
+   </LINK>
+   <NODE systemname="Translate (Transform)" nodename="Translate (Transform)" componentmode="Hidden" id="10014">
+   <BOUNDS type="Node" left="1848" top="1380" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Transform Out" visible="1">
+   </PIN>
+   <PIN pinname="X" slicecount="1" values="0.25">
+   </PIN>
+   <PIN pinname="Transform In" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Y" slicecount="1" values="-0.25">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="10014" srcpinname="Transform Out" dstnodeid="10015" dstpinname="Transform In">
+   </LINK>
+   <NODE systemname="Scale (Transform)" nodename="Scale (Transform)" componentmode="Hidden" id="10013">
+   <BOUNDS type="Node" left="2760" top="1884" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="X" slicecount="1" values="0.5">
+   </PIN>
+   <PIN pinname="Transform Out" visible="1">
+   </PIN>
+   <PIN pinname="Transform In" visible="1">
+   </PIN>
+   <PIN pinname="Y" slicecount="1" values="0.5">
+   </PIN>
+   </NODE>
+   <NODE systemname="Translate (Transform)" nodename="Translate (Transform)" componentmode="Hidden" id="10012">
+   <BOUNDS type="Node" left="2784" top="1452" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Transform Out" visible="1">
+   </PIN>
+   <PIN pinname="X" slicecount="1" values="0.25">
+   </PIN>
+   <PIN pinname="Y" slicecount="1" values="0.25">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="10012" srcpinname="Transform Out" dstnodeid="10013" dstpinname="Transform In">
+   </LINK>
+   <LINK srcnodeid="10013" srcpinname="Transform Out" dstnodeid="10016" dstpinname="Texture Transform">
+   </LINK>
+   <LINK srcnodeid="10022" srcpinname="Layer" dstnodeid="10019" dstpinname="Layer 1">
+   </LINK>
+   <NODE systemname="Quad (DX9)" nodename="Quad (DX9)" componentmode="Hidden" id="10011">
+   <BOUNDS type="Node" left="3558" top="2649" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Layer" visible="1">
+   </PIN>
+   <PIN pinname="Texture" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Transform" visible="1">
+   </PIN>
+   <PIN pinname="Color" slicecount="1" values="|1.00000,1.00000,1.00000,1.00000|">
+   </PIN>
+   <PIN pinname="Texture Transform" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="Scale (Transform)" nodename="Scale (Transform)" componentmode="Hidden" id="10010">
+   <BOUNDS type="Node" left="4440" top="1860" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Transform Out" visible="1">
+   </PIN>
+   <PIN pinname="X" slicecount="1" visible="1" values="0.5">
+   </PIN>
+   <PIN pinname="Y" slicecount="1" visible="1" values="0.5">
+   </PIN>
+   <PIN pinname="Transform In" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="10010" srcpinname="Transform Out" dstnodeid="10011" dstpinname="Texture Transform">
+   </LINK>
+   <NODE systemname="Scale (Transform)" nodename="Scale (Transform)" componentmode="Hidden" id="10009">
+   <BOUNDS type="Node" left="3720" top="1896" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Transform Out" visible="1">
+   </PIN>
+   <PIN pinname="Y" slicecount="1" values="0.5">
+   </PIN>
+   <PIN pinname="X" slicecount="1" values="0.5">
+   </PIN>
+   <PIN pinname="Transform In" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="10009" srcpinname="Transform Out" dstnodeid="10011" dstpinname="Transform">
+   </LINK>
+   <NODE systemname="Translate (Transform)" nodename="Translate (Transform)" componentmode="Hidden" id="10008">
+   <BOUNDS type="Node" left="4368" top="1140" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Transform Out" visible="1">
+   </PIN>
+   <PIN pinname="X" slicecount="1" values="-0.25">
+   </PIN>
+   <PIN pinname="Y" slicecount="1" values="-0.25">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="10008" srcpinname="Transform Out" dstnodeid="10010" dstpinname="Transform In">
+   </LINK>
+   <NODE systemname="Translate (Transform)" nodename="Translate (Transform)" componentmode="Hidden" id="10007">
+   <BOUNDS type="Node" left="3492" top="1152" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Transform Out" visible="1">
+   </PIN>
+   <PIN pinname="X" slicecount="1" values="-0.25">
+   </PIN>
+   <PIN pinname="Transform In" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Y" slicecount="1" values="0.25">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="10007" srcpinname="Transform Out" dstnodeid="10009" dstpinname="Transform In">
+   </LINK>
+   <NODE systemname="Quad (DX9)" nodename="Quad (DX9)" componentmode="Hidden" id="10006">
+   <BOUNDS type="Node" left="4920" top="2652" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Layer" visible="1">
+   </PIN>
+   <PIN pinname="Transform" visible="1">
+   </PIN>
+   <PIN pinname="Texture Transform" visible="1">
+   </PIN>
+   <PIN pinname="Texture" visible="1" slicecount="1" values="||">
+   </PIN>
+   </NODE>
+   <NODE systemname="Scale (Transform)" nodename="Scale (Transform)" componentmode="Hidden" id="10005">
+   <BOUNDS type="Node" left="5088" top="2208" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="X" slicecount="1" values="0.5">
+   </PIN>
+   <PIN pinname="Transform Out" visible="1">
+   </PIN>
+   <PIN pinname="Transform In" visible="1">
+   </PIN>
+   <PIN pinname="Y" slicecount="1" values="0.5">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="10005" srcpinname="Transform Out" dstnodeid="10006" dstpinname="Transform">
+   </LINK>
+   <NODE systemname="Translate (Transform)" nodename="Translate (Transform)" componentmode="Hidden" id="10004">
+   <BOUNDS type="Node" left="5052" top="1680" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Transform Out" visible="1">
+   </PIN>
+   <PIN pinname="X" slicecount="1" values="0.25">
+   </PIN>
+   <PIN pinname="Transform In" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Y" slicecount="1" values="0.25">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="10004" srcpinname="Transform Out" dstnodeid="10005" dstpinname="Transform In">
+   </LINK>
+   <NODE systemname="Scale (Transform)" nodename="Scale (Transform)" componentmode="Hidden" id="10003">
+   <BOUNDS type="Node" left="5880" top="2040" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="X" slicecount="1" values="0.5">
+   </PIN>
+   <PIN pinname="Transform Out" visible="1">
+   </PIN>
+   <PIN pinname="Transform In" visible="1">
+   </PIN>
+   <PIN pinname="Y" slicecount="1" values="0.5">
+   </PIN>
+   </NODE>
+   <NODE systemname="Translate (Transform)" nodename="Translate (Transform)" componentmode="Hidden" id="10002">
+   <BOUNDS type="Node" left="6000" top="1584" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Transform Out" visible="1">
+   </PIN>
+   <PIN pinname="X" slicecount="1" values="0.25">
+   </PIN>
+   <PIN pinname="Y" slicecount="1" values="-0.25">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="10002" srcpinname="Transform Out" dstnodeid="10003" dstpinname="Transform In">
+   </LINK>
+   <LINK srcnodeid="10003" srcpinname="Transform Out" dstnodeid="10006" dstpinname="Texture Transform">
+   </LINK>
+   <LINK srcnodeid="10020" srcpinname="Transform Out" dstnodeid="10022" dstpinname="Transform">
+   </LINK>
+   <LINK srcnodeid="10021" srcpinname="Transform Out" dstnodeid="10022" dstpinname="Texture Transform">
+   </LINK>
+   <LINK srcnodeid="10016" srcpinname="Layer" dstnodeid="10019" dstpinname="Layer 2">
+   </LINK>
+   <LINK srcnodeid="10011" srcpinname="Layer" dstnodeid="10019" dstpinname="Layer 3">
+   </LINK>
+   <LINK srcnodeid="10006" srcpinname="Layer" dstnodeid="10019" dstpinname="Layer 4">
+   </LINK>
+   <NODE systemname="IOBox (Node)" nodename="IOBox (Node)" componentmode="InABox" id="10023">
+   <BOUNDS type="Node" left="1380" top="5352" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="1380" top="5352" width="792" height="240">
+   </BOUNDS>
+   <PIN pinname="Descriptive Name" slicecount="1" values="|Layers Out|" encoded="0">
+   </PIN>
+   <PIN pinname="Input Node" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="10019" srcpinname="Layer" dstnodeid="10023" dstpinname="Input Node">
+   </LINK>
+   <NODE systemname="IOBox (Node)" nodename="IOBox (Node)" componentmode="InABox" id="10024">
+   <BOUNDS type="Node" left="2844" top="312" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="2844" top="312" width="792" height="240">
+   </BOUNDS>
+   <PIN pinname="Descriptive Name" slicecount="1" values="Transform" encoded="0">
+   </PIN>
+   <PIN pinname="Output Node" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="10024" srcpinname="Output Node" dstnodeid="10017" dstpinname="Transform In">
+   </LINK>
+   <LINK srcnodeid="10024" srcpinname="Output Node" dstnodeid="10014" dstpinname="Transform In">
+   </LINK>
+   <LINK srcnodeid="10024" srcpinname="Output Node" dstnodeid="10007" dstpinname="Transform In">
+   </LINK>
+   <LINK srcnodeid="10024" srcpinname="Output Node" dstnodeid="10004" dstpinname="Transform In">
+   </LINK>
+   <NODE systemname="IOBox (Node)" nodename="IOBox (Node)" componentmode="InABox" id="10025">
+   <BOUNDS type="Node" left="6084" top="444" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="6084" top="444" width="792" height="240">
+   </BOUNDS>
+   <PIN pinname="Descriptive Name" slicecount="1" values="Texture" encoded="0">
+   </PIN>
+   <PIN pinname="Output Node" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="10025" srcpinname="Output Node" dstnodeid="10006" dstpinname="Texture">
+   </LINK>
+   <LINK srcnodeid="10025" srcpinname="Output Node" dstnodeid="10011" dstpinname="Texture">
+   </LINK>
+   <LINK srcnodeid="10025" srcpinname="Output Node" dstnodeid="10016" dstpinname="Texture">
+   </LINK>
+   <LINK srcnodeid="10025" srcpinname="Output Node" dstnodeid="10022" dstpinname="Texture">
+   </LINK>
+   </PATCH>

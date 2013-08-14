@@ -1,0 +1,120 @@
+
+body{
+  background-color:rgb(44,44,44);
+  margin:0;
+  color:white;
+  font-family:'Lucida Sans Unicode', 'Lucida Grande', sans-serif;
+  width:100%;
+}
+
+p.intro{
+  font-style:italic;
+  margin-bottom:45px;
+}
+
+#headline{
+  position:relative;
+  font-size:10pt;
+  margin-top:3px;
+  padding:5px;
+  color:rgb(44,44,44);
+  background-color:#aaa;
+  margin-bottom:20px;
+}
+
+#headline #meta_links{
+  position:absolute;
+  right:5px;
+  bottom:5px;
+}
+
+#headline #meta_links a{
+  color:rgb(44,44,44);
+  margin-right:8px;
+  font-weight:bold;
+  text-decoration:none;
+}
+
+h2{
+  margin:0;
+  font-size:18pt;
+}
+
+a{
+  color:white;
+  text-decoration:underline;
+}
+
+a:visited{
+  color:white;
+}
+
+#main{
+  position:relative;
+  margin-left:auto;
+  margin-right:auto;
+  width:920px;
+}
+
+#main #header{
+  position:relative;
+  border-color:#aaa;
+  height:270;
+  border-width:0 0 1 0;
+  border-style:solid;
+  padding:5 0 5 0;
+  overflow:hidden;
+}
+
+.no_webgl{
+  width:100%;
+  display:none;
+  position:absolute;
+  bottom:0px;
+  color:white;
+  background:rgba(30,30,30,0.5);
+  padding:11px 5px 11px 5px;
+  font-weight:bold;
+}
+
+#the_patch{
+  float:right;
+  margin-left:10px;
+  width:460px;
+  height:871px;
+  border:8px solid #555;
+  border-radius:3px;
+  overflow:auto;
+}
+
+.patch_caption{
+  background-color:#555;
+  padding:10px;
+  border-radius:3px;
+}
+
+.patch_caption h4{
+  font-size:10pt;
+  margin-bottom:0.5em;
+  margin-top:0px;
+}
+
+#pattern canvas{
+  margin-top:-50px;
+  margin-left:-52px;
+}
+
+canvas.vvvv-js-generated-renderer{
+  display:none;
+}
+
+#loading {
+  margin-left: auto;
+  width: 160px;
+  text-align: center;
+  padding: 12px;
+  background-color: #555;
+  font-size: 8pt;
+  margin-right: auto;
+  margin-top: 119px;
+}
