@@ -1,5 +1,5 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta28.1.dtd" >
-   <PATCH nodename="C:\Users\Matthias\Dropbox\vvvv_js_page\micropages\subpatches\index_webgl.v4p" systemname="index_webgl" filename="C:\Dokumente und Einstellungen\Matthias\Eigene Dateien\My Dropbox\vvvv_js_page\micropages\subpatches\index_webgl.v4p">
+   <PATCH nodename="C:\Users\Matthias\Dropbox\vvvv_js_page\micropages\release_0_3\index_webgl.v4p" systemname="index_webgl" filename="C:\Dokumente und Einstellungen\Matthias\Eigene Dateien\My Dropbox\vvvv_js_page\micropages\subpatches\index_webgl.v4p">
    <BOUNDS type="Window" left="20070" top="660" width="8115" height="15480">
    </BOUNDS>
    <NODE systemname="Translate (Transform)" nodename="Translate (Transform)" componentmode="Hidden" id="47">
@@ -211,9 +211,9 @@
    </PIN>
    </NODE>
    <NODE nodename="IOBox (Color)" componentmode="InABox" id="18" systemname="IOBox (Color)">
-   <BOUNDS type="Node" left="3426" top="1875" width="0" height="0">
+   <BOUNDS type="Node" left="4170" top="2319" width="0" height="0">
    </BOUNDS>
-   <BOUNDS type="Box" left="3426" top="1875" width="465" height="240">
+   <BOUNDS type="Box" left="4170" top="2319" width="465" height="240">
    </BOUNDS>
    <PIN pinname="Color Input" slicecount="1" values="|1.00000,0.97533,0.67113,1.00000|">
    </PIN>
@@ -221,9 +221,9 @@
    </PIN>
    </NODE>
    <NODE nodename="IOBox (Color)" componentmode="InABox" id="17" systemname="IOBox (Color)">
-   <BOUNDS type="Node" left="4071" top="2310" width="0" height="0">
+   <BOUNDS type="Node" left="5247" top="3114" width="0" height="0">
    </BOUNDS>
-   <BOUNDS type="Box" left="4071" top="2310" width="465" height="240">
+   <BOUNDS type="Box" left="5247" top="3114" width="465" height="240">
    </BOUNDS>
    <PIN pinname="Color Input" slicecount="1" values="|0.55124,0.72736,0.70743,1.00000|">
    </PIN>
@@ -241,9 +241,9 @@
    </PIN>
    </NODE>
    <NODE nodename="IOBox (Color)" componentmode="InABox" id="15" systemname="IOBox (Color)">
-   <BOUNDS type="Node" left="5391" top="3135" width="0" height="0">
+   <BOUNDS type="Node" left="3915" top="1851" width="0" height="0">
    </BOUNDS>
-   <BOUNDS type="Box" left="5391" top="3135" width="465" height="240">
+   <BOUNDS type="Box" left="3915" top="1851" width="465" height="240">
    </BOUNDS>
    <PIN pinname="Color Input" slicecount="1" values="|0.00000,1.00000,0.88686,1.00000|">
    </PIN>
@@ -251,9 +251,9 @@
    </PIN>
    </NODE>
    <NODE systemname="IOBox (Value Advanced)" nodename="IOBox (Value Advanced)" componentmode="InABox" id="14">
-   <BOUNDS type="Node" left="381" top="2550" width="100" height="100">
+   <BOUNDS type="Node" left="393" top="3558" width="100" height="100">
    </BOUNDS>
-   <BOUNDS type="Box" left="381" top="2550" width="795" height="240">
+   <BOUNDS type="Box" left="393" top="3558" width="795" height="240">
    </BOUNDS>
    <PIN pinname="Y Input Value" visible="1">
    </PIN>
@@ -265,12 +265,14 @@
    <LINK srcnodeid="14" srcpinname="Y Output Value" dstnodeid="30" dstpinname="Index">
    </LINK>
    <NODE systemname="ClockSelector" filename="ClockSelector.v4p" nodename="ClockSelector.v4p" componentmode="Hidden" id="13">
-   <BOUNDS type="Node" left="378" top="1995" width="1320" height="270">
+   <BOUNDS type="Node" left="378" top="2271" width="1344" height="276">
    </BOUNDS>
    <PIN pinname="Clock ID" visible="1">
    </PIN>
-   <BOUNDS type="Window" left="13890" top="4365" width="4980" height="6540">
+   <BOUNDS type="Window" left="13260" top="6465" width="4980" height="6540">
    </BOUNDS>
+   <PIN pinname="Seconds Left" visible="1">
+   </PIN>
    </NODE>
    <LINK srcnodeid="13" srcpinname="Clock ID" dstnodeid="14" dstpinname="Y Input Value">
    </LINK>
@@ -317,7 +319,7 @@
    <NODE systemname="Renderer (Canvas VVVVjs)" filename="..\..\..\vvvv_js\vvvv_js_sdk\modules\Renderer (Canvas VVVVjs).v4p" nodename="Renderer (Canvas VVVVjs)" componentmode="Hidden" id="7">
    <BOUNDS type="Node" left="2361" top="5970" width="100" height="100">
    </BOUNDS>
-   <PIN pinname="Layers" visible="1">
+   <PIN pinname="Layers" visible="1" slicecount="1" values="||">
    </PIN>
    <PIN pinname="View" visible="1">
    </PIN>
@@ -443,7 +445,7 @@
    </PIN>
    <PIN pinname="Layer" visible="1">
    </PIN>
-   <PIN pinname="Color" slicecount="1" values="|1.00000,0.38651,0.32067,1.00000|">
+   <PIN pinname="Color" slicecount="1" values="|1.00000,1.00000,1.00000,1.00000|">
    </PIN>
    </NODE>
    <LINK srcnodeid="34" srcpinname="Transform Out" dstnodeid="10003" dstpinname="Transform">
@@ -609,7 +611,7 @@
    <LINK srcnodeid="4" srcpinname="Transform Out" dstnodeid="10067" dstpinname="Transform">
    </LINK>
    <NODE systemname="circular" filename="circular.v4p" nodename="circular.v4p" componentmode="Hidden" id="10086">
-   <BOUNDS type="Node" left="2424" top="2280" width="100" height="100">
+   <BOUNDS type="Node" left="3024" top="2712" width="1212" height="264">
    </BOUNDS>
    <PIN pinname="Layer Out" visible="1">
    </PIN>
@@ -618,14 +620,12 @@
    <PIN pinname="Color" visible="1">
    </PIN>
    </NODE>
-   <LINK srcnodeid="10086" srcpinname="Layer Out" dstnodeid="38" dstpinname="Input 2">
-   </LINK>
    <LINK srcnodeid="10068" srcpinname="Y Output Value" dstnodeid="10086" dstpinname="Time">
    </LINK>
    <LINK srcnodeid="18" srcpinname="Color Output" dstnodeid="10086" dstpinname="Color">
    </LINK>
    <NODE systemname="torque" filename="torque.v4p" nodename="torque.v4p" componentmode="Hidden" id="10087">
-   <BOUNDS type="Node" left="3000" top="2724" width="100" height="100">
+   <BOUNDS type="Node" left="4176" top="3528" width="100" height="100">
    </BOUNDS>
    <PIN pinname="Layer Out" visible="1">
    </PIN>
@@ -634,14 +634,12 @@
    <PIN pinname="Time" visible="1">
    </PIN>
    </NODE>
-   <LINK srcnodeid="10087" srcpinname="Layer Out" dstnodeid="38" dstpinname="Input 3">
-   </LINK>
    <LINK srcnodeid="17" srcpinname="Color Output" dstnodeid="10087" dstpinname="Color">
    </LINK>
    <LINK srcnodeid="10068" srcpinname="Y Output Value" dstnodeid="10087" dstpinname="Time">
    </LINK>
    <NODE systemname="bent_pointers" filename="bent_pointers.v4p" nodename="bent_pointers.v4p" componentmode="Hidden" id="10088">
-   <BOUNDS type="Node" left="4188" top="3552" width="100" height="100">
+   <BOUNDS type="Node" left="2448" top="2292" width="100" height="100">
    </BOUNDS>
    <PIN pinname="Layer Out" visible="1">
    </PIN>
@@ -650,10 +648,24 @@
    <PIN pinname="Time" visible="1">
    </PIN>
    </NODE>
-   <LINK srcnodeid="10088" srcpinname="Layer Out" dstnodeid="38" dstpinname="Input 5">
-   </LINK>
    <LINK srcnodeid="15" srcpinname="Color Output" dstnodeid="10088" dstpinname="Color">
    </LINK>
    <LINK srcnodeid="10068" srcpinname="Y Output Value" dstnodeid="10088" dstpinname="Time">
+   </LINK>
+   <LINK srcnodeid="10087" srcpinname="Layer Out" dstnodeid="38" dstpinname="Input 5">
+   </LINK>
+   <LINK srcnodeid="10086" srcpinname="Layer Out" dstnodeid="38" dstpinname="Input 3">
+   </LINK>
+   <LINK srcnodeid="10088" srcpinname="Layer Out" dstnodeid="38" dstpinname="Input 2">
+   </LINK>
+   <NODE systemname="IOBox (Value Advanced)" nodename="IOBox (Value Advanced)" componentmode="InABox" id="10089">
+   <BOUNDS type="Node" left="816" top="2796" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="816" top="2796" width="792" height="288">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="13" srcpinname="Seconds Left" dstnodeid="10089" dstpinname="Y Input Value">
    </LINK>
    </PATCH>

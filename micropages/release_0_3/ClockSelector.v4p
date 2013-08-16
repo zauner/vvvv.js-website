@@ -1,6 +1,6 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta28.1.dtd" >
-   <PATCH nodename="C:\Users\Matthias\Dropbox\vvvv_js_page\micropages\subpatches\ClockSelector.v4p" systemname="ClockSelector" filename="C:\Dokumente und Einstellungen\Matthias\Eigene Dateien\My Dropbox\vvvv_js_page\micropages\subpatches\ClockSelector.v4p">
-   <BOUNDS type="Window" left="13890" top="4365" width="4980" height="6540">
+   <PATCH nodename="C:\Users\Matthias\Dropbox\vvvv_js_page\micropages\release_0_3\ClockSelector.v4p" systemname="ClockSelector" filename="C:\Dokumente und Einstellungen\Matthias\Eigene Dateien\My Dropbox\vvvv_js_page\micropages\subpatches\ClockSelector.v4p">
+   <BOUNDS type="Window" left="8580" top="2175" width="4980" height="6540">
    </BOUNDS>
    <NODE systemname="VVVVJsConnector (VVVVjs)" nodename="VVVVJsConnector (VVVVjs)" componentmode="Hidden" id="10001" filename="..\..\..\vvvv_js\vvvv_js_sdk\modules\VVVVJsConnector (VVVVjs)\VVVVJsConnector (VVVVjs).v4p">
    <BOUNDS type="Node" left="0" top="0" width="100" height="100">
@@ -53,7 +53,7 @@
    </PIN>
    <PIN pinname="Cycles" visible="1">
    </PIN>
-   <PIN pinname="Period" slicecount="1" values="45">
+   <PIN pinname="Period" slicecount="1" values="45" visible="1">
    </PIN>
    </NODE>
    <NODE systemname="Change (Animation)" nodename="Change (Animation)" componentmode="Hidden" id="10002">
@@ -105,5 +105,65 @@
    <LINK srcnodeid="10003" srcpinname="Cycles" dstnodeid="10010" dstpinname="Input 1">
    </LINK>
    <LINK srcnodeid="10010" srcpinname="Output" dstnodeid="10004" dstpinname="Input 2">
+   </LINK>
+   <NODE systemname="IOBox (Value Advanced)" nodename="IOBox (Value Advanced)" componentmode="InABox" id="10011">
+   <BOUNDS type="Node" left="2628" top="3528" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="2628" top="3528" width="792" height="240">
+   </BOUNDS>
+   <PIN pinname="Descriptive Name" slicecount="1" values="|Seconds Left|" encoded="0">
+   </PIN>
+   <PIN pinname="Y Input Value" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="IOBox (Value Advanced)" nodename="IOBox (Value Advanced)" componentmode="InABox" id="10012">
+   <BOUNDS type="Node" left="2496" top="156" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="2496" top="156" width="792" height="240">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="1" values="20">
+   </PIN>
+   <PIN pinname="Y Output Value" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="10012" srcpinname="Y Output Value" dstnodeid="10003" dstpinname="Period">
+   </LINK>
+   <NODE systemname="Subtract (Value)" nodename="Subtract (Value)" componentmode="Hidden" id="10013">
+   <BOUNDS type="Node" left="2592" top="2172" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input 1" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Input 2" visible="1">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="10003" srcpinname="Output" dstnodeid="10013" dstpinname="Input 2">
+   </LINK>
+   <NODE systemname="Multiply (Value)" nodename="Multiply (Value)" componentmode="Hidden" id="10014">
+   <BOUNDS type="Node" left="2616" top="2616" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input 2" visible="1">
+   </PIN>
+   <PIN pinname="Input 1" visible="1">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="10012" srcpinname="Y Output Value" dstnodeid="10014" dstpinname="Input 2">
+   </LINK>
+   <LINK srcnodeid="10013" srcpinname="Output" dstnodeid="10014" dstpinname="Input 1">
+   </LINK>
+   <NODE systemname="Frac (Value)" nodename="Frac (Value)" componentmode="Hidden" id="10015">
+   <BOUNDS type="Node" left="2628" top="2964" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input" visible="1">
+   </PIN>
+   <PIN pinname="Whole Part" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="10014" srcpinname="Output" dstnodeid="10015" dstpinname="Input">
+   </LINK>
+   <LINK srcnodeid="10015" srcpinname="Whole Part" dstnodeid="10011" dstpinname="Y Input Value">
    </LINK>
    </PATCH>
