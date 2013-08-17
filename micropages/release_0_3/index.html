@@ -35,9 +35,9 @@
           }, 15000);
         }
         
-        $('#loading').text("Loading Patches ...")
+        $('.loading .label').text("Loading Patches ...");
         patch = new VVVV.Core.Patch(patchfile, function() {
-          $('#loading').hide();
+          $('.loading').hide();
           var mainloop = new VVVV.Core.MainLoop(patch, 30);
           mainloop.start();
           
@@ -54,7 +54,7 @@
 <body>
 <div id="main">
   <div id="header">
-    <div id="loading">Loading VVVV.js ...</div>
+    <img class="loading default_pattern" src="static_pattern.png"/>
     <canvas id="pattern" width="920" height="320"></canvas>
     <div class="no_webgl">
       You are viewing the light version of this page, because your browser doesn't support WebGL. Find out
@@ -83,24 +83,51 @@
   <p>
     <h3>Subpatches</h2>
     The biggest addition in this version is the support for subpatches. If you are into VVVV or similar software, you already know how valuable these are. For those
-    who are not familiar with the subpatch concept: you can now group together a patch and form a 'subpatch', which you can use as a node in
-    another patch. You can think of it as functions or classes/modules, if you like. This is great for modularizing your patches, hiding complexity and increasing
+    who are not familiar with the subpatch concept: you can now group together a patch and form a 'subpatch', which you can nest as a node in
+    another patch. You can think of it as functions or classes/modules, if you like. This is great for modularizing your patches, hiding complexity (aka mess) and increasing
     reusability of your code. Read more about subpatches in the <a href="http://vvvv.org/documentation/subpatches">VVVV Documentation</a>.
   </p>
   
   <div class="patch_caption">
     <h4>The Clock Pattern Example</h4>
-    If everything works as supposed, you should see a pattern consisting of repeating clock designs at the top of this page. You can observe 
-    the according patch on the right. The patch uses subpatches to modularize the different clock designs, and leaves only switching between
-    them to the main page.
+    If your browser is supported, you should see a pattern consisting of repeating clock designs at the top of this page (inspired by all the gread projects, where
+    clocks are mounted next to each other, like <a href="http://florianjenett.de/one-perfect-cube/">here</a> and everything from <a href="http://www.todayandtomorrow.net/?s=clock">here</a>) Click the patch on the right
+    to activate the VVVViewer and observe the running patch. It uses subpatches to modularize the five different clock designs, and leaves only switching between
+    them to the main page. This is great for various reasons:
+    <ul>
+      <li>Clock designs can easily be added or removed</li>
+      <li>
+        The main patch does not have to deal with the complexity of the single clock implementations (double click on of the
+        subpatches to see what's going on inside)
+      </li>
+      <li>
+        Reusability: there exist two versions, a WebGL and a pure canvas version of this. They only differ in the main patch. The same clock subpatches are
+        used in both.
+      </li>
+    </ul>
   </div>
   
   <p>
     <h3>Performance Boost</h2>
+    VVVV.js uses underscore.js mainly for iterating through hashes. This is really great because it overcomes Javascript's lack
+    of some sort of ordered hashes, and creates more verbous code.
+  </p>
+  <p>
+    However, if used at a high frequency (as in every frame) it turns
+    out to significantly throttle overall shmoofness. Replacing underscore.js calls with native loops at performance critical code locations brought
+    a noticable performance boost and should drastically increase the average frame rate in most cases.
   </p>
   
   <p>
     <h3>Editors</h2>
+    VVVV.js now provides an interface for "Editors" &mdash; this can be any kind of program which manipulates the VVVV patches in
+    the browser.
+  </p>
+  <p>
+    In this version, the VVVVJsConnector (which connects classic VVVV and VVVV.js in the browser) has been decoupled from the core,
+    and turned into such an "Editor". This paves the way for creating in-browser editors and plug them into VVVV.js effortlessly. In the near future
+    there might be a tabular editor which lets you tweak pins during runtime, to begin with. And eventually, this should lead to a full-fledged patch
+    editor running inside the browser.
   </p>
 </div>
 

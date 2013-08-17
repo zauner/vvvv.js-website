@@ -5,6 +5,7 @@ body{
   color:white;
   font-family:'Lucida Sans Unicode', 'Lucida Grande', sans-serif;
   width:100%;
+  font-size:10pt;
 }
 
 p.intro{
@@ -99,6 +100,18 @@ a:visited{
   margin-top:0px;
 }
 
+h3{
+  margin-top:2.5em;
+}
+
+.patch_caption ul{
+  padding-left:17px;
+}
+
+.patch_caption ul li{
+  margin-bottom:0.5em;
+}
+
 #pattern canvas{
   margin-top:-50px;
   margin-left:-52px;
@@ -108,7 +121,11 @@ canvas.vvvv-js-generated-renderer{
   display:none;
 }
 
-#loading {
+.loading.default_pattern{
+  position:absolute;
+}
+
+.loading.label {
   margin-left: auto;
   width: 160px;
   text-align: center;
