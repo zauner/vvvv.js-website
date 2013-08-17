@@ -11,6 +11,8 @@ body{
 p.intro{
   font-style:italic;
   margin-bottom:45px;
+  margin-right:0px;
+  font-size:11pt;
 }
 
 #headline{
@@ -134,4 +136,8 @@ canvas.vvvv-js-generated-renderer{
   font-size: 8pt;
   margin-right: auto;
   margin-top: 119px;
+}
+
+p{
+  margin-right: 470px;
 }

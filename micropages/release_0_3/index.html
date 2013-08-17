@@ -41,11 +41,13 @@
           var mainloop = new VVVV.Core.MainLoop(patch, 30);
           mainloop.start();
           
-          var vvvviewer = undefined;
+          var vvvviewer = new VVVV.VVVViewer(patch, '#the_patch');
+          /*var vvvviewer = undefined;
           $('#the_patch').click(function() {
             if (!vvvviewer)
               var vvvviewer = new VVVV.VVVViewer(patch, '#the_patch');
           });
+          */
         });
       });
     })
@@ -80,8 +82,8 @@
   
   <div id="the_patch"></div>
   
+  <h3>Subpatches</h2>
   <p>
-    <h3>Subpatches</h2>
     The biggest addition in this version is the support for subpatches. If you are into VVVV or similar software, you already know how valuable these are. For those
     who are not familiar with the subpatch concept: you can now group together a patch and form a 'subpatch', which you can nest as a node in
     another patch. You can think of it as functions or classes/modules, if you like. This is great for modularizing your patches, hiding complexity (aka mess) and increasing
@@ -107,8 +109,8 @@
     </ul>
   </div>
   
+  <h3>Performance Boost</h2>
   <p>
-    <h3>Performance Boost</h2>
     VVVV.js uses underscore.js mainly for iterating through hashes. This is really great because it overcomes Javascript's lack
     of some sort of ordered hashes, and creates more verbous code.
   </p>
@@ -118,8 +120,8 @@
     a noticable performance boost and should drastically increase the average frame rate in most cases.
   </p>
   
+  <h3>Editors</h2>
   <p>
-    <h3>Editors</h2>
     VVVV.js now provides an interface for "Editors" &mdash; this can be any kind of program which manipulates the VVVV patches in
     the browser.
   </p>
