@@ -74,8 +74,7 @@
   </div>
   
   <p class="intro">
-    Granted, this version's micropage does not show off visually as much as the <a href="../release_0_2">previous one</a>, but this has not
-    been the focus of this version update anyway. Instead, version 0.3.0 comes with improvements under VVVV.js' hood &mdash; improvements 
+    Granted, this version's micropage does not show off visually as much as the <a href="../release_0_2">previous one</a>, but this isn't the focus of this version update anyway. Instead, version 0.3.0 comes with improvements under VVVV.js' hood &mdash; improvements 
     in performance, stability and functionality which bring VVVV.js a step closer to becoming a ready-for-production development tool. 
     Here's what's new:
   </p>
@@ -83,9 +82,9 @@
   <div id="the_patch"></div>
   
   <h3>Subpatches</h2>
-  <p>
+  <p class="left">
     The biggest addition in this version is the support for subpatches. If you are into VVVV or similar software, you already know how valuable these are. For those
-    who are not familiar with the subpatch concept: you can now group together a patch and form a 'subpatch', which you can nest as a node in
+    who are not familiar with the subpatch concept: you can now group together a patch and form a 'subpatch', which you can nest as a node into
     another patch. You can think of it as functions or classes/modules, if you like. This is great for modularizing your patches, hiding complexity (aka mess) and increasing
     reusability of your code. Read more about subpatches in the <a href="http://vvvv.org/documentation/subpatches">VVVV Documentation</a>.
   </p>
@@ -95,7 +94,7 @@
     If your browser is supported, you should see a pattern consisting of repeating clock designs at the top of this page (inspired by all the gread projects, where
     clocks are mounted next to each other, like <a href="http://florianjenett.de/one-perfect-cube/">here</a> and everything from <a href="http://www.todayandtomorrow.net/?s=clock">here</a>) Click the patch on the right
     to activate the VVVViewer and observe the running patch. It uses subpatches to modularize the five different clock designs, and leaves only switching between
-    them to the main page. This is great for various reasons:
+    them to the main patch. This is great for various reasons:
     <ul>
       <li>Clock designs can easily be added or removed</li>
       <li>
@@ -108,6 +107,16 @@
       </li>
     </ul>
   </div>
+  
+  <h3>Pin Types and "Node" pins</h3>
+  <p class="left">
+    Until now, VVVV.js was fine without distinguishing different types of pins. The introduction of subpatches raised the need
+    for generic "Node" IOBoxes, which led to the decision, that now is the right time to add Pin Types.
+  </p>
+  <p>This allows us to port all the
+    "Node"-nodes (!), like Switch (Node), GetSlice (Node), etc. Also, it's the foundation for type checking, which again is crucial for a future
+    in-browser patch editor.
+  </p>
   
   <h3>Performance Boost</h2>
   <p>
