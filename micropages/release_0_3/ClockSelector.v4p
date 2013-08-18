@@ -53,7 +53,9 @@
    </PIN>
    <PIN pinname="Cycles" visible="1">
    </PIN>
-   <PIN pinname="Period" slicecount="1" values="45" visible="1">
+   <PIN pinname="Period" slicecount="1" visible="1" values="45">
+   </PIN>
+   <PIN pinname="Reset" visible="1">
    </PIN>
    </NODE>
    <NODE systemname="Change (Animation)" nodename="Change (Animation)" componentmode="Hidden" id="10002">
@@ -111,7 +113,7 @@
    </BOUNDS>
    <BOUNDS type="Box" left="2628" top="3528" width="792" height="240">
    </BOUNDS>
-   <PIN pinname="Descriptive Name" slicecount="1" values="|Seconds Left|" encoded="0">
+   <PIN pinname="Descriptive Name" slicecount="1" encoded="0" values="|Seconds Left|">
    </PIN>
    <PIN pinname="Y Input Value" visible="1">
    </PIN>
@@ -121,7 +123,7 @@
    </BOUNDS>
    <BOUNDS type="Box" left="2496" top="156" width="792" height="240">
    </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="1" values="20">
+   <PIN pinname="Y Input Value" slicecount="1" values="11">
    </PIN>
    <PIN pinname="Y Output Value" visible="1">
    </PIN>
@@ -165,5 +167,7 @@
    <LINK srcnodeid="10014" srcpinname="Output" dstnodeid="10015" dstpinname="Input">
    </LINK>
    <LINK srcnodeid="10015" srcpinname="Whole Part" dstnodeid="10011" dstpinname="Y Input Value">
+   </LINK>
+   <LINK srcnodeid="10006" srcpinname="Up Edge" dstnodeid="10003" dstpinname="Reset">
    </LINK>
    </PATCH>
