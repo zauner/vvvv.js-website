@@ -23,7 +23,8 @@
         try {
           var testctxt = $testcanvas.get(0).getContext("experimental-webgl");
           if (testctxt) {
-            patchfile = "index_webgl.v4p";
+            //patchfile = "index_webgl.v4p";
+            //$('#the_patch img').attr('src', "index_webgl_v4p_preview.png");
           }
         }
         catch (x) { }
@@ -41,13 +42,12 @@
           var mainloop = new VVVV.Core.MainLoop(patch, 30);
           mainloop.start();
           
-          var vvvviewer = new VVVV.VVVViewer(patch, '#the_patch');
-          /*var vvvviewer = undefined;
+          //var vvvviewer = new VVVV.VVVViewer(patch, '#the_patch');
+          var vvvviewer = undefined;
           $('#the_patch').click(function() {
             if (!vvvviewer)
               var vvvviewer = new VVVV.VVVViewer(patch, '#the_patch');
           });
-          */
         });
       });
     })
@@ -79,7 +79,7 @@
     Here's what's new:
   </p>
   
-  <div id="the_patch"></div>
+  <div id="the_patch"><img src="index_v4p_preview.png"/></div>
   
   <h3>Subpatches</h2>
   <p class="left">
