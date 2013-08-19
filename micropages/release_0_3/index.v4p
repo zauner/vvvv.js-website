@@ -1,5 +1,5 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta28.1.dtd" >
-   <PATCH nodename="C:\Users\Matthias\Dropbox\vvvv_js_page\micropages\release_0_3\index.v4p" systemname="index" filename="C:\Dokumente und Einstellungen\Matthias\Eigene Dateien\My Dropbox\vvvv_js_page\micropages\subpatches\index.v4p">
+   <PATCH nodename="C:\Dokumente und Einstellungen\Matthias\Eigene Dateien\My Dropbox\vvvv_js_page\micropages\release_0_3\index.v4p" systemname="index" filename="C:\Dokumente und Einstellungen\Matthias\Eigene Dateien\My Dropbox\vvvv_js_page\micropages\subpatches\index.v4p">
    <BOUNDS type="Window" left="18615" top="1620" width="7635" height="10800">
    </BOUNDS>
    <NODE systemname="VVVVJsConnector (VVVVjs)" nodename="VVVVJsConnector (VVVVjs)" componentmode="Hidden" id="10001" filename="..\..\..\vvvv_js\vvvv_js_sdk\modules\VVVVJsConnector (VVVVjs)\VVVVJsConnector (VVVVjs).v4p">
@@ -115,9 +115,9 @@
    </BOUNDS>
    <PIN pinname="Transform Out" visible="1">
    </PIN>
-   <PIN pinname="Y" slicecount="1" values="-0.15">
+   <PIN pinname="Y" slicecount="1" values="-0.037">
    </PIN>
-   <PIN pinname="X" slicecount="1" values="0">
+   <PIN pinname="X" slicecount="1" values="-0.037">
    </PIN>
    </NODE>
    <NODE systemname="Switch (Node Input)" nodename="Switch (Node Input)" componentmode="Hidden" id="10048">
@@ -203,7 +203,7 @@
    </BOUNDS>
    <PIN pinname="Transform Out" visible="1">
    </PIN>
-   <PIN pinname="Y" slicecount="1" values="-0.191">
+   <PIN pinname="Y" slicecount="1" values="-0.231">
    </PIN>
    <PIN pinname="X" visible="1" slicecount="1" values="0">
    </PIN>
