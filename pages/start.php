@@ -122,8 +122,8 @@ EOT;
     </li>
     <li>
       <b>Launch the Editor</b> by appending <code>#edit/assets/patches/mypatch.v4p</code> in the address bar. The editor will open in a new popup, so make sure you allow them for
-      this page. You see what we did here? Here is another example: <em>this</em> websites header animation is in the file <code>header_animation.v4p</code> in the <code>patches</code> directory. So, yes, you 
-      can edit it by appending <code>#edit/patches/header_animation.v4p</code> in the address bar of this window.
+      this page. You see what we did here? Here is another example: <em>this</em> websites header animation is in the file <code>header_animation.v4p</code> in the <code>/patches</code> directory. So, yes, you 
+      can edit it by appending <code>#edit//patches/header_animation.v4p</code> in the address bar of this window.
     </li>
   </ol>
 </div>

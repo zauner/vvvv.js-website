@@ -55,28 +55,40 @@ $(document).ready(function() {
   }
   attachGalleryEvents();
   
+  function openPage(url) {
+    $.ajax({
+      url: url+"?layout=false",
+      success: function(response) {
+        $('#contents').html(response);
+        attachGalleryEvents();
+        attachDownloadEvents();
+        attachInlineLinkEvents('#contents a.internal');
+      }
+    })
+  }
+  
   function attachInlineLinkEvents(selector) {
     $(selector).click(function(e) {
       if ($(this).hasClass('external'))
         return true;
-      var that = this;
-      $.ajax({
-        url: $(this).attr('href')+"?layout=false",
-        success: function(response) {
-          $('#contents').html(response);
-          window.history.pushState({}, $(that).attr('href'), $(that).attr('href'));
-          attachGalleryEvents();
-          attachDownloadEvents();
-          attachInlineLinkEvents('#contents a.internal');
-        }
-      })
-      
+      openPage($(this).attr('href'));
+      var url = $(this).attr('href');
+      window.history.pushState({path: url}, url, url);
       e.preventDefault();
       return false;
     })
   }
   attachInlineLinkEvents('#menu li a');
   attachInlineLinkEvents('#contents a.internal');
+  window.history.replaceState({path: location.href}, location.href, location.href);
+  
+  $(window).bind('popstate', function(e) {
+    var state = e.originalEvent.state;
+    console.log(state);
+    if (state) {
+      openPage(state.path);
+    }
+  });
   
   function attachDownloadEvents() {
     $('#download').magnificPopup({

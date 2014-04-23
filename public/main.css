@@ -14,6 +14,19 @@ a{
   color:#78B4A8;
 }
 
+table th{
+  text-align:left;
+}
+
+table td, table th{
+  border-bottom:1px solid #333333;
+  padding:5px;
+}
+
+table td.nowrap{
+  white-space:nowrap;
+}
+
 .box{
   text-align:justify;
   width:80%;
@@ -173,6 +186,7 @@ h2{
 }
 
 h3{
+  margin-top:2.8em;
   font-size:20px;
   font-weight:normal;
 }
@@ -446,6 +460,15 @@ code{
   width:100%;
   margin-top:1.5em;
   margin-bottom:1.5em;
+}
+
+.figure table.layout{
+  margin-left:auto;
+  margin-right:auto;
+}
+
+.figure table.layout td{
+  border:0;
 }
 
 .figure img{
