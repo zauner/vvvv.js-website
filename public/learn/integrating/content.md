@@ -18,9 +18,9 @@ the Inspektor: select the node and hit `CTRL+I`. This DOM selector string
 goes straight into jQuery, so you can use anything jQuery understands here. Read more about it in the [jQuery documentation](http://api.jquery.com/category/selectors/).
 
 <div class="figure">
-  <img src="selectors_in_descr_name.png"/>
+  <img src="../../../cheatsheet/img/embedding_renderer.png"/>
   <div class="caption">
-    Associating nodes with DOM elements by applying a selector to the "Descriptive Name" pin.
+    Associating nodes with DOM elements by applying a selector to the "Descriptive Name" pin. Select a node and hit <code>CTRL+I</code> to open the Inspektor window.
   </div>
 </div>
 
@@ -69,6 +69,7 @@ the VVVV.js output:
   ...
   The insignificance of the test results is shown in the following interactive infographic:
   <span class="highlight">&lt;div id="test_result_viz"&gt;&lt;/div&gt;</span>
+  As you can see, it is all random.
   ...
 &lt;/body&gt;</div>
 
@@ -157,13 +158,18 @@ By appending `/style/[css property]` to a selector, you can access an element's 
   <table class="layout">
   <tr>
   <td>
-  <div class="code">&lt;body&gt;
+  <div class="code">&lt;head&gt;
+  &lt;style type="text/css"&gt;
+    .thick-borders{border-width:6px; border-color:black; border-style:solid}
+    .thin-borders{border-width:1px; border-color:red; border-style:solid}
+  &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
   ...
-  &lt;select id="country"&gt;
-    &lt;option value="AT"&gt;Austria&lt;/option&gt;
-    &lt;option value="CH"&gt;Switzerland&lt;/option&gt;
-    &lt;option value="DE"&gt;Germany&lt;/option&gt;
-  &lt;/select&gt;
+  &lt;div class="thick-black-borders"&gt;Div 1&lt;/div&gt;
+  &lt;div class="thin-red-borders"&gt;Div 2&lt;/div&gt;
+  &lt;div class="thick-black-borders"&gt;Div 3&lt;/div&gt;
+  &lt;div class="thick-black-borders"&gt;Div 4&lt;/div&gt;
   ...
 &lt;/body&gt;</div>
   </td>
@@ -173,7 +179,34 @@ By appending `/style/[css property]` to a selector, you can access an element's 
   </tr>
   </table>
   <div class="caption">
-    The selector <code>select#country option</code> refers to all <code>&lt;OPTION&gt;</code> elements within the <code>&lt;SELECT&gt;</code> element. The string <code>/attribute/value</code> appended
-    to it retreives the "value" attribute rather than the enclosed text.
+    Using <code>/style/[property name]</code> we can get CSS properties of elements.
+  </div>
+</div>
+
+
+#### Capturing DOM events
+
+Adding `event/[event name]` to a selector allows you to capture events like mouse clicks, key presses, etc. fired in the surrounding page. The IOBox bound to an event will output
+the value `1` for exactly one frame, when the event is fired.
+
+<div class="figure">
+  <table class="layout">
+  <tr>
+  <td>
+  <div class="code">&lt;body&gt;
+  ...
+  &lt;a class="menu-item" href="..."&gt;Home&lt;/a&gt;
+  &lt;a class="menu-item" href="..."&gt;About&lt;/a&gt;
+  &lt;a class="menu-item" href="..."&gt;Contact&lt;/a&gt;
+  ...
+&lt;/body&gt;</div>
+  </td>
+  <td>
+    <img src="capturing_events.png"/>
+  </td>
+  </tr>
+  </table>
+  <div class="caption">
+    The FlipFlop node's output is set to 1, when the mouse pointer hovers over a link element, and is reset to 0 when it leaves the element again.
   </div>
 </div>
