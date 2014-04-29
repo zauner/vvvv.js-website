@@ -210,3 +210,35 @@ the value `1` for exactly one frame, when the event is fired.
     The FlipFlop node's output is set to 1, when the mouse pointer hovers over a link element, and is reset to 0 when it leaves the element again.
   </div>
 </div>
+
+#### Modifying the DOM
+
+You can also use DOM-referencing IOBoxes like this to _write_ text nodes, attributes and style properties. Just use the same selectors
+as described above, but apply them to "sink" IOBoxes (IOBoxes at the end of a node network).
+
+By combining reading _and_ writing IOBoxes, you can set up your patch to continuously process the DOM and manipulate it based on the DOM
+data like this:
+
+<div class="figure">
+  <table class="layout">
+  <tr>
+  <td>
+  <div class="code">&lt;body&gt;
+  ...
+  &lt;a class="menu-item" title="Back to start" href="..."&gt;Home&lt;/a&gt;
+  &lt;a class="menu-item" title="Find out more" href="..."&gt;About&lt;/a&gt;
+  &lt;a class="menu-item" title="Get in touch" href="..."&gt;Contact&lt;/a&gt;
+  &lt;div id="description"&gt;&lt;/div&gt;
+  ...
+&lt;/body&gt;</div>
+  </td>
+  <td>
+    <img src="writing_dom.png"/>
+  </td>
+  </tr>
+  </table>
+  <div class="caption">
+    When hovering over a menu link, the patch makes the active link bold, and fills the <code>&lt;DIV id="description"&gt;</code> element
+    with the description taken from the <code>title</code> attribute.
+  </div>
+</div>

@@ -104,7 +104,7 @@ If so, a new `MainLoop` object is created for `patch`. The second argument of th
 ### Launching the editor
 
 After everything is set up, we can view the page in the browser. Obviously, nothing will happen, except a blank screen saying "nothing here ...", because
-the patch we loaded is still empty. Check the JavaScript console (Ctrl+Shit+J in Chrome) to see if VVVV.js loaded correctly. If yes, we can start patching now.
+the patch we loaded is still empty. Check the JavaScript console (F12 in Chrome) to see if VVVV.js loaded correctly. If yes, we can start patching now.
 As discussed in the [previous guide](/learn/patching), you can plug an editor into a running patch by appending the `#edit` command to the URL in the address bar
 like this (assuming you are viewing the page at `http://localhost/my_project/`):
 

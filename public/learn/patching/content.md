@@ -149,6 +149,21 @@ the patch like this:
   </div>
 </div>
 
+### Adding subpatch nodes
+
+Subpatch nodes will not show up in the list of nodes, as VVVV.js initially has no idea about any available subpatches. You have to
+enter the complete _relative filename_ of the subpatch and hit enter. Let's say the patch you are working on is
+<code>/patches/main.v4p</code>, you can load the subpatch <code>/patches/sub/subpatch.v4p</code> like this:
+
+<ol>
+  <li>Double-Click anywhere in the patch</li>
+  <li>enter <code>"sub/subpatch.v4p"</code>, including the .v4p extension</li>
+  <li>hit Enter</li>
+</ol>
+
+To add the subpatch <code>/patches/other_subpatch.v4p</code> (which is in the same directory as _main.v4p_), you have to enter
+<code>"./other_subpatch.v4p"</code>
+
 ### Conclusion
 
 That's it, you learned how to launch the editor and made your first steps in patching VVVV.js. Now it's time to find out how to use VVVV.js in your own project, rather than just

@@ -1,6 +1,7 @@
 <html>
   <head>
     <title>VVVV.js - Visual Web Client Programming</title>
+    <meta charset="UTF-8">
     <link href='http://fonts.googleapis.com/css?family=Duru+Sans|Carme' rel='stylesheet' type='text/css'>
     <link type="text/css" rel="stylesheet" href="/main.css"/>
     <link type="text/css" rel="stylesheet" href="/fonts/style.css"/>
@@ -66,8 +67,9 @@
           <a href="https://flattr.com/thing/1972082/zaunervvvv-js-on-GitHub">Flattr</a>
         </div>
         <div class="two-column" style="text-align:right">
-          A <a href="http://quasipartikel.at">Quasipartikel</a> Quasiproject.<br/>
-          &copy; Matthias Zauner<br/>
+          This is a <a href="http://quasipartikel.at">Quasipartikel</a> Quasiproject<br/>
+          &copy; <?= date('Y') ?> VVVV.js Project<br/>
+          <a class="internal" href="/imprint">Imprint &amp; Contact</a>
         </div>
       </div>
     </div>

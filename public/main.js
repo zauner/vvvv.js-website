@@ -1,7 +1,7 @@
 
 
 $(document).ready(function() {
-  VVVV.fps = 30;
+  VVVV.fps = 24;
   VVVV.init('/vvvv_js', 'full', function() {
   
   });
