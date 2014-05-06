@@ -13,6 +13,7 @@ foreach ($postfolders as $postfolder) {
   $meta = file_get_contents('../public/posts/'.$postfolder."/meta.json");
   $meta = json_decode($meta);
   $content = file_get_contents('../public/posts/'.$postfolder."/content.md");
+  $meta->link = $postfolder;
   $meta->content = $parsedown->parse($content);
   $meta->content = preg_replace_callback('/src="([^"]+)"/', function($matches) use ($postfolder) {
     return 'src="/posts/'.$postfolder.'/images/'.$matches[1].'"';
@@ -26,7 +27,7 @@ usort($posts, function($p1, $p2) {
 ?>
 <? foreach ($posts as $post): ?>
   <div class="post box">
-    <h2><?= $post->title ?></h2>
+    <h2><a href="/posts/<?= $post->link ?>" class="internal"><?= $post->title ?></a></h2>
     <div class="meta">posted on <?= $post->date ?>, by <?= $post->author ?></div>
     <?= $post->content ?>
   </div>

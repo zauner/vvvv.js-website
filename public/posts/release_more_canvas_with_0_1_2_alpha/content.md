@@ -1,4 +1,4 @@
-With slight delay we finally reached the next milestone with version 0.1.2-alpha. Besides some changes under the hood (mostly regarding graph evaluation), this release introduces a bunch of new nodes, covering a major part of Canvas 2D drawing functionality. As a development guidline we used this handy Canvas HTML5 Cheat Sheet.
+With slight delay we finally reached the next milestone with version 0.1.2-alpha. Besides some changes under the hood (mostly regarding graph evaluation), this release introduces a bunch of new nodes, covering a major part of Canvas 2D drawing functionality. As a development guidline we used this handy [Canvas HTML5 Cheat Sheet](http://www.nihilogic.dk/labs/canvas_sheet/HTML5_Canvas_Cheat_Sheet.png).
 
 Version 0.1.2-alpha allows us to:
 
@@ -9,7 +9,8 @@ Version 0.1.2-alpha allows us to:
 * render shadows and glows
 * use various blend techniques
 * transform all this using regular VVVV transform nodes
-* Have a look at the CHANGELOG, and check out the Examples here, to get the details.
+
+Have a look at the [CHANGELOG](https://github.com/zauner/vvvv.js/blob/v0.1.2-alpha/CHANGELOG), and check out the [Examples](/vvvv_js/examples/index.html) here, to get the details.
 
 Thanks to vux, defetto, matise and micro.d for contributing to this release! The next big step is tackling the WebGL pipeline, by implementing dynamic shaders, render state nodes, etc. If you're interested in participating here, contact us via Github!
 

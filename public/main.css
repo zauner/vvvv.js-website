@@ -456,6 +456,10 @@ code{
   margin-bottom:2em;
 }
 
+.post img{
+  text-align:center;
+}
+
 .figure{
   text-align:center;
   width:100%;
@@ -554,18 +558,29 @@ code{
 /* Docs */
 
 ul.doc-list{
+  list-style:none;
   font-size:12px;
   line-height:1.3em;
   padding-left:0;
 }
 
 ul.doc-list li{
-  margin-left:2em;
+  clear:both;
+  margin-left:0em;
   margin-bottom:2em;
 }
 
 ul.doc-list li a{
   font-size:16px;
+}
+
+ul.doc-list .guide-thumb {
+  float:left;
+  width:150px;
+  height:100px;
+  border:1px solid #BBB;
+  margin-right:10px;
+  margin-bottom:2em;
 }
 
 /* Download */

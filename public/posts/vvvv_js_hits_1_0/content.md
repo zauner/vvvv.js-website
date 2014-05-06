@@ -1,0 +1,1 @@
+Three years after the project launched, VVVV.js reaches version 1.0.

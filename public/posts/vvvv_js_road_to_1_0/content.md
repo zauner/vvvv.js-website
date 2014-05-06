@@ -2,7 +2,9 @@ Many of you might wonder how this VVVV.js thing is going to evolve, and when it 
 
 Of course, the roadmap below is not carved in stone at all. Rather, it's an overview of the things that have to be tackled, and of when this might happen.
 
-![VVVV.js Roadmap](vvvvjsroadmap.png)
+<p class="figure">
+  <img src="vvvvjsroadmap.png"/>
+</p>
 
 As you can see, we're first heading for some visual bragging to find out, what's possible in terms of Canvas 2D and WebGL 3D graphics (In fact, the set of Canvas drawing nodes will be released this week).
 
