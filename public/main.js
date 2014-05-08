@@ -101,7 +101,6 @@ $(document).ready(function() {
       callbacks: {
         ajaxContentAdded: function() {
           PAYPAL.apps.ButtonFactory.create("vvvvjs@vvvvjs.com", {
-            env: "sandbox",
             'return': "http://localhost/vvvv_js_page/index.php?page=download",
             tax: 0,
             shipping: 0,
