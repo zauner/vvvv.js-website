@@ -1,22 +1,20 @@
 
 
 $(document).ready(function() {
-  VVVV.fps = 24;
-  VVVV.init('/vvvv_js', 'full', function() {
-  
-  });
   
   $testcanvas = $('<canvas width="10" height="10"></canvas>');
   $('body').append($testcanvas);
   var webgl_enabled = false;
-  try {
-    var testctxt = $testcanvas.get(0).getContext("experimental-webgl");
-    if (testctxt) {
-      webgl_enabled = true;
+  if( !/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|WindowsPhone|Opera Mini/i.test(navigator.userAgent) ) {
+    try {
+      var testctxt = $testcanvas.get(0).getContext("experimental-webgl");
+      if (testctxt) {
+        webgl_enabled = true;
+      }
     }
+    catch (x) { }
+    $testcanvas.remove();
   }
-  catch (x) { }
-  $testcanvas.remove();
 
   if (!webgl_enabled) {
     $('.no-webgl').show();
@@ -37,6 +35,12 @@ $(document).ready(function() {
         },
       });
     }, 6000);
+  }
+  else {
+    VVVV.fps = 24;
+    VVVV.init('/vvvv_js', 'full', function() {
+    
+    });
   }
   
   function attachGalleryEvents() {
