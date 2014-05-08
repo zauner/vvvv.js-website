@@ -32,7 +32,7 @@ if ($PAGE=="")
   $PAGE = "start";
 
 if ($_REQUEST["layout"]=="false")
-  echo contents($PAGE);
+  echo render('../nolayout.php');
 else
   echo render('../layout.php');
 
