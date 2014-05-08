@@ -12,7 +12,7 @@
     <script language="JavaScript" src="/vvvv_js/lib/underscore/underscore-min.js"></script>
     <script language="JavaScript" src="/vvvv_js/lib/glMatrix-0.9.5.min.js"></script>
     <script language="JavaScript" src="/vvvv_js/lib/d3-v1.14/d3.min.js"></script>
-    <script language="JavaScript" src="/vvvv_js/vvvv.js"></script>
+    <script language="JavaScript" src="/vvvv_js/vvvv.min.js"></script>
     <script language="JavaScript" src="/main.js"></script>
     <script language="VVVV" src="/patches/header_animation.v4p"></script>
     <script language="JavaScript" src="/lib/magnific-popup/magnific-popup.min.js"></script>
