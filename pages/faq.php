@@ -6,6 +6,15 @@
   So they are compatible with classic VVVV. There is a feature in the making which translates terms from classic VVVV to VVVV.js and
   vice versa, but at the moment we just have to play along.
   
+  <h3>Q: When should I use the <em>EX9/WebGL</em> nodes, and when the <em>Canvas VVVVjs</em> nodes?</h3>
+  
+  <p>With the <em>EX9/WebGL</em> nodes you can create hardware accelerated 3D graphics and employ shader effects. The downside is, that there is a
+  considerable chance that the users' browser does not support WebGL.</p>
+  
+  <p>The <em>Canvas</em> nodes are great for all kinds of vector graphics. Shapes, curves, text, etc. is all done easier with the
+  Canvas nodes, so they might be the better choice for e.g. charts and user interfaces. However, at the moment there is no support
+  for 3D using the Canvas nodes.</p>
+  
   
   <h2>Patching</h2>
   
