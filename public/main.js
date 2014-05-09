@@ -22,7 +22,7 @@ $(document).ready(function() {
     window.setInterval(function() {
       i++;
       if (i>5) i=1;
-      var $new_img = $('<img src="assets/fallback_header'+i+'.png">');
+      var $new_img = $('<img src="/assets/fallback_header'+i+'.png">');
       $new_img.css('opacity', 0);
       $('.no-webgl img').after($new_img);
       $new_img.animate({opacity: 1.0}, {
