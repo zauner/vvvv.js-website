@@ -26,6 +26,7 @@
         <li><a href="/start">Start</a></li>
         <li><a href="/blog">Blog</a></li>
         <li><a href="/learn">Learning</a></li>
+        <li><a href="/forum" class="external">Forum</a></li>
         <li><a href="/vvvv_js/api/" class="external">API</a></li>
         <li><a href="/contribute">Contribute</a></li>
       </ul>
@@ -62,7 +63,6 @@
         <div id="background"></div>
         <div class="two-column">
           <a href="http://github.com/zauner/vvvv.js">Github</a><br/>
-          <a href="https://groups.google.com/d/forum/vvvvjs">Google Groups</a><br/>
           <a href="http://www.twitter.com/vvvv_js">Twitter</a><br/>
           <a href="https://flattr.com/thing/1972082/zaunervvvv-js-on-GitHub">Flattr</a>
         </div>

@@ -6,6 +6,7 @@
   <ul>
     <li>Audio Analysis Nodes</li>
     <li>Box2D Nodes</li>
+    <li>Collada Geometry Loader</li>
     <li>Improved packaging mechanisms</li>
     <li>Server-side execution</li>
     <li>Creating alternative themes</li>

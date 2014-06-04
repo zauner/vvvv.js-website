@@ -16,7 +16,7 @@ and a dedicated section for guides and howtos.
 Being grown up also often means having to make some money. This is why we are giving you the opportunity to actually buy your copy of VVVV.js
 if you feel like it &mdash; you decide how much it should be.
 
-Try it out, nothing to lose, we hope you enjoy it. As always, there is the [Google Group](https://groups.google.com/d/forum/vvvvjs) if you are
+Try it out, nothing to lose, we hope you enjoy it. As always, there is the [Forum](/forum) if you are
 looking for help.
 
 
