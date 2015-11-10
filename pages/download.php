@@ -1,7 +1,7 @@
 <? if ($_POST['txn_type']=='web_accept'): ?>
 <div class="box">
   Thank you for your support, <?= $_POST['first_name'] ?>,<br/>
-  your download will start now. If not, click <a href="/downloads/vvvv_js_1_0.zip">here</a>.
+  your download will start now. If not, click <a href="/downloads/vvvv_js_1_1.zip">here</a>.
 </div>
 <? else: ?>
 <div class="white-popup">
@@ -28,10 +28,10 @@
     <div class="usage_model inactive">
       <input type="radio" name="model" value="free"/>
       <div class="title">Nothing, maybe some other time.</div>
-      <a href="/downloads/vvvv_js_1_0.zip" id="free-download-button" class="button disabled">Free Download</a>
+      <a href="/downloads/vvvv_js_1_1.zip" id="free-download-button" class="button disabled">Free Download</a>
     </div>
   </p>
- 
+
 </div>
 
 <? endif ?>

@@ -9,7 +9,7 @@
 </div>
 <div id="downloads" class="box">
   <a id="try-lab" class="button" href="http://lab.vvvvjs.com"><span class="link_h">Try it</span><span class="link_descr">in the VVVV.js Lab</span></a>
-  <a id="download" class="button" href="/download?layout=false"><span class="link_h">Download</span><span class="link_descr">Version 1.0</span></a>
+  <a id="download" class="button" href="/download?layout=false"><span class="link_h">Download</span><span class="link_descr">Version 1.1</span></a>
 </div>
 <div id="features" class="box">
   <h2>Features</h2>
@@ -85,7 +85,7 @@
   <h2>Getting Started</h2>
   <p>
     There are a lot of different ways to integrate VVVV.js with your project, have a look at the <a href="../docs">Docs Section</a> to read everything about it. However,
-    getting a first VVVV.js patch up and running takes you four steps: 
+    getting a first VVVV.js patch up and running takes you four steps:
   </p>
   <ol>
     <li>
@@ -101,7 +101,7 @@
       $code = <<<EOT
 <head>
   ...
-  <script language="JavaScript" src="javascripts/vvvv_js/lib/jquery/jquery-1.8.2.min.js"></script> 
+  <script language="JavaScript" src="javascripts/vvvv_js/lib/jquery/jquery-1.8.2.min.js"></script>
   ~~<script language="JavaScript" src="javascripts/vvvv_js/vvvv.js"></script>
   <script language="VVVV" src="assets/patches/mypatch.v4p"></script>~~
   <script language="JavaScript">
@@ -113,16 +113,16 @@
   </script>
   ...
 </head>
-      
+
 EOT;
       echo format_code($code);
 
-      
+
 ?>    </div>
     </li>
     <li>
       <b>Launch the Editor</b> by appending <code>#edit/assets/patches/mypatch.v4p</code> in the address bar. The editor will open in a new popup, so make sure you allow them for
-      this page. You see what we did here? Here is another example: <em>this</em> websites header animation is in the file <code>header_animation.v4p</code> in the <code>/patches</code> directory. So, yes, you 
+      this page. You see what we did here? Here is another example: <em>this</em> websites header animation is in the file <code>header_animation.v4p</code> in the <code>/patches</code> directory. So, yes, you
       can edit it by appending <code>#edit//patches/header_animation.v4p</code> in the address bar of this window.
     </li>
   </ol>
