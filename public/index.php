@@ -27,11 +27,11 @@ function format_code($code) {
 }
 
 
-$PAGE = $_GET["page"];
+$PAGE = key_exists("page", $_GET) ? $_GET["page"] : "";
 if ($PAGE=="")
   $PAGE = "start";
 
-if ($_REQUEST["layout"]=="false")
+if (key_exists("layout", $_REQUEST) && $_REQUEST["layout"]=="false")
   echo render('../nolayout.php');
 else
   echo render('../layout.php');

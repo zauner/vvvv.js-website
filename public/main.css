@@ -449,6 +449,7 @@ code{
 }
 
 .post .meta{
+  margin-top:5px;
   line-height:1em;
   font-size:11px;
   color:#363636;
@@ -530,12 +531,12 @@ code{
 }
 
 .figure .image-container .image-annotation .description span{
- display:none; 
+ display:none;
  color:#BBBBBB;
 }
 
 .figure .image-container .image-annotation:hover .description span{
- display:inline; 
+ display:inline;
 }
 
 .figure .image-container .image-annotation .arrow{

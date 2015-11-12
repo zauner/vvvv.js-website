@@ -25,10 +25,10 @@ usort($posts, function($p1, $p2) {
 });
 
 ?>
-<? foreach ($posts as $post): ?>
+<?php foreach ($posts as $post): ?>
   <div class="post box">
     <h2><a href="/posts/<?= $post->link ?>" class="internal"><?= $post->title ?></a></h2>
     <div class="meta">posted on <?= $post->date ?>, by <?= $post->author ?></div>
     <?= $post->content ?>
   </div>
-<? endforeach ?>
+<?php endforeach ?>
