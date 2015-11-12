@@ -1,0 +1,530 @@
+<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta28.1.dtd" >
+<PATCH>
+  <NODE id="1" nodename="Renderer (Canvas VVVVjs)" systemname="Renderer (Canvas VVVVjs)" componentmode="Hidden">
+  <BOUNDS type="Node" left="4305" top="10605" width="100" height="100">
+  </BOUNDS>
+  <PIN pinname="Layers" visible="1">
+  </PIN>
+  <PIN pinname="Clear" visible="1">
+  </PIN>
+  <PIN pinname="Background Color" visible="1" values="|0.2930000126361847, 0.2930000126361847, 0.2930000126361847, 1|">
+  </PIN>
+  <PIN pinname="Backbuffer Width" visible="1">
+  </PIN>
+  <PIN pinname="Backbuffer Height" visible="1">
+  </PIN>
+  <PIN pinname="View" visible="1">
+  </PIN>
+  <PIN pinname="Descriptive Name" visible="0" values="|#renderer|">
+  </PIN>
+  </NODE>
+  <NODE id="2" nodename="DefineNode (System)" systemname="DefineNode (System)" componentmode="Hidden">
+  <BOUNDS type="Node" left="315" top="270" width="100" height="100">
+  </BOUNDS>
+  <PIN pinname="Node Name" visible="0" values="|GetNearest|">
+  </PIN>
+  <PIN pinname="Source Code" visible="0" values="|var xyzIn = this.addInputPin(&quot;XYZ In&quot;, [0, 0, 0, 1, 1, 1], VVVV.PinTypes.Value);
+var neighbourCountIn = this.addInputPin(&quot;Neighbour Count&quot;, [1], VVVV.PinTypes.Value);
+
+var indexOut = this.addOutputPin(&quot;Neighbour Indices&quot;, [0], VVVV.PinTypes.Value);
+
+this.initialize = function() {
+
+//Put node configuration code here ...
+}
+
+this.evaluate = function() {
+  var inputSliceCount = Math.ceil(xyzIn.getSliceCount()/3.0);
+
+  var idx = 0;
+  for (var i=0; i<inputSliceCount; i++) {
+    var point = xyzIn.getValue(i, 3);
+    var distances = [];
+    var indices = [];
+
+    // calculate distances from all other points
+    for (var j=0; j<inputSliceCount; j++) {
+      if (i==j)
+        continue;
+      var curr = xyzIn.getValue(j, 3);
+      var dist = Math.pow(curr[0]-point[0], 2) + Math.pow(curr[1]-point[1], 2) + Math.pow(curr[2]-point[2], 2);
+
+      // insert distance and index at the correct position, smallest distance first
+      var k=0;
+      while (k<distances.length &amp;&amp; distances[k]<dist) {
+        k++;
+      }
+      distances.splice(k, 0, dist);
+      indices.splice(k, 0, j);
+    }
+
+    // output the desired number of neires neighbours
+    var neighbourCount = neighbourCountIn.getValue(i);
+    for (var j=0; j<neighbourCount; j++) {
+      indexOut.setValue(idx++, indices[j]);
+    }
+  }
+
+  indexOut.setSliceCount(idx);
+}
+
+this.destroy = function() {
+  // This is called when the node is deleted
+}|">
+  </PIN>
+  <PIN pinname="Descriptive Name" visible="0" values="||">
+  </PIN>
+  </NODE>
+  <NODE id="8" nodename="RandomSpread (Spreads)" systemname="RandomSpread (Spreads)" componentmode="Hidden">
+  <BOUNDS type="Node" left="3675" top="2385" width="100" height="100">
+  </BOUNDS>
+  <PIN pinname="Input" visible="1">
+  </PIN>
+  <PIN pinname="Width" visible="1" values="|3.1599999999999917|">
+  </PIN>
+  <PIN pinname="Random Seed" visible="1">
+  </PIN>
+  <PIN pinname="Spread Count" visible="1">
+  </PIN>
+  <PIN pinname="Descriptive Name" visible="0" values="||">
+  </PIN>
+  </NODE>
+  <NODE id="9" nodename="Arc (Canvas VVVVjs)" systemname="Arc (Canvas VVVVjs)" componentmode="Hidden">
+  <BOUNDS type="Node" left="6960" top="8640" width="100" height="100">
+  </BOUNDS>
+  <PIN pinname="Render State" visible="1">
+  </PIN>
+  <PIN pinname="Transform" visible="1">
+  </PIN>
+  <PIN pinname="Clipping Layer" visible="1">
+  </PIN>
+  <PIN pinname="Radius" visible="1" values="|0.029999999999999312|">
+  </PIN>
+  <PIN pinname="Start Angle" visible="1">
+  </PIN>
+  <PIN pinname="End Angle" visible="1" values="|1.0000000000000004|">
+  </PIN>
+  <PIN pinname="Draw Segment" visible="1">
+  </PIN>
+  <PIN pinname="Descriptive Name" visible="0" values="||">
+  </PIN>
+  </NODE>
+  <NODE id="10" nodename="Fill (Canvas VVVVjs RenderState)" systemname="Fill (Canvas VVVVjs RenderState)" componentmode="Hidden">
+  <BOUNDS type="Node" left="6675" top="8205" width="100" height="100">
+  </BOUNDS>
+  <PIN pinname="Render State In" visible="1">
+  </PIN>
+  <PIN pinname="Color" visible="1" values="|0, 0, 0, 0|">
+  </PIN>
+  <PIN pinname="Descriptive Name" visible="0" values="||">
+  </PIN>
+  </NODE>
+  <NODE id="11" nodename="Stroke (Canvas VVVVjs RenderState)" systemname="Stroke (Canvas VVVVjs RenderState)" componentmode="Hidden">
+  <BOUNDS type="Node" left="6675" top="7665" width="100" height="100">
+  </BOUNDS>
+  <PIN pinname="Render State In" visible="1">
+  </PIN>
+  <PIN pinname="Color" visible="1">
+  </PIN>
+  <PIN pinname="Width" visible="1">
+  </PIN>
+  <PIN pinname="Cap Style" visible="1">
+  </PIN>
+  <PIN pinname="Join Style" visible="1">
+  </PIN>
+  <PIN pinname="Descriptive Name" visible="0" values="||">
+  </PIN>
+  </NODE>
+  <NODE id="13" nodename="Translate (Transform)" systemname="Translate (Transform)" componentmode="Hidden">
+  <BOUNDS type="Node" left="7440" top="8130" width="100" height="100">
+  </BOUNDS>
+  <PIN pinname="Transform In" visible="1">
+  </PIN>
+  <PIN pinname="X" visible="1">
+  </PIN>
+  <PIN pinname="Y" visible="1">
+  </PIN>
+  <PIN pinname="Z" visible="1" values="|0.2782813153156939|,|0.026203197843990167|">
+  </PIN>
+  <PIN pinname="Descriptive Name" visible="0" values="||">
+  </PIN>
+  </NODE>
+  <NODE id="14" nodename="GetSlice (Spreads)" systemname="GetSlice (Spreads)" componentmode="Hidden">
+  <BOUNDS type="Node" left="2100" top="6690" width="100" height="100">
+  </BOUNDS>
+  <PIN pinname="Input" visible="1">
+  </PIN>
+  <PIN pinname="Bin Size" visible="1" values="|2|">
+  </PIN>
+  <PIN pinname="Index" visible="1">
+  </PIN>
+  <PIN pinname="Descriptive Name" visible="0" values="||">
+  </PIN>
+  </NODE>
+  <NODE id="15" nodename="BezierCurve (Canvas VVVVjs)" systemname="BezierCurve (Canvas VVVVjs)" componentmode="Hidden">
+  <BOUNDS type="Node" left="1650" top="8445" width="100" height="100">
+  </BOUNDS>
+  <PIN pinname="Render State" visible="1">
+  </PIN>
+  <PIN pinname="Transform" visible="1">
+  </PIN>
+  <PIN pinname="Clipping Layer" visible="1">
+  </PIN>
+  <PIN pinname="X" visible="1">
+  </PIN>
+  <PIN pinname="Y" visible="1">
+  </PIN>
+  <PIN pinname="Control 1 X" visible="1">
+  </PIN>
+  <PIN pinname="Control 1 Y" visible="1">
+  </PIN>
+  <PIN pinname="Control 2 X" visible="1">
+  </PIN>
+  <PIN pinname="Control 2 Y" visible="1">
+  </PIN>
+  <PIN pinname="BinSize" visible="1" values="|2|">
+  </PIN>
+  <PIN pinname="Descriptive Name" visible="0" values="||">
+  </PIN>
+  </NODE>
+  <NODE id="16" nodename="Group (Canvas VVVVjs)" systemname="Group (Canvas VVVVjs)" componentmode="Hidden">
+  <BOUNDS type="Node" left="4290" top="9780" width="100" height="100">
+  </BOUNDS>
+  <PIN pinname="Layer 1" visible="1">
+  </PIN>
+  <PIN pinname="Layer 2" visible="1">
+  </PIN>
+  <PIN pinname="Layer Count" visible="0" values="|2|">
+  </PIN>
+  <PIN pinname="Descriptive Name" visible="0" values="||">
+  </PIN>
+  </NODE>
+  <NODE id="19" nodename="Vector (2d Join)" systemname="Vector (2d Join)" componentmode="Hidden">
+  <BOUNDS type="Node" left="2070" top="7680" width="100" height="100">
+  </BOUNDS>
+  <PIN pinname="X" visible="1">
+  </PIN>
+  <PIN pinname="Y" visible="1">
+  </PIN>
+  <PIN pinname="Descriptive Name" visible="0" values="||">
+  </PIN>
+  </NODE>
+  <NODE id="20" nodename="Vector (2d Join)" systemname="Vector (2d Join)" componentmode="Hidden">
+  <BOUNDS type="Node" left="2955" top="7680" width="100" height="100">
+  </BOUNDS>
+  <PIN pinname="X" visible="1">
+  </PIN>
+  <PIN pinname="Y" visible="1">
+  </PIN>
+  <PIN pinname="Descriptive Name" visible="0" values="||">
+  </PIN>
+  </NODE>
+  <NODE id="21" nodename="Stroke (Canvas VVVVjs RenderState)" systemname="Stroke (Canvas VVVVjs RenderState)" componentmode="Hidden">
+  <BOUNDS type="Node" left="585" top="7695" width="100" height="100">
+  </BOUNDS>
+  <PIN pinname="Render State In" visible="1">
+  </PIN>
+  <PIN pinname="Color" visible="1" values="|0.3700000047683716, 0.3700000047683716, 0.3700000047683716, 1|">
+  </PIN>
+  <PIN pinname="Width" visible="1">
+  </PIN>
+  <PIN pinname="Cap Style" visible="1">
+  </PIN>
+  <PIN pinname="Join Style" visible="1">
+  </PIN>
+  <PIN pinname="Descriptive Name" visible="0" values="||">
+  </PIN>
+  </NODE>
+  <NODE id="23" nodename="Vector (2d Split)" systemname="Vector (2d Split)" componentmode="Hidden">
+  <BOUNDS type="Node" left="7590" top="4575" width="100" height="100">
+  </BOUNDS>
+  <PIN pinname="XY" visible="1">
+  </PIN>
+  <PIN pinname="Descriptive Name" visible="0" values="||">
+  </PIN>
+  </NODE>
+  <NODE id="24" nodename="Vector (3d Join)" systemname="Vector (3d Join)" componentmode="Hidden">
+  <BOUNDS type="Node" left="2970" top="5640" width="100" height="100">
+  </BOUNDS>
+  <PIN pinname="X" visible="1">
+  </PIN>
+  <PIN pinname="Y" visible="1">
+  </PIN>
+  <PIN pinname="Z" visible="1">
+  </PIN>
+  <PIN pinname="Descriptive Name" visible="0" values="||">
+  </PIN>
+  </NODE>
+  <NODE id="25" nodename="Vector (2d Split)" systemname="Vector (2d Split)" componentmode="Hidden">
+  <BOUNDS type="Node" left="2100" top="7095" width="100" height="100">
+  </BOUNDS>
+  <PIN pinname="XY" visible="1">
+  </PIN>
+  <PIN pinname="Descriptive Name" visible="0" values="||">
+  </PIN>
+  </NODE>
+  <NODE id="28" nodename="IOBox (Value Advanced)" systemname="IOBox (Value Advanced)" componentmode="InABox">
+  <BOUNDS type="Box" left="4725" top="4485" width="0" height="0">
+  </BOUNDS>
+  <PIN pinname="Y Input Value" visible="1" values="|2|">
+  </PIN>
+  <PIN pinname="Rows" visible="0" values="|1|">
+  </PIN>
+  <PIN pinname="Descriptive Name" visible="0" values="|Connection Count|">
+  </PIN>
+  </NODE>
+  <NODE id="29" nodename="Select (Value)" systemname="Select (Value)" componentmode="Hidden">
+  <BOUNDS type="Node" left="4530" top="6375" width="100" height="100">
+  </BOUNDS>
+  <PIN pinname="Input" visible="1">
+  </PIN>
+  <PIN pinname="Select" visible="1">
+  </PIN>
+  <PIN pinname="Descriptive Name" visible="0" values="||">
+  </PIN>
+  </NODE>
+  <NODE id="30" nodename="Select (Value)" systemname="Select (Value)" componentmode="Hidden">
+  <BOUNDS type="Node" left="5520" top="6390" width="100" height="100">
+  </BOUNDS>
+  <PIN pinname="Input" visible="1">
+  </PIN>
+  <PIN pinname="Select" visible="1">
+  </PIN>
+  <PIN pinname="Descriptive Name" visible="0" values="||">
+  </PIN>
+  </NODE>
+  <NODE id="31" nodename="LinearFilter (Animation)" systemname="LinearFilter (Animation)" componentmode="Hidden">
+  <BOUNDS type="Node" left="3675" top="3045" width="100" height="100">
+  </BOUNDS>
+  <PIN pinname="Go To Position" visible="1">
+  </PIN>
+  <PIN pinname="FilterTime" visible="1" values="|5|">
+  </PIN>
+  <PIN pinname="Descriptive Name" visible="0" values="||">
+  </PIN>
+  </NODE>
+  <NODE id="32" nodename="LFO (Animation)" systemname="LFO (Animation)" componentmode="Hidden">
+  <BOUNDS type="Node" left="4050" top="1200" width="100" height="100">
+  </BOUNDS>
+  <PIN pinname="Period" visible="1" values="|3.17|">
+  </PIN>
+  <PIN pinname="Pause" visible="1">
+  </PIN>
+  <PIN pinname="Reverse" visible="1">
+  </PIN>
+  <PIN pinname="Reset" visible="1">
+  </PIN>
+  <PIN pinname="Phase" visible="1">
+  </PIN>
+  <PIN pinname="Descriptive Name" visible="0" values="||">
+  </PIN>
+  </NODE>
+  <NODE id="33" nodename="Random (Value)" systemname="Random (Value)" componentmode="Hidden">
+  <BOUNDS type="Node" left="4440" top="1770" width="100" height="100">
+  </BOUNDS>
+  <PIN pinname="Enabled" visible="1">
+  </PIN>
+  <PIN pinname="Is Integer" visible="1">
+  </PIN>
+  <PIN pinname="Scale" visible="1" values="|78|">
+  </PIN>
+  <PIN pinname="Prevent from doubles" visible="1">
+  </PIN>
+  <PIN pinname="Descriptive Name" visible="0" values="||">
+  </PIN>
+  </NODE>
+  <NODE id="34" nodename="IOBox (Value Advanced)" systemname="IOBox (Value Advanced)" componentmode="InABox">
+  <BOUNDS type="Box" left="5445" top="1065" width="0" height="0">
+  </BOUNDS>
+  <PIN pinname="Y Input Value" visible="1" values="|25|">
+  </PIN>
+  <PIN pinname="Rows" visible="0" values="|1|">
+  </PIN>
+  <PIN pinname="Descriptive Name" visible="0" values="|Point Count|">
+  </PIN>
+  </NODE>
+  <NODE id="35" nodename="Multiply (Value)" systemname="Multiply (Value)" componentmode="Hidden">
+  <BOUNDS type="Node" left="5415" top="1725" width="100" height="100">
+  </BOUNDS>
+  <PIN pinname="Input 1" visible="1">
+  </PIN>
+  <PIN pinname="Input 2" visible="1" values="|2|">
+  </PIN>
+  <PIN pinname="Input Count" visible="0" values="|2|">
+  </PIN>
+  <PIN pinname="Descriptive Name" visible="0" values="||">
+  </PIN>
+  </NODE>
+  <NODE id="36" nodename="IOBox (Color)" systemname="IOBox (Color)" componentmode="InABox">
+  <BOUNDS type="Box" left="6855" top="6645" width="0" height="0">
+  </BOUNDS>
+  <PIN pinname="Color Input" visible="1" values="|0.7916186451911926, 0.8259999752044678, 0.04460399970412254, 1|">
+  </PIN>
+  <PIN pinname="Rows" visible="0" values="|1|">
+  </PIN>
+  <PIN pinname="Descriptive Name" visible="0" values="||">
+  </PIN>
+  </NODE>
+  <NODE id="37" nodename="IOBox (Value Advanced)" systemname="IOBox (Value Advanced)" componentmode="InABox">
+  <BOUNDS type="Box" left="7050" top="6990" width="0" height="0">
+  </BOUNDS>
+  <PIN pinname="Y Input Value" visible="1" values="|4|">
+  </PIN>
+  <PIN pinname="Rows" visible="0" values="|1|">
+  </PIN>
+  <PIN pinname="Descriptive Name" visible="0" values="|Stroke Weight|">
+  </PIN>
+  </NODE>
+  <NODE id="38" nodename="IOBox (Value Advanced)" systemname="IOBox (Value Advanced)" componentmode="InABox">
+  <BOUNDS type="Box" left="960" top="7080" width="0" height="0">
+  </BOUNDS>
+  <PIN pinname="Y Input Value" visible="1" values="|2|">
+  </PIN>
+  <PIN pinname="Rows" visible="0" values="|1|">
+  </PIN>
+  <PIN pinname="Descriptive Name" visible="0" values="|Line Weight|">
+  </PIN>
+  </NODE>
+  <NODE id="39" nodename="IOBox (String)" systemname="IOBox (String)" componentmode="InABox">
+  <BOUNDS type="Box" left="1530" top="255" width="100" height="100">
+  </BOUNDS>
+  <PIN pinname="SliceOffset" visible="1">
+  </PIN>
+  <PIN pinname="Input String" visible="1" values="|<< here, the custom node is defined. Right-click it, to open the code editor|">
+  </PIN>
+  <PIN pinname="Rows" visible="0" values="|1|">
+  </PIN>
+  <PIN pinname="Descriptive Name" visible="0" values="||">
+  </PIN>
+  </NODE>
+  <NODE id="40" nodename="IOBox (String)" systemname="IOBox (String)" componentmode="InABox">
+  <BOUNDS type="Box" left="255" top="6195" width="100" height="100">
+  </BOUNDS>
+  <PIN pinname="SliceOffset" visible="1">
+  </PIN>
+  <PIN pinname="Input String" visible="1" values="|Here is, where the node is used >>|">
+  </PIN>
+  <PIN pinname="Rows" visible="0" values="|1|">
+  </PIN>
+  <PIN pinname="Descriptive Name" visible="0" values="||">
+  </PIN>
+  </NODE>
+  <NODE id="7" nodename="GetNearest" systemname="GetNearest" componentmode="Hidden">
+  <BOUNDS type="Node" left="2955" top="6210" width="0" height="0">
+  </BOUNDS>
+  <PIN pinname="XYZ In" visible="1">
+  </PIN>
+  <PIN pinname="Neighbour Count" visible="1">
+  </PIN>
+  <PIN pinname="Descriptive Name" visible="0" values="||">
+  </PIN>
+  </NODE>
+  <NODE id="41" nodename="Mouse (System Window)" systemname="Mouse (System Window)" componentmode="Hidden">
+  <BOUNDS type="Node" left="7800" top="1785" width="100" height="100">
+  </BOUNDS>
+  <PIN pinname="Maximum Touch Points" visible="1">
+  </PIN>
+  <PIN pinname="Descriptive Name" visible="0" values="||">
+  </PIN>
+  </NODE>
+  <NODE id="42" nodename="Cons (Spreads)" systemname="Cons (Spreads)" componentmode="Hidden">
+  <BOUNDS type="Node" left="3795" top="3555" width="100" height="100">
+  </BOUNDS>
+  <PIN pinname="Input 1" visible="1">
+  </PIN>
+  <PIN pinname="Input 2" visible="1">
+  </PIN>
+  <PIN pinname="Input Count" visible="0" values="|2|">
+  </PIN>
+  <PIN pinname="Descriptive Name" visible="0" values="||">
+  </PIN>
+  </NODE>
+  <NODE id="43" nodename="Vector (2d Join)" systemname="Vector (2d Join)" componentmode="Hidden">
+  <BOUNDS type="Node" left="7800" top="2175" width="100" height="100">
+  </BOUNDS>
+  <PIN pinname="X" visible="1">
+  </PIN>
+  <PIN pinname="Y" visible="1">
+  </PIN>
+  <PIN pinname="Descriptive Name" visible="0" values="||">
+  </PIN>
+  </NODE>
+  <LINK srcnodeid="16" srcpinname="Layer" dstnodeid="1" dstpinname="Layers">
+  </LINK>
+  <LINK srcnodeid="33" srcpinname="Output" dstnodeid="8" dstpinname="Random Seed">
+  </LINK>
+  <LINK srcnodeid="35" srcpinname="Output" dstnodeid="8" dstpinname="Spread Count">
+  </LINK>
+  <LINK srcnodeid="10" srcpinname="Render State Out" dstnodeid="9" dstpinname="Render State">
+  </LINK>
+  <LINK srcnodeid="13" srcpinname="Transform Out" dstnodeid="9" dstpinname="Transform">
+  </LINK>
+  <LINK srcnodeid="11" srcpinname="Render State Out" dstnodeid="10" dstpinname="Render State In">
+  </LINK>
+  <LINK srcnodeid="36" srcpinname="Color Output" dstnodeid="11" dstpinname="Color">
+  </LINK>
+  <LINK srcnodeid="37" srcpinname="Y Output Value" dstnodeid="11" dstpinname="Width">
+  </LINK>
+  <LINK srcnodeid="23" srcpinname="X" dstnodeid="13" dstpinname="X">
+  </LINK>
+  <LINK srcnodeid="23" srcpinname="Y" dstnodeid="13" dstpinname="Y">
+  </LINK>
+  <LINK srcnodeid="42" srcpinname="Output" dstnodeid="14" dstpinname="Input">
+  </LINK>
+  <LINK srcnodeid="7" srcpinname="Neighbour Indices" dstnodeid="14" dstpinname="Index">
+  </LINK>
+  <LINK srcnodeid="21" srcpinname="Render State Out" dstnodeid="15" dstpinname="Render State">
+  </LINK>
+  <LINK srcnodeid="19" srcpinname="XY" dstnodeid="15" dstpinname="X">
+  </LINK>
+  <LINK srcnodeid="20" srcpinname="XY" dstnodeid="15" dstpinname="Y">
+  </LINK>
+  <LINK srcnodeid="15" srcpinname="Layer" dstnodeid="16" dstpinname="Layer 1">
+  </LINK>
+  <LINK srcnodeid="9" srcpinname="Layer" dstnodeid="16" dstpinname="Layer 2">
+  </LINK>
+  <LINK srcnodeid="25" srcpinname="X" dstnodeid="19" dstpinname="X">
+  </LINK>
+  <LINK srcnodeid="29" srcpinname="Output" dstnodeid="19" dstpinname="Y">
+  </LINK>
+  <LINK srcnodeid="25" srcpinname="Y" dstnodeid="20" dstpinname="X">
+  </LINK>
+  <LINK srcnodeid="30" srcpinname="Output" dstnodeid="20" dstpinname="Y">
+  </LINK>
+  <LINK srcnodeid="38" srcpinname="Y Output Value" dstnodeid="21" dstpinname="Width">
+  </LINK>
+  <LINK srcnodeid="42" srcpinname="Output" dstnodeid="23" dstpinname="XY">
+  </LINK>
+  <LINK srcnodeid="23" srcpinname="X" dstnodeid="24" dstpinname="X">
+  </LINK>
+  <LINK srcnodeid="23" srcpinname="Y" dstnodeid="24" dstpinname="Y">
+  </LINK>
+  <LINK srcnodeid="14" srcpinname="Output" dstnodeid="25" dstpinname="XY">
+  </LINK>
+  <LINK srcnodeid="23" srcpinname="X" dstnodeid="29" dstpinname="Input">
+  </LINK>
+  <LINK srcnodeid="28" srcpinname="Y Output Value" dstnodeid="29" dstpinname="Select">
+  </LINK>
+  <LINK srcnodeid="23" srcpinname="Y" dstnodeid="30" dstpinname="Input">
+  </LINK>
+  <LINK srcnodeid="28" srcpinname="Y Output Value" dstnodeid="30" dstpinname="Select">
+  </LINK>
+  <LINK srcnodeid="8" srcpinname="Output" dstnodeid="31" dstpinname="Go To Position">
+  </LINK>
+  <LINK srcnodeid="32" srcpinname="Change" dstnodeid="33" dstpinname="Enabled">
+  </LINK>
+  <LINK srcnodeid="34" srcpinname="Y Output Value" dstnodeid="35" dstpinname="Input 1">
+  </LINK>
+  <LINK srcnodeid="24" srcpinname="XYZ" dstnodeid="7" dstpinname="XYZ In">
+  </LINK>
+  <LINK srcnodeid="28" srcpinname="Y Output Value" dstnodeid="7" dstpinname="Neighbour Count">
+  </LINK>
+  <LINK srcnodeid="31" srcpinname="Position Out" dstnodeid="42" dstpinname="Input 1">
+  </LINK>
+  <LINK srcnodeid="43" srcpinname="XY" dstnodeid="42" dstpinname="Input 2">
+  </LINK>
+  <LINK srcnodeid="41" srcpinname="X" dstnodeid="43" dstpinname="X">
+  </LINK>
+  <LINK srcnodeid="41" srcpinname="Y" dstnodeid="43" dstpinname="Y">
+  </LINK>
+  </PATCH>

@@ -1,0 +1,95 @@
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>VVVV.js 1.1: Inline Node Editor Demo</title>
+  <script language="JavaScript" src="../../vvvv_js/lib/jquery/jquery-1.8.2.min.js"></script>
+  <script language="JavaScript" src="../../vvvv_js/vvvv.js"></script>
+  <link rel="VVVV" href="index.v4p"></link>
+  <script language="JavaScript">
+    $(document).ready(function() {
+      VVVV.init('../../vvvv_js', 'full', function() {
+
+        $('#openpatch').click(function() {
+          var editor = new VVVV.Editors.BrowserEditor.Interface();
+          editor.enable(VVVV.Patches[0]);
+        })
+
+      })
+    })
+  </script>
+  <style type="text/css">
+    body{
+      background:#4a4a4a;
+      color:#EFEFEF;
+      font-family: "Lucida Sans";
+      font-size:14px;
+      line-height:1.6em;
+    }
+    #container{
+      background:#4A4A4A;
+      width:512px;
+      margin-left:auto;
+      margin-right:auto;
+    }
+    #openpatch{
+      position:absolute;
+      top: 3px;
+      background:#BFBB23;
+      color: black;
+      padding:5px;
+      border: 0px;
+      border-radius: 2px;
+      display:inline-block;
+      font-size:12px;
+      line-height:1.3em;
+      text-decoration:none;
+    }
+    #renderer{
+      border-top:2px solid #BFBB23;
+      border-bottom:2px solid #BFBB23;
+      margin-top:20px;
+      position:relative;
+    }
+    h1{
+      margin-top:56px;
+      margin-bottom:36px;
+      font-size:25px;
+      font-weight:normal;
+    }
+    h2{
+      font-size:20px;
+      font-weight:normal;
+      margin-top:5px;
+    }
+    p{
+      text-align: justify;
+    }
+    i{
+      background: #3A3A3A;
+      padding:2px;
+    }
+    a{
+      color:#E1E1E1;
+    }
+  </style>
+</head>
+<body>
+  <div id="container">
+    <h1>VVVV.js inline Node-Code-Editor</h1>
+    <p>
+      <a href="/">VVVV.js 1.1</a> comes with a built-in code editor, which allows you to <strong>code your own nodes easily</strong>. Open the patch below to see how it works: it contains a <i>DefineNode</i> node. This is used
+      to create a node, which does not yet exist in VVVV.js: <i>GetNearest</i>. You can right-click the <i>DefineNode</i> node, to open the code editor and edit its source code directly. You don't even have to reload the page after you made changes.
+    </p>
+
+    <div id="renderer">
+      <a href="#" id="openpatch">Open Patch Editor</a>
+    </div>
+
+    <p>
+      The custom <i>GetNearest</i> node solves a problem, which otherwise would be clumsy to implement using VVVV's spread arithmetics &ndash; just because of its lack of classic loops. It is a good example of a combination of VVVV.js' out-of-the-box graphics utilities,
+      and custom logic written in JavaScript. Getting and combining the best of both worlds.<br/>
+      Read more about the Node-Code-Editor in this more detailed <a href="/posts/node_code_editor">blog post on the VVVV.js website</a>.
+    </p>
+  </div>
+</body>
+</html>
