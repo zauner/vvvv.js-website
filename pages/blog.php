@@ -12,7 +12,10 @@ foreach ($postfolders as $postfolder) {
     continue;
   $meta = file_get_contents('../public/posts/'.$postfolder."/meta.json");
   $meta = json_decode($meta);
-  $content = file_get_contents('../public/posts/'.$postfolder."/content.md");
+  if (file_exists('../public/posts/'.$postfolder."/summary.md"))
+    $content = file_get_contents('../public/posts/'.$postfolder."/summary.md");
+  else
+    $content = file_get_contents('../public/posts/'.$postfolder."/content.md");
   $meta->link = $postfolder;
   $meta->content = $parsedown->parse($content);
   $meta->content = preg_replace_callback('/src="([^"]+)"/', function($matches) use ($postfolder) {
