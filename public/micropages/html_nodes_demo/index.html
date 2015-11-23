@@ -1,0 +1,128 @@
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>VVVV.js 1.1: HTML/CSS/Event Nodes Demo</title>
+  <script language="JavaScript" src="../../vvvv_js/lib/jquery/jquery-1.8.2.min.js"></script>
+  <script language="JavaScript" src="../../vvvv_js/vvvv.js"></script>
+  <link rel="VVVV" href="index.v4p"></link>
+  <script language="JavaScript">
+    $(document).ready(function() {
+      VVVV.init('../../vvvv_js', 'full', function() {
+
+        $('#openpatch').click(function() {
+          var editor = new VVVV.Editors.BrowserEditor.Interface();
+          editor.enable(VVVV.Patches[0]);
+        })
+
+      })
+    })
+  </script>
+  <style type="text/css">
+    body{
+      background:rgb(236, 236, 236);
+      color:black;
+      font-family: "Lucida Sans";
+      font-size:14px;
+      line-height:1.6em;
+    }
+    #container{
+      width:512px;
+      margin-left:auto;
+      margin-right:auto;
+    }
+    #openpatch{
+      position:absolute;
+      top: 3px;
+      left: 3px;
+      background:#CE3121;
+      color: white;
+      padding:5px;
+      border: 0px;
+      border-radius: 2px;
+      display:inline-block;
+      font-size:12px;
+      line-height:1.3em;
+      text-decoration:none;
+    }
+    #renderer{
+      height:512px;
+      border-top:2px solid #CE3121;
+      border-bottom:2px solid #CE3121;
+      margin-top:20px;
+      position:relative;
+    }
+    h1{
+      margin-top:56px;
+      margin-bottom:36px;
+      font-size:25px;
+      font-weight:normal;
+    }
+    h2{
+      font-size:20px;
+      font-weight:normal;
+      margin-top:5px;
+    }
+    p{
+      text-align: justify;
+    }
+    i{
+      color:white;
+      background: #656565;
+      padding:2px;
+    }
+    a{
+      color:#CE3121;
+    }
+    ul{
+      padding-left: 15px;
+    }
+    ul li{
+      margin-top: 0.6em;
+      text-align: justify;
+    }
+  </style>
+</head>
+<body>
+  <div id="container">
+    <h1>VVVV.js HTML/CSS/Event Nodes</h1>
+    <p>
+      Based on the previous <a href="/micropages/code_editor/">Code Editor example</a>, this page shows most of VVVV.js' new nodes for <b>manipulating the DOM, catching events and styling elements.</b>. Try to check the flying
+      checkboxes to pin down the points.
+    </p>
+
+    <div id="renderer">
+      <a href="#" id="openpatch">Open Patch Editor</a>
+    </div>
+
+    <p>
+      Open the patch, to see, what's going on:
+      <ul>
+       <li>We use <i>GetElement (HTML)</i> to fetch elements from the DOM, and <i>ApplyStyle (HTML)</i> to set the page's accent color to this beautiful red.</li>
+       <li><i>Element (HTML)</i> creates new HTML elements, like the red settings box at the top right. CSS nodes, like <i>Position</i>, <i>Background</i>, <i>Border</i> or the generic <i>Style</i> node do the rest.</li>
+       <li>We take the value from the slider (which we created using <i>RangeSlider</i>) with the <i>GetValue (HTML)</i> node.</li>
+       <li>Finally, we have the <i>Checkbox (HTML)</i> node to attach checkboxes to the canvas graphics.</li>
+     </ul>
+    </p>
+
+    <p>
+      There is a lot to tell about these new set of nodes. Read the <a href="/posts/html_nodes">related blog post</a> to find out about <b>nesting elements</b>, <b>chaining up style nodes</b>, or how all this goes along with spreads.
+    </p>
+  </div>
+
+  <!-- Start of StatCounter Code -->
+  <script type="text/javascript">
+  var sc_project=7067416;
+  var sc_invisible=1;
+  var sc_security="cfe91c6a";
+  </script>
+
+  <script type="text/javascript"
+  src="http://www.statcounter.com/counter/counter.js"></script><noscript><div
+  class="statcounter"><a title="free web stats"
+  href="http://statcounter.com/" target="_blank"><img
+  class="statcounter"
+  src="http://c.statcounter.com/7067416/0/cfe91c6a/1/"
+  alt="free web stats" ></a></div></noscript>
+  <!-- End of StatCounter Code -->
+</body>
+</html>
