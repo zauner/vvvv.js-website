@@ -23,7 +23,7 @@ include the VVVV.js library:
 <div class="code">&lt;html&gt;
   &lt;head&gt;
     &lt;title&gt;My VVVV.js project&lt;/title&gt;
-    <span class="highlight">&lt;script language="JavaScript" src="lib/vvvv_js/lib/jquery/jquery-1.8.2.min.js"&gt;&lt;/script&gt;
+    <span class="highlight">&lt;script language="JavaScript" src="lib/vvvv_js/lib/jquery/jquery-1.8.2.min.js"&gt;&lt;/link&gt;
     &lt;script language="JavaScript" src="lib/vvvv_js/vvvv.js"&gt;&lt;/script&gt;
     &lt;link rel="stylesheet" href="lib/vvvv_js/vvvviewer/vvvv.css"&gt;&lt;/script&gt;</span>
   &lt;/head&gt;
@@ -43,7 +43,7 @@ After this, we have to initialize VVVV.js by calling `VVVV.init(...)` when the d
     &lt;title&gt;My VVVV.js project&lt;/title&gt;
     &lt;script language="JavaScript" src="lib/vvvv_js/lib/jquery/jquery-1.8.2.min.js"&gt;&lt;/script&gt;
     &lt;script language="JavaScript" src="lib/vvvv_js/vvvv.js"&gt;&lt;/script&gt;
-    &lt;link rel="stylesheet" href="lib/vvvv_js/vvvviewer/vvvv.css"&gt;&lt;/script&gt;
+    &lt;link rel="stylesheet" href="lib/vvvv_js/vvvviewer/vvvv.css"&gt;&lt;/link&gt;
     <span class="highlight">&lt;script language="JavaScript"&gt;
       $(document).ready(function() {
         VVVV.init("lib/vvvv_js", "full", function() {
@@ -72,7 +72,7 @@ tag in the HTML header:
     &lt;title&gt;My VVVV.js project&lt;/title&gt;
     &lt;script language="JavaScript" src="lib/vvvv_js/lib/jquery/jquery-1.8.2.min.js"&gt;&lt;/script&gt;
     &lt;script language="JavaScript" src="lib/vvvv_js/vvvv.js"&gt;&lt;/script&gt;
-    &lt;link rel="stylesheet" href="lib/vvvv_js/vvvviewer/vvvv.css"&gt;&lt;/script&gt;
+    &lt;link rel="stylesheet" href="lib/vvvv_js/vvvviewer/vvvv.css"&gt;&lt;/link&gt;
     &lt;script language="JavaScript"&gt;
       $(document).ready(function() {
         VVVV.init("lib/vvvv_js", "full", function() {
@@ -109,7 +109,7 @@ As discussed in the [previous guide](/learn/patching), you can plug an editor in
 like this (assuming you are viewing the page at `http://localhost/my_project/`):
 
     http://localhost/my_project/#edit/assets/patches/my_patch.v4p
-    
+
 Hit enter, and an empty patch editor should start in new popup. If not, double-check if the patch file name after `#edit/` is _exactly_ as you specified it when loading it. Also
 make sure the popup has not been blocked by your browser.
 
@@ -128,4 +128,4 @@ of making Chrome display the "Save As" dialog instead of downloading to the defa
 ### Conclusion
 
 You learned how to include the VVVV.js library in your project and how to run a VVVV.js patch on a website. Go ahead with the [next guide](/learn/integrating)
-to find out about more advanced techniques to seemlessly integrate VVVV.js with your site. 
+to find out about more advanced techniques to seemlessly integrate VVVV.js with your site.
